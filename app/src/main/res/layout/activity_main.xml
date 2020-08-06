@@ -7,6 +7,17 @@
     android:background="#E7FBFF"
     tools:context=".MainActivity">
 
+    <ListView
+        android:id="@+id/listWithNews"
+        android:layout_width="413dp"
+        android:layout_height="510dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blueStripe"
+        app:layout_constraintVertical_bias="1.0" />
+
     <View
         android:id="@+id/topWhiteBox"
         android:layout_width="406dp"
@@ -16,21 +27,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textSSU"
-        android:layout_width="113dp"
-        android:layout_height="70dp"
-        android:text="СГУ"
-        android:textColor="#100C0C"
-        android:textSize="58dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/topWhiteBox"
-        app:layout_constraintEnd_toStartOf="@+id/topWhiteBox"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toEndOf="@+id/topWhiteBox"
-        app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
-        app:layout_constraintVertical_bias="0.445" />
 
     <View
         android:id="@+id/blueStripe"
@@ -87,5 +83,20 @@
         app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
         app:layout_constraintVertical_bias="0.425"
         app:srcCompat="@drawable/menu_icon" />
+
+    <TextView
+        android:id="@+id/textSSU"
+        android:layout_width="113dp"
+        android:layout_height="70dp"
+        android:text="СГУ"
+        android:textColor="#100C0C"
+        android:textSize="58dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/topWhiteBox"
+        app:layout_constraintEnd_toStartOf="@+id/topWhiteBox"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toEndOf="@+id/topWhiteBox"
+        app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
+        app:layout_constraintVertical_bias="0.445" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
