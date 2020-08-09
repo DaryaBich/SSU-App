@@ -106,14 +106,16 @@
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="386dp"
         android:layout_height="65dp"
+        android:autoText="false"
+        android:background="@drawable/btn_rounded_corner"
+        android:cursorVisible="true"
         android:hint="Преподаватель"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.254"
-        android:background="@drawable/btn_rounded_corner"/>
+        app:layout_constraintVertical_bias="0.254" />
 
     <Button
         android:id="@+id/button_teacher"
