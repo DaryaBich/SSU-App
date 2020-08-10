@@ -1,16 +1,11 @@
 package com.example.mobilessu
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.TextView
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main_student_faculty.*
+import com.example.mobilessu.mvp.MVPContract
 
-class MainActivity  : AppCompatActivity() {
+
+class MainActivity  :MVPContract.View, AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
