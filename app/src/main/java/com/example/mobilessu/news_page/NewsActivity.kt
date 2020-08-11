@@ -13,7 +13,7 @@ class NewsActivity : NewsInterface.View, AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        presenter.getData()
+        presenter.getData() // получение новостей
     }
 
     override fun showNews(list: List<News>) {

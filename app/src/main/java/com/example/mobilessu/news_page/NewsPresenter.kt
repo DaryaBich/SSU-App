@@ -8,8 +8,4 @@ class NewsPresenter(var view: NewsInterface.View) :
         val list = model.getNews()
         view.showNews(list)
     }
-
-    override fun onDestroy() {
-        TODO("Not yet implemented")
-    }
 }

@@ -15,6 +15,5 @@ interface NewsInterface {
 
     interface Presenter {
         fun getData()
-        fun onDestroy()
     }
 }
