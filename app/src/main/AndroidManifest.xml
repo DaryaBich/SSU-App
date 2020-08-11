@@ -10,11 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MainActivity_menu"></activity>
-        <activity android:name=".MainActivity_student_faculty"></activity>
-        <activity android:name=".MainActivity_find_teacher" />
-        <activity android:name=".MainActivity_teacher_or_student" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".menu_page.MainActivity_menu"></activity>
+        <activity android:name=".student_faculty_page.StudentFacultyActivity"></activity>
+        <activity android:name=".teacher_page.FindTeacherActivity" />
+        <activity android:name=".teacher_or_student_page.TeacherOrStudentActivity" />
+        <activity android:name="com.example.mobilessu.news_page.NewsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

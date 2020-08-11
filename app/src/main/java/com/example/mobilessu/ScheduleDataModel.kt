@@ -1,8 +1,10 @@
-package com.example.mobilessu.mvp
+package com.example.mobilessu
+
+import com.example.mobilessu.news_page.NewsInterface
 
 // класс отвечающий за выгрузку расписания и выгрузку списка групп
 
-class ScheduleDataModel : MVPContract.Model{
+class ScheduleDataModel {
     // Функция получения списка групп по фак-ту и форме обучения
     fun getGroupNumbers(department:String, educationForm:String) {
     }

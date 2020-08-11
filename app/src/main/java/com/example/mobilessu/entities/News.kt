@@ -2,9 +2,9 @@ package com.example.mobilessu.entities
 
 // класс хранит данные о новостях
 
-public class NewsData(
+public class News(
     private var date: String, private var title: String,
-    private var image: String
+    private var url: String
 ) {
     fun getDate() {
         date
@@ -14,8 +14,8 @@ public class NewsData(
         title
     }
 
-    fun getImage() {
-        image
+    fun getUrl() {
+        url
     }
 
     fun setDate(date: String) {
@@ -26,7 +26,7 @@ public class NewsData(
         this.title = title
     }
 
-    fun setImage(image: String) {
-        this.image = image
+    fun setUrl(url: String) {
+        this.url = url
     }
 }

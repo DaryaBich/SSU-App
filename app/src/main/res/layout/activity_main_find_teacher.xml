@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7FBFF"
-    tools:context=".MainActivity_find_teacher">
+    tools:context=".teacher_page.FindTeacherActivity">
 
     <View
         android:id="@+id/topWhiteBox"
