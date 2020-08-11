@@ -60,6 +60,7 @@
 
     <ImageButton
         android:id="@+id/menuButton"
+        android:onClick="clickmenu"
         android:layout_width="31dp"
         android:layout_height="31dp"
         android:background="#FFFFFF"

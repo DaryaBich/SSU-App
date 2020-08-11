@@ -1,9 +1,13 @@
 package com.example.mobilessu.news_page
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.mobilessu.R
 import com.example.mobilessu.entities.News
+import com.example.mobilessu.menu_page.MainActivity_menu
+import com.example.mobilessu.student_faculty_page.StudentFacultyActivity
 
 
 class NewsActivity : NewsInterface.View, AppCompatActivity() {
@@ -20,8 +24,8 @@ class NewsActivity : NewsInterface.View, AppCompatActivity() {
         // вывод входного списка на экран
     }
 
-    //fun clickmenu(view: View){
-    //    val randomIntent = Intent(this, MainActivity_student_faculty::class.java)
-    //     startActivity(randomIntent)
-    // }
+    fun clickmenu(view:View){
+      val randomIntent = Intent(this, MainActivity_menu::class.java)
+         startActivity(randomIntent)
+    }
 }

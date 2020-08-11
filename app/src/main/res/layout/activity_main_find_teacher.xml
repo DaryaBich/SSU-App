@@ -75,6 +75,7 @@
 
     <ImageButton
         android:id="@+id/menuButton"
+        android:onClick="click_back"
         android:layout_width="31dp"
         android:layout_height="29dp"
         android:background="#FFFFFF"
@@ -86,7 +87,8 @@
         app:layout_constraintStart_toEndOf="@+id/topWhiteBox"
         app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
         app:layout_constraintVertical_bias="0.450"
-        app:srcCompat="@drawable/arrow_left" />
+        app:srcCompat="@drawable/arrow_left"
+        tools:ignore="OnClick" />
 
     <TextView
         android:id="@+id/textView"
@@ -97,11 +99,11 @@
         android:textSize="20sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.196" />
+        app:layout_constraintVertical_bias="0.207" />
 
     <Button
         android:id="@+id/button_teacher"
@@ -123,15 +125,17 @@
 
     <EditText
         android:id="@+id/teacher_name"
-        android:layout_width="374dp"
+        android:layout_width="330dp"
         android:layout_height="70dp"
+        android:paddingLeft="25dp"
         android:background="@drawable/btn_rounded_corner"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/button_teacher"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.48" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
