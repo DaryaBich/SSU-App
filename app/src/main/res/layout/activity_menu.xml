@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#E7FBFF"
     android:visibility="visible"
-    tools:context=".menu_page.MainActivity_menu"
+    tools:context=".menu_page.Activity_menu"
     tools:visibility="visible">
 
     <View

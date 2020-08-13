@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7FBFF"
-    tools:context=".MainActivity_day_evening">
+    tools:context=".teacher_or_student_page.Activity_teacher_or_student">
 
     <View
         android:id="@+id/topWhiteBox"
@@ -89,76 +89,42 @@
         app:layout_constraintVertical_bias="0.450"
         app:srcCompat="@drawable/arrow_left" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="294dp"
-        android:layout_height="27dp"
-        android:text="Форма обучения"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.207" />
-
     <Button
-        android:id="@+id/button_day"
-        android:layout_width="200dp"
+        android:id="@+id/button_student"
+        android:onClick="click_schedule_students"
+        android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:background="@drawable/btn_rounded_corner"
-        android:onClick="click_schedule_students"
+        android:text="Расписание студентов"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
-        android:text="Дневная"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.264" />
+        app:layout_constraintVertical_bias="0.23" />
 
     <Button
-        android:id="@+id/button_evening"
-        android:layout_width="200dp"
-        android:layout_height="65dp"
-        android:background="@drawable/btn_rounded_corner"
-        android:onClick="click_schedule_students"
+        android:id="@+id/button_teacher"
+        android:onClick="click_schedule_teacher"
+        android:layout_width="wrap_content"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
-        android:text="Вечерняя"
+        android:layout_height="65dp"
+        android:background="@drawable/btn_rounded_corner"
+        android:text="Расписание преподавателей"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
-
-    <Button
-        android:id="@+id/button_zaoch"
-        android:layout_width="200dp"
-        android:layout_height="65dp"
-        android:background="@drawable/btn_rounded_corner"
-        android:onClick="click_schedule_students"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
-        android:text="Заочная"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintVertical_bias="0.356" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

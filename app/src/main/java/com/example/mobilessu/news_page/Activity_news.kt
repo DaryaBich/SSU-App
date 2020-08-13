@@ -9,16 +9,15 @@ import android.view.View
 import android.widget.Toast
 import com.example.mobilessu.R
 import com.example.mobilessu.entities.News
-import com.example.mobilessu.menu_page.MainActivity_menu
-import com.example.mobilessu.student_faculty_page.StudentFacultyActivity
+import com.example.mobilessu.menu_page.Activity_menu
 
-class NewsActivity : NewsInterface.View, AppCompatActivity() {
+class Activity_news : NewsInterface.View, AppCompatActivity() {
 
     var presenter: NewsInterface.Presenter = NewsPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_news)
         //presenter.getData() // получение новостей
     }
 
@@ -35,7 +34,7 @@ class NewsActivity : NewsInterface.View, AppCompatActivity() {
 
     }
     fun clickmenu(view: View){
-        val randomIntent = Intent(this, MainActivity_menu::class.java)
+        val randomIntent = Intent(this, Activity_menu::class.java)
         startActivity(randomIntent)
     }
 
