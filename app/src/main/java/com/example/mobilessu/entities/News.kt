@@ -6,16 +6,16 @@ public class News(
     private var date: String, private var title: String,
     private var url: String
 ) {
-    fun getDate() {
-        date
+    fun getDate() :String{
+        return date
     }
 
-    fun getTitle() {
-        title
+    fun getTitle() :String{
+        return title
     }
 
-    fun getUrl() {
-        url
+    fun getUrl() :String{
+        return url
     }
 
     fun setDate(date: String) {

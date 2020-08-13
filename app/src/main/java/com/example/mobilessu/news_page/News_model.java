@@ -19,6 +19,7 @@ import java.util.concurrent.ExecutionException;
 
 public class News_model implements News_interface.Model {
     private MyAsyncTask myAsyncTask;
+
     // Функция парсинга новостей с сайта www.sgu.ru
     @NotNull
     @Override
@@ -27,7 +28,7 @@ public class News_model implements News_interface.Model {
             myAsyncTask = new MyAsyncTask();
             myAsyncTask.execute();
             return myAsyncTask.get();
-        } catch (ExecutionException | InterruptedException e ) {
+        } catch (ExecutionException | InterruptedException e) {
             Log.d("ERROR", "Problem with multithreading");
             return new LinkedList<>();
         }
@@ -45,6 +46,7 @@ public class News_model implements News_interface.Model {
                 for (Element element : listNews) {
                     String date = element.select("span.date-display-single").get(0)
                             .attr("content");
+                    date = date.substring(8, 10)+"." + date.substring(5,7) +"."+ date.substring(0, 4);
                     String title = element.select("a[href]").get(0).text();
                     String url = "https://www.sgu.ru" + element.select("a[href]").get(0)
                             .attr("href");
