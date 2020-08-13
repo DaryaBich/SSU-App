@@ -12,8 +12,6 @@ class StudentFacultyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_student_faculty)
-
-
         val demodata = MutableList(5, {x -> "Item$x"})
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, demodata)
         listfaculty.adapter = adapter
