@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7FBFF"
-    tools:context=".teacher_page.FindTeacherActivity">
+    tools:context=".student_faculty_page.Activity_student_faculty">
 
     <View
         android:id="@+id/topWhiteBox"
@@ -87,55 +87,31 @@
         app:layout_constraintStart_toEndOf="@+id/topWhiteBox"
         app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
         app:layout_constraintVertical_bias="0.450"
-        app:srcCompat="@drawable/arrow_left"
-        tools:ignore="OnClick" />
+        app:srcCompat="@drawable/arrow_left" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="294dp"
-        android:layout_height="27dp"
-        android:text="Введите ФИО преподавателя:"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.207" />
-
-    <Button
-        android:id="@+id/button_teacher"
-        android:layout_width="186dp"
-        android:layout_height="65dp"
-        android:background="@drawable/btn_rounded_corner"
-        android:text="Найти"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
+    <View
+        android:id="@+id/viewdop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:outlineAmbientShadowColor="#100707"
+        android:outlineSpotShadowColor="#190C0C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
+        app:layout_constraintTop_toBottomOf="@+id/blueStripe"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/teacher_name"
-        android:layout_width="330dp"
-        android:layout_height="70dp"
-        android:paddingLeft="25dp"
-        android:background="@drawable/btn_rounded_corner"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/button_teacher"
+    <ListView
+        android:id="@+id/listfaculty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintTop_toBottomOf="@+id/blueStripe"
+        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

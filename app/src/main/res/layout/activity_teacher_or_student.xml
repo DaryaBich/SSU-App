@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7FBFF"
-    tools:context=".teacher_or_student_page.TeacherOrStudentActivity">
+    tools:context=".teacher_or_student_page.Activity_teacher_or_student">
 
     <View
         android:id="@+id/topWhiteBox"

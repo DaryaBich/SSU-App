@@ -5,22 +5,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.mobilessu.R
-import com.example.mobilessu.student_faculty_page.StudentFacultyActivity
-import com.example.mobilessu.teacher_page.FindTeacherActivity
+import com.example.mobilessu.student_faculty_page.Activity_student_faculty
+import com.example.mobilessu.teacher_page.Activity_find_teacher
 
-class TeacherOrStudentActivity : AppCompatActivity() {
+class Activity_teacher_or_student : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_teacher_or_student)
+        setContentView(R.layout.activity_teacher_or_student)
     }
 
     fun click_schedule_teacher(view: View){
-        val randomIntent = Intent(this, FindTeacherActivity::class.java)
+        val randomIntent = Intent(this, Activity_find_teacher::class.java)
         startActivity(randomIntent)
     }
 
     fun click_schedule_students(view: View){
-        val randomIntent = Intent(this, StudentFacultyActivity::class.java)
+        val randomIntent = Intent(this, Activity_student_faculty::class.java)
         startActivity(randomIntent)
     }
 

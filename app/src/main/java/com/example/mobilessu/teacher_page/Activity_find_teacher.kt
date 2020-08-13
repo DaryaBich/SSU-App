@@ -1,16 +1,19 @@
-package com.example.mobilessu
+package com.example.mobilessu.teacher_page
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.mobilessu.R
 
-class MainActivity_day_evening : AppCompatActivity() {
+class Activity_find_teacher :  AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_day_evening)
+        setContentView(R.layout.activity_find_teacher)
+
+
     }
 
-    fun click_back(view: View){
+    fun click_back(view: View) {
         finish()
     }
 }

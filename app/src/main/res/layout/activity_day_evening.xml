@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7FBFF"
-    tools:context=".MainActivity_course">
+    tools:context=".choose_day_evening.Activity_day_evening">
 
     <View
         android:id="@+id/topWhiteBox"
@@ -93,25 +93,25 @@
         android:id="@+id/textView"
         android:layout_width="294dp"
         android:layout_height="27dp"
-        android:text="Курс"
+        android:text="Форма обучения"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204" />
+        app:layout_constraintVertical_bias="0.207" />
 
     <Button
-        android:id="@+id/button_1_course"
+        android:id="@+id/button_day"
         android:layout_width="200dp"
         android:layout_height="65dp"
         android:background="@drawable/btn_rounded_corner"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
-        android:text="1 курс"
+        android:text="Дневная"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="normal|bold"
@@ -123,13 +123,13 @@
         app:layout_constraintVertical_bias="0.264" />
 
     <Button
-        android:id="@+id/button_2_course"
+        android:id="@+id/button_evening"
         android:layout_width="200dp"
         android:layout_height="65dp"
         android:background="@drawable/btn_rounded_corner"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
-        android:text="2 курс"
+        android:text="Вечерняя"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="normal|bold"
@@ -141,57 +141,21 @@
         app:layout_constraintVertical_bias="0.372" />
 
     <Button
-    android:id="@+id/button_3_course"
-    android:layout_width="200dp"
-    android:layout_height="65dp"
-    android:background="@drawable/btn_rounded_corner"
-    android:paddingLeft="25dp"
-    android:paddingRight="25dp"
-    android:text="3 курс"
-    android:textAllCaps="false"
-    android:textSize="20sp"
-    android:textStyle="normal|bold"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintHorizontal_bias="0.496"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.481" />
-
-    <Button
-        android:id="@+id/button_4_course"
+        android:id="@+id/button_zaoch"
         android:layout_width="200dp"
         android:layout_height="65dp"
         android:background="@drawable/btn_rounded_corner"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
-        android:text="4 курс"
+        android:text="Заочная"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589" />
-
-    <Button
-        android:id="@+id/button_5_course"
-        android:layout_width="200dp"
-        android:layout_height="65dp"
-        android:background="@drawable/btn_rounded_corner"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
-        android:text="5 курс"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.481" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
