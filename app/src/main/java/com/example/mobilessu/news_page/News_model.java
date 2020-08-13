@@ -18,40 +18,47 @@ import java.util.concurrent.ExecutionException;
 
 
 public class News_model implements News_interface.Model {
+    private MyAsyncTask myAsyncTask;
     // Функция парсинга новостей с сайта www.sgu.ru
     @NotNull
     @Override
     public List<News> getNews() {
         try {
-            MyAsyncTask myAsyncTask = new MyAsyncTask();
+            myAsyncTask = new MyAsyncTask();
             myAsyncTask.execute();
             return myAsyncTask.get();
-        } catch (ExecutionException e ) {
-            Log.d("ERROR", "Problem with multithreading");
-            return new LinkedList<>();
-        } catch (InterruptedException e) {
+        } catch (ExecutionException | InterruptedException e ) {
             Log.d("ERROR", "Problem with multithreading");
             return new LinkedList<>();
         }
     }
 
-    private static class MyAsyncTask extends AsyncTask<String, Integer, LinkedList<News>> {
+    private static class MyAsyncTask extends AsyncTask<Void, Void, LinkedList<News>> {
+
         @Override
-        protected LinkedList<News> doInBackground(String... strings) {
-            LinkedList<News> resultNews = new LinkedList<>();
+        protected LinkedList<News> doInBackground(Void... voids) {
+            LinkedList<News> newsLinkedList = new LinkedList<>();
             try {
                 Document document = Jsoup.connect("https://www.sgu.ru/news").get();
-                Elements listNews = document.select("div[class^=views-row]");
+                Elements listNews = document.select("div.region.region-local-navigation")
+                        .select("div[class*=smart-links]");
                 for (Element element : listNews) {
-                    String date = element.select("div.field-content").get(0).attr("content");
+                    String date = element.select("span.date-display-single").get(0)
+                            .attr("content");
                     String title = element.select("a[href]").get(0).text();
-                    String url = element.select("a[href]").get(0).attr("href");
-                    resultNews.add(new News(date, title, url));
+                    String url = "https://www.sgu.ru" + element.select("a[href]").get(0)
+                            .attr("href");
+                    newsLinkedList.add(new News(date, title, url));
                 }
-                return resultNews;
+                return newsLinkedList;
             } catch (IOException e) {
-                return resultNews;
+                return newsLinkedList;
             }
+        }
+
+        @Override
+        protected void onPostExecute(LinkedList<News> news) {
+            super.onPostExecute(news);
         }
     }
 }

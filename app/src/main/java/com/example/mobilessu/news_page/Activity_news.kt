@@ -18,7 +18,7 @@ class Activity_news : News_interface.View, AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news)
-        //presenter.getData() // получение новостей
+        presenter.getData() // получение новостей
     }
 
     override fun showNews(list: List<News>) {
@@ -33,7 +33,8 @@ class Activity_news : News_interface.View, AppCompatActivity() {
         }
 
     }
-    fun clickmenu(view: View){
+
+    fun clickmenu(view: View) {
         val randomIntent = Intent(this, Activity_menu::class.java)
         startActivity(randomIntent)
     }
