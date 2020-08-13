@@ -12,13 +12,12 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 
-public class NewsModel implements NewsInterface.Model {
+public class News_model implements News_interface.Model {
     // Функция парсинга новостей с сайта www.sgu.ru
     @NotNull
     @Override

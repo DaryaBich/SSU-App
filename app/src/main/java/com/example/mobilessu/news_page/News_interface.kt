@@ -4,7 +4,7 @@ import com.example.mobilessu.entities.News
 import java.io.IOException
 import java.util.concurrent.ExecutionException
 
-interface NewsInterface {
+interface News_interface {
     interface Model {
         @Throws(IOException::class, ExecutionException::class, InterruptedException::class)
         fun getNews() :List<News>

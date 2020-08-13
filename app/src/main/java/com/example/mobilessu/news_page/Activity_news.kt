@@ -11,9 +11,9 @@ import com.example.mobilessu.R
 import com.example.mobilessu.entities.News
 import com.example.mobilessu.menu_page.Activity_menu
 
-class Activity_news : NewsInterface.View, AppCompatActivity() {
+class Activity_news : News_interface.View, AppCompatActivity() {
 
-    var presenter: NewsInterface.Presenter = NewsPresenter(this)
+    var presenter: News_interface.Presenter = News_presenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

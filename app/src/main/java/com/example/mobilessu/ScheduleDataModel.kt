@@ -1,7 +1,5 @@
 package com.example.mobilessu
 
-import com.example.mobilessu.news_page.NewsInterface
-
 // класс отвечающий за выгрузку расписания и выгрузку списка групп
 
 class ScheduleDataModel {
