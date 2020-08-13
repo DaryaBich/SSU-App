@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mobilessu">
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-<uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,11 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".menu_page.MainActivity_menu"></activity>
-        <activity android:name=".student_faculty_page.StudentFacultyActivity"></activity>
+        <activity android:name=".MainActivity_course"></activity>
+        <activity android:name=".MainActivity_day_evening" />
+        <activity android:name=".menu_page.MainActivity_menu" />
+        <activity android:name=".student_faculty_page.StudentFacultyActivity" />
         <activity android:name=".teacher_page.FindTeacherActivity" />
         <activity android:name=".teacher_or_student_page.TeacherOrStudentActivity" />
-        <activity android:name="com.example.mobilessu.news_page.NewsActivity">
+        <activity android:name=".news_page.NewsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

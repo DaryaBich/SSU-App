@@ -105,8 +105,8 @@
 
     <ListView
         android:id="@+id/listfaculty"
-        android:layout_width="409dp"
-        android:layout_height="506dp"
+        android:layout_width="414dp"
+        android:layout_height="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"

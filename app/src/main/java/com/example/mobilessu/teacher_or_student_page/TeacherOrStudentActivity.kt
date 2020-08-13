@@ -29,5 +29,4 @@ class TeacherOrStudentActivity : AppCompatActivity() {
         //startActivity(randomIntent)
         finish()
     }
-
 }
