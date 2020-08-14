@@ -89,21 +89,7 @@
         app:layout_constraintVertical_bias="0.450"
         app:srcCompat="@drawable/arrow_left" />
 
-    <View
-        android:id="@+id/viewdop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:outlineAmbientShadowColor="#100707"
-        android:outlineSpotShadowColor="#190C0C"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blueStripe"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ListView
-        android:id="@+id/listfaculty"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -111,7 +97,48 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/blueStripe"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blueStripe"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Факультеты и институты"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/listfaculty"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:divider="@color/cardview_light_background" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Колледжи"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/listcolledge"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:divider="@color/cardview_light_background" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
