@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.example.mobilessu.R
 import com.example.mobilessu.entities.News
 import com.example.mobilessu.menu_page.Activity_menu
+import kotlinx.android.synthetic.main.activity_news.*
 
 class Activity_news : News_interface.View, AppCompatActivity() {
 
@@ -23,7 +24,8 @@ class Activity_news : News_interface.View, AppCompatActivity() {
 
     override fun showNews(list: List<News>) {
         if (list.size > 0) {
-            // вывод входного списка на экран
+            val adapter = MyArrayAdapter(this,R.layout.news_list_items, list)
+            list_of_news.adapter = adapter
         } else {
             Toast.makeText(
                 applicationContext,
