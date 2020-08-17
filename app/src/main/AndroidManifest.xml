@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".choose_course.Activity_course"></activity>
+        <activity android:name=".Activity_group"></activity>
+        <activity android:name=".choose_course.Activity_course" />
         <activity android:name=".choose_day_evening.Activity_day_evening" />
         <activity android:name=".menu_page.Activity_menu" />
         <activity android:name=".student_faculty_page.Activity_student_faculty" />
