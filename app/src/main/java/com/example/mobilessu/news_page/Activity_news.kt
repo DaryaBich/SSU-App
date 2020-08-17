@@ -37,6 +37,7 @@ class Activity_news : News_interface.View, AppCompatActivity() {
     fun clickmenu(view: View) {
         val randomIntent = Intent(this, Activity_menu::class.java)
         startActivity(randomIntent)
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
 }

@@ -16,9 +16,12 @@ class Activity_menu :  AppCompatActivity() {
     fun click_schedule(view: View){
         val randomIntent = Intent(this, Activity_teacher_or_student::class.java)
         startActivity(randomIntent)
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
     fun click_back(view: View){
         finish()
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
+
     }
 }

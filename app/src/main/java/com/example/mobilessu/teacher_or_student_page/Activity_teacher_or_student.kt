@@ -17,16 +17,19 @@ class Activity_teacher_or_student : AppCompatActivity() {
     fun click_schedule_teacher(view: View){
         val randomIntent = Intent(this, Activity_find_teacher::class.java)
         startActivity(randomIntent)
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
     fun click_schedule_students(view: View){
         val randomIntent = Intent(this, Activity_student_faculty::class.java)
         startActivity(randomIntent)
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
     fun click_back(view: View){
         //val randomIntent = Intent(this, TeacherOrStudentActivity::class.java)
         //startActivity(randomIntent)
         finish()
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 }

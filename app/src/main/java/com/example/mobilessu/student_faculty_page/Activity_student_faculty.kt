@@ -81,14 +81,17 @@ class Activity_student_faculty : AppCompatActivity() {
     fun click_faculty(view: View){
         val randomIntent = Intent(this, Activity_day_evening::class.java)
         startActivity(randomIntent)
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
     fun click_colledge(view: View){
         val randomIntent = Intent(this, Activity_course::class.java)
         startActivity(randomIntent)
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
     fun click_back(view: View){
         finish()
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 }

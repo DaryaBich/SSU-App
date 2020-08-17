@@ -15,5 +15,6 @@ class Activity_find_teacher :  AppCompatActivity() {
 
     fun click_back(view: View) {
         finish()
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 }

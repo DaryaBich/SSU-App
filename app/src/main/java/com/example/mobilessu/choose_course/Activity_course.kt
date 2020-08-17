@@ -36,11 +36,13 @@ class Activity_course : AppCompatActivity() {
     fun click_course(view: View){
         val randomIntent = Intent(this, Activity_group::class.java)
         startActivity(randomIntent)
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
 
 
     fun click_back(view: View){
         finish()
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 }

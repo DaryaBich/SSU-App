@@ -33,9 +33,11 @@ class Activity_day_evening : AppCompatActivity() {
     fun click_day_evening(view: View){
         val randomIntent = Intent(this, Activity_course::class.java)
         startActivity(randomIntent)
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
     fun click_back(view: View){
         finish()
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 }
