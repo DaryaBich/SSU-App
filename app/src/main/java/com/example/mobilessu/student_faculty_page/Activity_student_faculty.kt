@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
 import com.example.mobilessu.choose_course.Activity_course
 import com.example.mobilessu.choose_day_evening.Activity_day_evening
-import com.example.mobilessu.teacher_or_student_page.Activity_teacher_or_student
 import kotlinx.android.synthetic.main.activity_student_faculty.*
 
 class Activity_student_faculty : AppCompatActivity() {
@@ -68,20 +66,28 @@ class Activity_student_faculty : AppCompatActivity() {
         listcolledge.adapter = adapter1
         listfaculty.setOnItemClickListener { adapterView, view, i, l ->
             //Toast.makeText(this, (view as TextView).text, Toast.LENGTH_LONG).show()
+            val element = (view as TextView).text // получаем текст нажатого элемента
+           // val document = Jsoup.connect("https://www.sgu.ru/schedule").get()
+           // val list_faculty = document.select("div[class*=panes_item panes_item__type_group]")
 
-            click_faculty(view)
+
+
+            //click_faculty(view)
+            val randomIntent = Intent(this, Activity_day_evening::class.java)
+            randomIntent.putExtra("url", "https://www.sgu.ru/schedule/")
+            when(element){
+                "Биологический факультет" -> randomIntent.putExtra("faculty", "bf/") //передали факультет
+                else -> randomIntent.putExtra("faculty", "")
+            }
+            //val randomIntent = Intent(this, Activity_day_evening::class.java)
+            startActivity(randomIntent)
+            overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
         }
         listcolledge.setOnItemClickListener { adapterView, view, i, l ->
 
             click_colledge(view)
         }
 //>>>>>>> 92e20a2b554b26c93864bc01ba7368930bb4aa4c:app/src/main/java/com/example/mobilessu/student_faculty_page/Activity_student_faculty.kt
-    }
-
-    fun click_faculty(view: View){
-        val randomIntent = Intent(this, Activity_day_evening::class.java)
-        startActivity(randomIntent)
-        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
     fun click_colledge(view: View){
