@@ -20,12 +20,12 @@ import java.util.List;
 public class MyArrayAdapterGroup extends ArrayAdapter<ScheduleData> {
     Context context;
     int resource;
-    List<ScheduleData> newsList;
+    List<ScheduleData> groupsList;
 
-    public MyArrayAdapter(Context context, int resource, List<ScheduleData> newsList) {
-        super(context, resource, newsList);
+    public MyArrayAdapterGroup(Context context, int resource, List<ScheduleData> groupsList) {
+        super(context, resource, groupsList);
         this.context = context;
-        this.newsList = newsList;
+        this.groupsList = groupsList;
         this.resource = resource;
     }
 
@@ -33,13 +33,14 @@ public class MyArrayAdapterGroup extends ArrayAdapter<ScheduleData> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.news_list_items,null);
-        TextView textViewDate = view.findViewById(R.id.itemDate);
-        TextView textViewTitle = view.findViewById(R.id.itemTitle);
+        View view = inflater.inflate(R.layout.groups_list_items,null);
+        TextView textViewGroup = view.findViewById(R.id.itemGroup);
+       // TextView textViewTitle = view.findViewById(R.id.itemTitle);
         LinearLayout linearLayout = view.findViewById(R.id.linearLayout);
-        ScheduleData groups = newsList.get(position);
-        textViewDate.setText(groups.getDate());
-        textViewTitle.setText(groups.getTitle());
+        ScheduleData groups = groupsList.get(position);
+        textViewGroup.setText(groups.getGroup());
+       // textViewGroup.setText("39);
+       // textViewTitle.setText(groups.getTitle());
         return view;
     }
 }

@@ -17,7 +17,6 @@ class Activity_course : AppCompatActivity() {
         setContentView(R.layout.activity_course)
         val arguments = intent.extras
         if (arguments != null) {
-            val url = arguments["url"].toString()
             val faculty = arguments["faculty"].toString()
             val day_evening = arguments["day_evening"].toString()
             val demodata = mutableListOf<String>()
@@ -35,15 +34,15 @@ class Activity_course : AppCompatActivity() {
                 //Toast.makeText(this, (view as TextView).text, Toast.LENGTH_LONG).show()
                 val element = (view as TextView).text // получаем текст нажатого элемента
                 //val randomIntent = Intent(this, Activity_group::class.java)
+                val randomIntent1 = Intent(this, Activity_group::class.java)
                 val randomIntent = Intent(this, Groups_model::class.java)
-                randomIntent.putExtra("url", url)
                 randomIntent.putExtra("faculty", faculty)
                 randomIntent.putExtra("day_evening", day_evening)
                 when (element) {
                     "1 курс" -> randomIntent.putExtra("course", "1") //передали курс
                     else -> randomIntent.putExtra("course", "")
                 }
-                startActivity(randomIntent)
+                startActivity(randomIntent1)
                 overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
             }
         }

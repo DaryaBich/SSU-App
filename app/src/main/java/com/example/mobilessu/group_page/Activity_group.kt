@@ -2,32 +2,34 @@ package com.example.mobilessu.group_page
 
 import android.os.Bundle
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
-import com.example.mobilessu.entities.News
 import com.example.mobilessu.entities.ScheduleData
-import com.example.mobilessu.news_page.MyArrayAdapter
-import com.example.mobilessu.news_page.News_interface
-import com.example.mobilessu.news_page.News_presenter
 import kotlinx.android.synthetic.main.activity_group.*
-import kotlinx.android.synthetic.main.activity_news.*
-import org.jsoup.Jsoup
 
 
 class Activity_group : AppCompatActivity() {
     var presenter: Group_interface.Presenter = Groups_presenter(this)
+    val arguments = intent.extras
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_news)
-        presenter.getData() // получение новостей
+        setContentView(R.layout.activity_group)
+        val arguments = intent.extras
+        if (arguments != null) {
+            val faculty = arguments["faculty"].toString()
+            val day_evening = arguments["day_evening"].toString()
+            val course = arguments["course"].toString()
+            val scheduleData = ScheduleData(faculty, day_evening, course, 0)
+            presenter.getData(scheduleData) // получение групп
+        }
     }
 
-    override fun showGroups(list: List<ScheduleData>) {
+    fun showGroups(list: List<ScheduleData>) {
         if (list.size > 0) {
-            val adapter = MyArrayAdapter(this,R.layout.news_list_items, list)
-            list_of_news.adapter = adapter
+            val adapter = MyArrayAdapterGroup(this, R.layout.groups_list_items, list)
+            list_group.adapter = adapter
         } else {
             Toast.makeText(
                 applicationContext,

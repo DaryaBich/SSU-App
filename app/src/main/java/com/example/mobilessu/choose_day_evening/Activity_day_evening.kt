@@ -16,7 +16,6 @@ class Activity_day_evening : AppCompatActivity() {
         setContentView(R.layout.activity_day_evening)
         val arguments = intent.extras
         if (arguments != null) {
-            val url = arguments["url"].toString()
             val faculty = arguments["faculty"].toString()
 
             val demodata = mutableListOf<String>()
@@ -31,7 +30,6 @@ class Activity_day_evening : AppCompatActivity() {
                 //Toast.makeText(this, (view as TextView).text, Toast.LENGTH_LONG).show()
                 val element = (view as TextView).text // получаем текст нажатого элемента
                 val randomIntent = Intent(this, Activity_course::class.java)
-                randomIntent.putExtra("url", url)
                 randomIntent.putExtra("faculty", faculty)
                 when (element) {
                     "Дневная" -> randomIntent.putExtra(

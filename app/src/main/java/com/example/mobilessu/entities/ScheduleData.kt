@@ -2,19 +2,31 @@ package com.example.mobilessu.entities
 
 // класс хранит данные для поиска расписания
 
-public class ScheduleData(private var department: String) {
-    private var educationForm: String = ""
-    private var course: String = ""
-    fun getDepartment() {
-        department
+public class ScheduleData(
+    private var department: String,
+    private var educationForm: String,
+    private var course: String,
+    private var group: Int
+){
+
+    fun getGroup(): String {
+       return group.toString()
     }
 
-    fun getEducationForm() {
-        educationForm
+    fun setGroup(group: Int) {
+        this.group = group
     }
 
-    fun getCourse() {
-        course
+    fun getDepartment(): String {
+       return department
+    }
+
+    fun getEducationForm(): String {
+        return educationForm
+    }
+
+    fun getCourse():String {
+        return course
     }
 
     fun setDepartment(department: String) {

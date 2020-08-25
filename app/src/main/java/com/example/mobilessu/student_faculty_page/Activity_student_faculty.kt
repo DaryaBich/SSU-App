@@ -74,7 +74,6 @@ class Activity_student_faculty : AppCompatActivity() {
 
             //click_faculty(view)
             val randomIntent = Intent(this, Activity_day_evening::class.java)
-            randomIntent.putExtra("url", "https://www.sgu.ru/schedule/")
             when(element){
                 "Биологический факультет" -> randomIntent.putExtra("faculty", "bf/") //передали факультет
                 else -> randomIntent.putExtra("faculty", "")
