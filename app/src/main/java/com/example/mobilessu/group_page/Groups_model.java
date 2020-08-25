@@ -37,13 +37,19 @@ public class Groups_model implements Group_interface.Model {
             return new LinkedList<>();
         }
     }
-
+    // первый параметр это тип входных параметров, третий - тип выходных параметров
+    //private static class MyAsyncTask extends AsyncTask<ScheduleData, Void, LinkedList<ScheduleData>>
     private static class MyAsyncTask extends AsyncTask<Void, Void, LinkedList<ScheduleData>> {
 
        // private ScheduleData scheduleData;
         @Override
+        // Тогда здесь входным параметром будет ScheduleData
+        //protected LinkedList<ScheduleData> doInBackground(ScheduleData... sheduleData)
         protected LinkedList<ScheduleData> doInBackground(Void... voids) {
             LinkedList<ScheduleData> groupsLinkedList = new LinkedList<>();
+            // тогда здесь ты просто берешь первый элемент списка,
+            // если сюда приходит точно ровно один элемент:
+            // scheduleData[0]
             try {
                // Bundle data = getIntent.getExtras();
                // String faculty = scheduleData.getDepartment();
