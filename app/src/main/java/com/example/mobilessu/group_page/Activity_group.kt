@@ -1,0 +1,58 @@
+package com.example.mobilessu.group_page
+
+import android.os.Bundle
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.mobilessu.R
+import com.example.mobilessu.entities.ScheduleData
+import kotlinx.android.synthetic.main.activity_group.*
+
+
+class Activity_group : AppCompatActivity() {
+    var presenter: Group_interface.Presenter = Groups_presenter(this)
+    val arguments = intent.extras
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_group)
+        val arguments = intent.extras
+        if (arguments != null) {
+            val faculty = arguments["faculty"].toString()
+            val day_evening = arguments["day_evening"].toString()
+            val course = arguments["course"].toString()
+            val scheduleData = ScheduleData(faculty, day_evening, course, 0)
+            presenter.getData(scheduleData) // получение групп
+        }
+    }
+
+    fun showGroups(list: List<ScheduleData>) {
+        if (list.size > 0) {
+            val adapter = MyArrayAdapterGroup(this, R.layout.groups_list_items, list)
+            list_group.adapter = adapter
+        } else {
+            Toast.makeText(
+                applicationContext,
+                "Проверьте подключение к интернету",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+
+    }
+
+//            textView.setText(
+//                """
+//                    Name: $name
+//                    Company: $company
+//                    Price: $price
+//                    """.trimIndent()
+//            )
+
+    fun click_back(view: View){
+        finish()
+        overridePendingTransition(
+            R.anim.fide_in,
+            R.anim.fide_out
+        );
+    }
+}

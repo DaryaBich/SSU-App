@@ -21,7 +21,7 @@ class Activity_menu :  AppCompatActivity() {
 
     fun click_back(view: View){
         finish()
-        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
+        overridePendingTransition(R.anim.news_in, R.anim.news_out);
 
     }
 }

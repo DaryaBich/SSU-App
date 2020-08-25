@@ -21,17 +21,7 @@
         app:layout_constraintVertical_bias="0.031">
 
         <TextView
-            android:id="@+id/itemDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:text="TextView"
-            android:textColor="#949494"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/itemTitle"
+            android:id="@+id/itemGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -43,6 +33,3 @@
             android:textSize="22sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--    android:layout_width="354dp"-->
-<!--    android:layout_height="217dp"-->
