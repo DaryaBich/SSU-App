@@ -1,4 +1,4 @@
-package com.example.mobilessu.news_page;
+package com.example.mobilessu.teacher_page;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,19 +12,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.mobilessu.R;
-import com.example.mobilessu.entities.News;
+import com.example.mobilessu.entities.Teacher;
 
 import java.util.List;
 
-public class MyArrayAdapter extends ArrayAdapter<News> {
+public class TeacherArrayAdapter extends ArrayAdapter<Teacher> {
     Context context;
     int resource;
-    List<News> newsList;
+    List<Teacher> teacherList;
 
-    public MyArrayAdapter(Context context, int resource, List<News> newsList) {
-        super(context, resource, newsList);
+    public TeacherArrayAdapter(Context context, int resource, List<Teacher> teacherList) {
+        super(context, resource, teacherList);
+        //super(context, resource, teacherList);
         this.context = context;
-        this.newsList = newsList;
+        this.teacherList = teacherList;
         this.resource = resource;
     }
 
@@ -32,13 +33,11 @@ public class MyArrayAdapter extends ArrayAdapter<News> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.news_list_items,null);
-        TextView textViewDate = view.findViewById(R.id.itemDate);
-        TextView textViewTitle = view.findViewById(R.id.itemTitle);
+        View view = inflater.inflate(R.layout.teacher_list_item,null);
+        TextView textViewTeacher = view.findViewById(R.id.itemTeacher);
         LinearLayout linearLayout = view.findViewById(R.id.linearLayout);
-        News news = newsList.get(position);
-        textViewDate.setText(news.getDate());
-        textViewTitle.setText(news.getTitle());
+        Teacher teacher = teacherList.get(position);
+        textViewTeacher.setText(teacher.getName()+" " + teacher.getPatronymic()+" " + teacher.getSurname());
         return view;
     }
 }

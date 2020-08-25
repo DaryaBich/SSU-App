@@ -75,10 +75,10 @@
 
     <ImageButton
         android:id="@+id/menuButton"
-        android:onClick="click_back"
         android:layout_width="31dp"
         android:layout_height="29dp"
         android:background="#FFFFFF"
+        android:onClick="click_back"
         android:scaleX="3"
         android:scaleY="3"
         app:layout_constraintBottom_toTopOf="@+id/topWhiteBox"
@@ -99,11 +99,13 @@
         android:textSize="20sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.207" />
+        app:layout_constraintVertical_bias="0.204" />
 
     <Button
         android:id="@+id/button_teacher"
@@ -127,15 +129,25 @@
         android:id="@+id/teacher_name"
         android:layout_width="330dp"
         android:layout_height="70dp"
-        android:paddingLeft="25dp"
         android:background="@drawable/btn_rounded_corner"
         android:ems="10"
         android:inputType="textPersonName"
+        android:paddingLeft="25dp"
         app:layout_constraintBottom_toTopOf="@+id/button_teacher"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.48" />
+
+    <ListView
+        android:id="@+id/teacher_list"
+        android:layout_width="413dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_teacher" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,7 +33,6 @@ class Activity_news : News_interface.View, AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
         }
-
     }
 
     fun clickmenu(view: View) {
