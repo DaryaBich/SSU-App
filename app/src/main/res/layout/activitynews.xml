@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7FBFF"
     tools:context=".news_page.Activity_news">
-
     <View
         android:id="@+id/topWhiteBox"
         android:layout_width="406dp"
@@ -16,7 +16,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <View
         android:id="@+id/blueStripe"
         android:layout_width="411dp"
@@ -30,21 +29,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
         app:layout_constraintVertical_bias="0.0" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="0dp" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
-
     <ImageView
         android:id="@+id/ssuEmblema"
         android:layout_width="156dp"
@@ -57,7 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
     <ImageButton
         android:id="@+id/menuButton"
         android:layout_width="31dp"
@@ -73,7 +68,6 @@
         app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
         app:layout_constraintVertical_bias="0.425"
         app:srcCompat="@drawable/menu_icon" />
-
     <TextView
         android:id="@+id/textSSU"
         android:layout_width="113dp"
@@ -88,7 +82,6 @@
         app:layout_constraintStart_toEndOf="@+id/topWhiteBox"
         app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
         app:layout_constraintVertical_bias="0.445" />
-
     <ListView
         android:id="@+id/list_of_news"
         android:layout_width="match_parent"
