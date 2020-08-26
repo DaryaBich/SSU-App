@@ -6,28 +6,25 @@ import android.view.View
 import android.widget.Toast
 import com.example.mobilessu.R
 import com.example.mobilessu.entities.Teacher
-import com.example.mobilessu.news_page.MyArrayAdapter
-import com.example.mobilessu.news_page.News_interface
-import com.example.mobilessu.news_page.News_presenter
-import kotlinx.android.synthetic.main.activity_find_teacher.*
-import kotlinx.android.synthetic.main.activity_news.*
+import kotlinx.android.synthetic.main.activityfindteacher.*
 
 class Activity_find_teacher :  AppCompatActivity() , Teacher_interface.View{
     var presenter: Teacher_interface.Presenter = Teacher_presenter(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_find_teacher)
+        setContentView(R.layout.activityfindteacher)
         button_teacher.setOnClickListener {
             if(teacher_name.text.toString()!=""){
                 presenter.searchInputTeachers(teacher_name.text.toString())
             }
-            Toast.makeText(
-                applicationContext,
-                "Введите ФИО",
-                Toast.LENGTH_LONG
-            ).show()
+            else{
+                Toast.makeText(
+                    applicationContext,
+                    "Введите ФИО",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
-
     }
 
     fun click_back(view: View) {
@@ -37,7 +34,7 @@ class Activity_find_teacher :  AppCompatActivity() , Teacher_interface.View{
 
     override fun showTeachers(list: List<Teacher>) {
         if (list.size > 0) {
-            val adapter = TeacherArrayAdapter(this,R.layout.news_list_items, list)
+            val adapter = TeacherArrayAdapter(this,R.layout.newslistitems, list)
             teacher_list.adapter = adapter
         } else {
             Toast.makeText(

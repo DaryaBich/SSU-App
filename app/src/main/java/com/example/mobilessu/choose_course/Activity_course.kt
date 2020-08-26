@@ -9,12 +9,12 @@ import android.widget.TextView
 import com.example.mobilessu.group_page.Activity_group
 import com.example.mobilessu.R
 import com.example.mobilessu.group_page.Groups_model
-import kotlinx.android.synthetic.main.activity_course.*
+import kotlinx.android.synthetic.main.activityсourse.*
 
 class Activity_course : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_course)
+        setContentView(R.layout.activityСourse)
         val arguments = intent.extras
         if (arguments != null) {
             val faculty = arguments["faculty"].toString()
@@ -27,7 +27,7 @@ class Activity_course : AppCompatActivity() {
             demodata.add("4 курс")
             demodata.add("5 курс")
 
-            val adapter = ArrayAdapter<String>(this, R.layout.list_item, demodata)
+            val adapter = ArrayAdapter<String>(this, R.layout.listitem, demodata)
 
             listcourse.adapter = adapter
             listcourse.setOnItemClickListener { adapterView, view, i, l ->

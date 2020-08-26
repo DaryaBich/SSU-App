@@ -10,7 +10,7 @@ import com.example.mobilessu.teacher_or_student_page.Activity_teacher_or_student
 class Activity_menu :  AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+        setContentView(R.layout.activitymenu)
     }
 
     fun click_schedule(view: View){

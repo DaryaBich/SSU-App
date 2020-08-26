@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
 import com.example.mobilessu.entities.ScheduleData
-import kotlinx.android.synthetic.main.activity_group.*
+import kotlinx.android.synthetic.main.activitygroup.*
 
 
 class Activity_group : AppCompatActivity() {
@@ -15,7 +15,7 @@ class Activity_group : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_group)
+        setContentView(R.layout.activitygroup)
         val arguments = intent.extras
         if (arguments != null) {
             val faculty = arguments["faculty"].toString()
@@ -28,7 +28,7 @@ class Activity_group : AppCompatActivity() {
 
     fun showGroups(list: List<ScheduleData>) {
         if (list.size > 0) {
-            val adapter = MyArrayAdapterGroup(this, R.layout.groups_list_items, list)
+            val adapter = MyArrayAdapterGroup(this, R.layout.groupslistitems, list)
             list_group.adapter = adapter
         } else {
             Toast.makeText(

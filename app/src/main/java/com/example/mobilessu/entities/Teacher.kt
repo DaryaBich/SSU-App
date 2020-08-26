@@ -1,6 +1,7 @@
 package com.example.mobilessu.entities
 
-public class Teacher(var id:Int, name:String, patronymic:String, surname:String){
+public class Teacher(id:Int, name:String, patronymic:String, surname:String){
+    var id = id
     var name = name
     var patronymic = patronymic
     var surname = surname

@@ -9,14 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
 import com.example.mobilessu.choose_course.Activity_course
 import com.example.mobilessu.choose_day_evening.Activity_day_evening
-import kotlinx.android.synthetic.main.activity_student_faculty.*
+import kotlinx.android.synthetic.main.activitystudentfaculty.*
 
 class Activity_student_faculty : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 //<<<<<<< HEAD:app/src/main/java/com/example/mobilessu/student_faculty_page/StudentFacultyActivity.kt
-//        setContentView(R.layout.activity_student_faculty)
+//        setContentView(R.layout.activitystudentfaculty)
 
 
        // val demodata = MutableList(25, {x -> "Item$x"})
@@ -27,7 +27,7 @@ class Activity_student_faculty : AppCompatActivity() {
        // }
 //=======
 
-        setContentView(R.layout.activity_student_faculty)
+        setContentView(R.layout.activitystudentfaculty)
             // val demodata = MutableList(2, {"Биологический факультет"; "Географический факультет"})
         val demodata = mutableListOf<String>()
         val demodata1 = mutableListOf<String>()
@@ -59,8 +59,8 @@ class Activity_student_faculty : AppCompatActivity() {
 
 
 
-        val adapter = ArrayAdapter<String>(this, R.layout.list_item, demodata)
-        val adapter1 = ArrayAdapter<String>(this, R.layout.list_item, demodata1)
+        val adapter = ArrayAdapter<String>(this, R.layout.listitem, demodata)
+        val adapter1 = ArrayAdapter<String>(this, R.layout.listitem, demodata1)
 
         listfaculty.adapter = adapter
         listcolledge.adapter = adapter1

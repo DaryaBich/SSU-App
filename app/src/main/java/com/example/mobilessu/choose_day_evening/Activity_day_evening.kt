@@ -8,12 +8,12 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.mobilessu.R
 import com.example.mobilessu.choose_course.Activity_course
-import kotlinx.android.synthetic.main.activity_day_evening.*
+import kotlinx.android.synthetic.main.activitydayevening.*
 
 class Activity_day_evening : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_day_evening)
+        setContentView(R.layout.activitydayevening)
         val arguments = intent.extras
         if (arguments != null) {
             val faculty = arguments["faculty"].toString()
@@ -23,7 +23,7 @@ class Activity_day_evening : AppCompatActivity() {
             demodata.add("Вечерняя")
             demodata.add("Заочная")
 
-            val adapter = ArrayAdapter<String>(this, R.layout.list_item, demodata)
+            val adapter = ArrayAdapter<String>(this, R.layout.listitem, demodata)
 
             list_day_evening.adapter = adapter
             list_day_evening.setOnItemClickListener { adapterView, view, i, l ->

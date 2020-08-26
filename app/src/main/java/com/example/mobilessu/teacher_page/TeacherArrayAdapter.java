@@ -33,7 +33,7 @@ public class TeacherArrayAdapter extends ArrayAdapter<Teacher> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.teacher_list_item,null);
+        View view = inflater.inflate(R.layout.teacherlistitem,null);
         TextView textViewTeacher = view.findViewById(R.id.itemTeacher);
         LinearLayout linearLayout = view.findViewById(R.id.linearLayout);
         Teacher teacher = teacherList.get(position);

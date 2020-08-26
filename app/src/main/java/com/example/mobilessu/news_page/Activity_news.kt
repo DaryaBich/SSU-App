@@ -10,7 +10,7 @@ import android.widget.Toast
 import com.example.mobilessu.R
 import com.example.mobilessu.entities.News
 import com.example.mobilessu.menu_page.Activity_menu
-import kotlinx.android.synthetic.main.activity_news.*
+import kotlinx.android.synthetic.main.activitynews.*
 
 class Activity_news : News_interface.View, AppCompatActivity() {
 
@@ -18,13 +18,13 @@ class Activity_news : News_interface.View, AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_news)
+        setContentView(R.layout.activitynews)
         presenter.getData() // получение новостей
     }
 
     override fun showNews(list: List<News>) {
         if (list.size > 0) {
-            val adapter = MyArrayAdapter(this,R.layout.news_list_items, list)
+            val adapter = MyArrayAdapter(this,R.layout.newslistitems, list)
             list_of_news.adapter = adapter
         } else {
             Toast.makeText(

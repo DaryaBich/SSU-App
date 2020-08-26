@@ -32,7 +32,7 @@ public class MyArrayAdapter extends ArrayAdapter<News> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.news_list_items,null);
+        View view = inflater.inflate(R.layout.newslistitems,null);
         TextView textViewDate = view.findViewById(R.id.itemDate);
         TextView textViewTitle = view.findViewById(R.id.itemTitle);
         LinearLayout linearLayout = view.findViewById(R.id.linearLayout);

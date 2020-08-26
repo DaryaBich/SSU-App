@@ -4,10 +4,11 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.mobilessu.entities.Teacher;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.jetbrains.annotations.NotNull;
-import org.json.JSONException;
-import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,7 +29,9 @@ public class Teacher_model implements Teacher_interface.Model {
         try {
             MyAsyncTask myAsyncTask = new MyAsyncTask();
             myAsyncTask.execute(inputName);
-            return myAsyncTask.get();
+            List result = myAsyncTask.get();
+            Thread.sleep(500);
+            return result;
         } catch (ExecutionException | InterruptedException e) {
             Log.d("ERROR", "Problem with multithreading");
             return new LinkedList<>();
@@ -36,34 +39,37 @@ public class Teacher_model implements Teacher_interface.Model {
     }
 
     private static class MyAsyncTask extends AsyncTask<String, Void, List<Teacher>> {
-        List<Teacher> teacherList = new LinkedList<>();
 
         @Override
         protected List<Teacher> doInBackground(String... strings) {
-            String url = "https://scribabot.tk/api/v2/api-docs/v1.0/teacher/" +strings[0];
+            String url = "https://scribabot.tk/api/v1.0/teacher/word";
+            final List<Teacher> teacherList = new LinkedList<>();
             OkHttpClient okHttpClient = new OkHttpClient();
-            
-            Request request = new Request.Builder().url(url).build();
-
+            RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), strings[0]);
+            Request request = new Request.Builder().url(url).post(requestBody).build();
             okHttpClient.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
                 }
-
                 @Override
-                public void onResponse(Call call, Response response) throws IOException {
-                    String json = response.body().string();
-                    try {
-                        JSONObject jsonObject = new JSONObject(json).getJSONObject("value");
-                        teacherList = (List<Teacher>) jsonObject.get("teachers");
-                    } catch (JSONException e) {
-                        Log.d("ERROR", "Problem with response");
+                public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                    assert response.body() != null;
+                    String responseBody = response.body().string();
+                    String jsonList = responseBody.substring(responseBody.indexOf("[") + 1,
+                            responseBody.indexOf("}]") + 1);
+                    GsonBuilder gsonBuilder = new GsonBuilder();
+                    Gson gson = gsonBuilder.create();
+                    while(jsonList.indexOf("id") > 0){
+                        String jsonTeacher = jsonList.substring(jsonList.indexOf("{"),
+                                jsonList.indexOf("}") + 1);
+                        jsonList = jsonList.replace(jsonTeacher,"");
+                        Teacher teacher = gson.fromJson(jsonTeacher, Teacher.class);
+                        teacherList.add(teacher);
                     }
                 }
             });
             return teacherList;
         }
-
         @Override
         protected void onPostExecute(List<Teacher> teachers) {
             super.onPostExecute(teachers);
