@@ -21,7 +21,7 @@
             />
 
         <activity android:name=".teacher_or_student_page.Activity_teacher_or_student" />
-        <activity android:name=".news_page.Activity_news">
+        <activity android:name=".newspage.ActivityNews">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

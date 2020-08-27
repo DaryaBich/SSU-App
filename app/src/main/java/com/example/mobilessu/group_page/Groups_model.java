@@ -1,14 +1,9 @@
 package com.example.mobilessu.group_page;
 
-import android.app.DirectAction;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.util.Log;
 
-import com.example.mobilessu.entities.News;
 import com.example.mobilessu.entities.ScheduleData;
-import com.example.mobilessu.news_page.News_interface;
-import com.example.mobilessu.news_page.News_model;
 
 import org.jetbrains.annotations.NotNull;
 import org.jsoup.Jsoup;

@@ -1,4 +1,4 @@
-package com.example.mobilessu.news_page;
+package com.example.mobilessu.newspage;
 
 import android.content.Context;
 import android.view.LayoutInflater;

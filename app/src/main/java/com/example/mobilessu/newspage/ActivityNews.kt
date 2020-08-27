@@ -1,4 +1,4 @@
-package com.example.mobilessu.news_page
+package com.example.mobilessu.newspage
 
 import android.content.Intent
 
@@ -12,9 +12,9 @@ import com.example.mobilessu.entities.News
 import com.example.mobilessu.menu_page.Activity_menu
 import kotlinx.android.synthetic.main.activitynews.*
 
-class Activity_news : News_interface.View, AppCompatActivity() {
+class ActivityNews : NewsInterface.View, AppCompatActivity() {
 
-    var presenter: News_interface.Presenter = News_presenter(this)
+    var presenter: NewsInterface.Presenter = NewsPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

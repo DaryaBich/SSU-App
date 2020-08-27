@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7FBFF"
-    tools:context=".news_page.Activity_news">
+    tools:context=".newspage.ActivityNews">
     <View
         android:id="@+id/topWhiteBox"
         android:layout_width="406dp"

@@ -1,4 +1,4 @@
-package com.example.mobilessu.news_page;
+package com.example.mobilessu.newspage;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 
-public class News_model implements News_interface.Model {
+public class NewsModel implements NewsInterface.Model {
     private MyAsyncTask myAsyncTask;
 
     // Функция парсинга новостей с сайта www.sgu.ru
