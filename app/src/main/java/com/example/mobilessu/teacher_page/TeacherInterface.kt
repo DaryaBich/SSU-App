@@ -2,7 +2,7 @@ package com.example.mobilessu.teacher_page
 
 import com.example.mobilessu.entities.Teacher
 
-interface Teacher_interface{
+interface TeacherInterface{
     interface Presenter{
         fun searchInputTeachers(inputName:String)
     }

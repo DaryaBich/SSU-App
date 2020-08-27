@@ -22,7 +22,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class Teacher_model implements Teacher_interface.Model {
+public class TeacherModel implements TeacherInterface.Model {
     @NotNull
     @Override
     public List<Teacher> getTeachers(@NotNull String inputName) {

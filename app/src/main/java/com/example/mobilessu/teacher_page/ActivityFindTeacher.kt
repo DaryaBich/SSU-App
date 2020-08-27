@@ -8,8 +8,8 @@ import com.example.mobilessu.R
 import com.example.mobilessu.entities.Teacher
 import kotlinx.android.synthetic.main.activityfindteacher.*
 
-class Activity_find_teacher :  AppCompatActivity() , Teacher_interface.View{
-    var presenter: Teacher_interface.Presenter = Teacher_presenter(this)
+class ActivityFindTeacher :  AppCompatActivity() , TeacherInterface.View{
+    var presenter: TeacherInterface.Presenter = TeacherPresenter(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activityfindteacher)
