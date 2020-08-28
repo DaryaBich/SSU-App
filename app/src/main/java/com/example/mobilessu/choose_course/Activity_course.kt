@@ -18,7 +18,7 @@ class Activity_course : AppCompatActivity() {
         val arguments = intent.extras
         if (arguments != null) {
             val faculty = arguments["faculty"].toString()
-            val day_evening = arguments["day_evening"].toString()
+            val dayevening = arguments["dayevening"].toString()
             val demodata = mutableListOf<String>()
 
             demodata.add("1 курс")
@@ -35,12 +35,22 @@ class Activity_course : AppCompatActivity() {
                 val element = (view as TextView).text // получаем текст нажатого элемента
                 //val randomIntent = Intent(this, Activity_group::class.java)
                 val randomIntent1 = Intent(this, Activity_group::class.java)
-                val randomIntent = Intent(this, Groups_model::class.java)
-                randomIntent.putExtra("faculty", faculty)
-                randomIntent.putExtra("day_evening", day_evening)
+               // val randomIntent = Intent(this, Groups_model::class.java)
+                randomIntent1.putExtra("faculty", faculty)
+                randomIntent1.putExtra("dayevening", dayevening)
                 when (element) {
-                    "1 курс" -> randomIntent.putExtra("course", "1") //передали курс
-                    else -> randomIntent.putExtra("course", "")
+                    "1 курс" ->
+                        randomIntent1.putExtra("course", "1") //передали курс
+                    "2 курс" ->
+                        randomIntent1.putExtra("course", "2")
+                    "3 курс" ->
+                        randomIntent1.putExtra("course", "3")
+                    "4 курс" ->
+                        randomIntent1.putExtra("course", "4")
+                    "5 курс" ->
+                        randomIntent1.putExtra("course", "5")
+                    else ->
+                        randomIntent1.putExtra("course", "")
                 }
                 startActivity(randomIntent1)
                 overridePendingTransition(R.anim.fide_in, R.anim.fide_out);

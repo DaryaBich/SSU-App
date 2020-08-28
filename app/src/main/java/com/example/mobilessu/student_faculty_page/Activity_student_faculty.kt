@@ -75,8 +75,50 @@ class Activity_student_faculty : AppCompatActivity() {
             //click_faculty(view)
             val randomIntent = Intent(this, Activity_day_evening::class.java)
             when(element){
-                "Биологический факультет" -> randomIntent.putExtra("faculty", "bf/") //передали факультет
-                else -> randomIntent.putExtra("faculty", "")
+                "Биологический факультет" ->
+                    randomIntent.putExtra("faculty", "bf/") //передали факультет
+                "Географический факультет" ->
+                    randomIntent.putExtra("faculty", "gf/")
+                "Геологический факультет" ->
+                    randomIntent.putExtra("faculty", "gl/") //передали факультет
+                "Институт дополнительного профессионального образования" ->
+                    randomIntent.putExtra("faculty", "idpo/")
+                "Институт искусств" ->
+                    randomIntent.putExtra("faculty", "ii/") //передали факультет
+                "Институт истории и международных отношений" ->
+                    randomIntent.putExtra("faculty", "imo/")
+                "Институт физической культуры и спорта" ->
+                    randomIntent.putExtra("faculty", "ifk/") //передали факультет
+                "Институт филологии и журналистики" ->
+                    randomIntent.putExtra("faculty", "ifg/")
+                "Институт химии" ->
+                    randomIntent.putExtra("faculty", "ih/") //передали факультет
+                "Механико-математический факультет" ->
+                    randomIntent.putExtra("faculty", "mm/")
+                "Социологический факультет" ->
+                    randomIntent.putExtra("faculty", "sf/") //передали факультет
+                "Факультет иностранных языков и лингводидактики" ->
+                    randomIntent.putExtra("faculty", "fi/")
+                "Факультет компьютерных наук и информационных технологий" ->
+                    randomIntent.putExtra("faculty", "knt/") //передали факультет
+                "Факультет нано- и биомедицинских технологий" ->
+                    randomIntent.putExtra("faculty", "fn/")
+                "Факультет нелинейных процессов" ->
+                    randomIntent.putExtra("faculty", "fnp/") //передали факультет
+                "Факультет психологии" ->
+                    randomIntent.putExtra("faculty", "fps/")
+                "Факультет психолого-педагогического и специального образования" ->
+                    randomIntent.putExtra("faculty", "fppso/") //передали факультет
+                "Физический факультет" ->
+                    randomIntent.putExtra("faculty", "ff/")
+                "Философский факультет" ->
+                    randomIntent.putExtra("faculty", "fp/") //передали факультет
+                "Экономический факультет" ->
+                    randomIntent.putExtra("faculty", "ef/")
+                "Юридический факультет" ->
+                    randomIntent.putExtra("faculty", "uf/")
+                else ->
+                    randomIntent.putExtra("faculty", "")
             }
             //val randomIntent = Intent(this, Activity_day_evening::class.java)
             startActivity(randomIntent)
@@ -84,15 +126,25 @@ class Activity_student_faculty : AppCompatActivity() {
         }
         listcolledge.setOnItemClickListener { adapterView, view, i, l ->
 
-            click_colledge(view)
+            val element = (view as TextView).text // получаем текст нажатого элемента
+            // val document = Jsoup.connect("https://www.sgu.ru/schedule").get()
+            // val list_faculty = document.select("div[class*=panes_item panes_item__type_group]")
+            //click_faculty(view)
+            val randomIntent = Intent(this, Activity_course::class.java)
+            when(element){
+                "Геологический колледж" ->
+                    randomIntent.putExtra("faculty", "kgl/") //передали факультет
+                "Колледж радиоэлектроники им. П.Н. Яблочкова" ->
+                    randomIntent.putExtra("faculty", "cre/")
+                else ->
+                    randomIntent.putExtra("faculty", "")
+            }
+            randomIntent.putExtra("dayevening", "do/")
+            //val randomIntent = Intent(this, Activity_day_evening::class.java)
+            startActivity(randomIntent)
+            overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
         }
 //>>>>>>> 92e20a2b554b26c93864bc01ba7368930bb4aa4c:app/src/main/java/com/example/mobilessu/student_faculty_page/Activity_student_faculty.kt
-    }
-
-    fun click_colledge(view: View){
-        val randomIntent = Intent(this, Activity_course::class.java)
-        startActivity(randomIntent)
-        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
     fun click_back(view: View){
