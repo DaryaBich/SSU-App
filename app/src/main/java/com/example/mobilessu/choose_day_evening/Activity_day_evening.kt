@@ -32,11 +32,14 @@ class Activity_day_evening : AppCompatActivity() {
                 val randomIntent = Intent(this, Activity_course::class.java)
                 randomIntent.putExtra("faculty", faculty)
                 when (element) {
-                    "Дневная" -> randomIntent.putExtra(
-                        "day_evening",
-                        "do/"
-                    ) //передали форму обучения
-                    else -> randomIntent.putExtra("day_evening", "")
+                    "Дневная" ->
+                        randomIntent.putExtra("dayevening", "do/") //передали форму обучения
+                    "Вечерняя" ->
+                        randomIntent.putExtra("dayevening", "vo/")
+                    "Заочная" ->
+                        randomIntent.putExtra("dayevening", "zo/")
+                    else ->
+                        randomIntent.putExtra("dayevening", "")
                 }
 
                 //val randomIntent = Intent(this, Activity_course::class.java)

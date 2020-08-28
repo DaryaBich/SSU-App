@@ -6,14 +6,14 @@ public class ScheduleData(
     private var department: String,
     private var educationForm: String,
     private var course: String,
-    private var group: Int
+    private var group: String
 ){
 
     fun getGroup(): String {
-       return group.toString()
+       return group
     }
 
-    fun setGroup(group: Int) {
+    fun setGroup(group: String) {
         this.group = group
     }
 

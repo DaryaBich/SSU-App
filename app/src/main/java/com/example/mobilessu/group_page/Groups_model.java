@@ -20,9 +20,9 @@ public class Groups_model implements Group_interface.Model {
     private MyAsyncTask myAsyncTask;
     // Функция парсинга новостей с сайта www.sgu.ru
 
-    @NotNull
+    //@NotNull
     @Override
-    public List<ScheduleData> getGroups(@NotNull ScheduleData scheduleData) throws IOException, ExecutionException, InterruptedException {
+    public List<ScheduleData> getGroups(ScheduleData scheduleData) throws IOException, ExecutionException, InterruptedException {
         try {
             myAsyncTask = new MyAsyncTask();
             myAsyncTask.execute();
@@ -34,36 +34,50 @@ public class Groups_model implements Group_interface.Model {
     }
     // первый параметр это тип входных параметров, третий - тип выходных параметров
     //private static class MyAsyncTask extends AsyncTask<ScheduleData, Void, LinkedList<ScheduleData>>
-    private static class MyAsyncTask extends AsyncTask<Void, Void, LinkedList<ScheduleData>> {
+    private static class MyAsyncTask extends AsyncTask<ScheduleData, Void, LinkedList<ScheduleData>> {
 
        // private ScheduleData scheduleData;
         @Override
         // Тогда здесь входным параметром будет ScheduleData
         //protected LinkedList<ScheduleData> doInBackground(ScheduleData... sheduleData)
-        protected LinkedList<ScheduleData> doInBackground(Void... voids) {
+        protected LinkedList<ScheduleData> doInBackground(ScheduleData... scheduleData) {
             LinkedList<ScheduleData> groupsLinkedList = new LinkedList<>();
             // тогда здесь ты просто берешь первый элемент списка,
             // если сюда приходит точно ровно один элемент:
             // scheduleData[0]
-            try {
-               // Bundle data = getIntent.getExtras();
-               // String faculty = scheduleData.getDepartment();
-                Document document = Jsoup.connect("https://www.sgu.ru/news").get();
-                Elements listGroups = document.select("div.region.region-local-navigation")
-                        .select("div[class*=smart-links]");
-                for (Element element : listGroups) {
-                    String date = element.select("span.date-display-single").get(0)
-                            .attr("content");
-                    date = date.substring(8, 10)+"." + date.substring(5,7) +"."+ date.substring(0, 4);
-                    String title = element.select("a[href]").get(0).text();
-                    String url = "https://www.sgu.ru" + element.select("a[href]").get(0)
-                            .attr("href");
-                    //groupsLinkedList.add(new ScheduleData(date, title, url,411));
+            //ScheduleData object = scheduleData[0];
+            //if (scheduleData.length == 1) {
+           // ScheduleData scheduleData1;
+                String faculty = scheduleData[0].getDepartment();
+                String day_evening = scheduleData[0].getEducationForm();
+                String course = scheduleData[0].getCourse();
+                try {
+                    // Bundle data = getIntent.getExtras();
+                    // String faculty = scheduleData.getDepartment();
+                    String url = "https://www.sgu.ru/schedule/" + faculty + day_evening;
+                    Document document = Jsoup.connect(url).get();
+                    Elements listGroups;
+                    if (day_evening.equals("do/"))
+                        listGroups = document.select("div[class*=do form_education form-wrapper]");
+                    else if (day_evening.equals("zo/"))
+                        listGroups = document.select("div[class*=zo form_education form-wrapper]");
+                    else //if (day_evening == "vo/")
+                        listGroups = document.select("div[class*=vo form_education form-wrapper]");
+                   // for (Element element : listGroups) {
+                        //String date = element.select("span.date-display-single").get(0)
+                       //         .attr("content");
+                       // date = date.substring(8, 10) + "." + date.substring(5, 7) + "." + date.substring(0, 4);
+                        //String title = element.select("a[href]").get(0).text();
+                        //String url = "https://www.sgu.ru" + element.select("a[href]").get(0)
+                              //  .attr("href");
+                        //groupsLinkedList.add(new ScheduleData(date, title, url,411));
+                  //  }
+                    return groupsLinkedList;
+                } catch (IOException e) {
+                    return groupsLinkedList;
                 }
-                return groupsLinkedList;
-            } catch (IOException e) {
-                return groupsLinkedList;
-            }
+           // }
+           // return groupsLinkedList;
         }
 
 //        val arguments = intent.extras

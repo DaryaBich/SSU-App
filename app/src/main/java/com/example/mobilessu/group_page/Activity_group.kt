@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activitygroup.*
 
 class Activity_group : AppCompatActivity() {
     var presenter: Group_interface.Presenter = Groups_presenter(this)
-    val arguments = intent.extras
+    //val arguments = intent.extras
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,15 +19,15 @@ class Activity_group : AppCompatActivity() {
         val arguments = intent.extras
         if (arguments != null) {
             val faculty = arguments["faculty"].toString()
-            val day_evening = arguments["day_evening"].toString()
+            val dayevening = arguments["dayevening"].toString()
             val course = arguments["course"].toString()
-            val scheduleData = ScheduleData(faculty, day_evening, course, 0)
+            val scheduleData = ScheduleData(faculty, dayevening, course, "0")
             presenter.getData(scheduleData) // получение групп
         }
     }
 
     fun showGroups(list: List<ScheduleData>) {
-        if (list.size > 0) {
+        if (list.isNotEmpty()) {
             val adapter = MyArrayAdapterGroup(this, R.layout.groupslistitems, list)
             list_group.adapter = adapter
         } else {
