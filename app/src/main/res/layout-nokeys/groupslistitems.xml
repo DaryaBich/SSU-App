@@ -8,10 +8,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/btn_rounded_corner"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,12 +23,16 @@
             android:id="@+id/itemGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:maxLines="10"
-            android:text="TextView"
-            android:textColor="#070101"
-            android:textSize="22sp" />
+            android:background="@drawable/btn_rounded_corner"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:gravity="start|center_vertical">
+
+        </TextView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

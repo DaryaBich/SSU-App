@@ -76,47 +76,47 @@ class Activity_student_faculty : AppCompatActivity() {
             val randomIntent = Intent(this, Activity_day_evening::class.java)
             when(element){
                 "Биологический факультет" ->
-                    randomIntent.putExtra("faculty", "bf/") //передали факультет
+                    randomIntent.putExtra("faculty", "/bf") //передали факультет
                 "Географический факультет" ->
-                    randomIntent.putExtra("faculty", "gf/")
+                    randomIntent.putExtra("faculty", "/gf")
                 "Геологический факультет" ->
-                    randomIntent.putExtra("faculty", "gl/") //передали факультет
+                    randomIntent.putExtra("faculty", "/gl") //передали факультет
                 "Институт дополнительного профессионального образования" ->
-                    randomIntent.putExtra("faculty", "idpo/")
+                    randomIntent.putExtra("faculty", "/idpo")
                 "Институт искусств" ->
-                    randomIntent.putExtra("faculty", "ii/") //передали факультет
+                    randomIntent.putExtra("faculty", "/ii") //передали факультет
                 "Институт истории и международных отношений" ->
-                    randomIntent.putExtra("faculty", "imo/")
+                    randomIntent.putExtra("faculty", "/imo")
                 "Институт физической культуры и спорта" ->
-                    randomIntent.putExtra("faculty", "ifk/") //передали факультет
+                    randomIntent.putExtra("faculty", "/ifk") //передали факультет
                 "Институт филологии и журналистики" ->
-                    randomIntent.putExtra("faculty", "ifg/")
+                    randomIntent.putExtra("faculty", "/ifg")
                 "Институт химии" ->
-                    randomIntent.putExtra("faculty", "ih/") //передали факультет
+                    randomIntent.putExtra("faculty", "/ih") //передали факультет
                 "Механико-математический факультет" ->
-                    randomIntent.putExtra("faculty", "mm/")
+                    randomIntent.putExtra("faculty", "/mm")
                 "Социологический факультет" ->
-                    randomIntent.putExtra("faculty", "sf/") //передали факультет
+                    randomIntent.putExtra("faculty", "/sf") //передали факультет
                 "Факультет иностранных языков и лингводидактики" ->
-                    randomIntent.putExtra("faculty", "fi/")
+                    randomIntent.putExtra("faculty", "/fi")
                 "Факультет компьютерных наук и информационных технологий" ->
-                    randomIntent.putExtra("faculty", "knt/") //передали факультет
+                    randomIntent.putExtra("faculty", "/knt") //передали факультет
                 "Факультет нано- и биомедицинских технологий" ->
-                    randomIntent.putExtra("faculty", "fn/")
+                    randomIntent.putExtra("faculty", "/fn")
                 "Факультет нелинейных процессов" ->
-                    randomIntent.putExtra("faculty", "fnp/") //передали факультет
+                    randomIntent.putExtra("faculty", "/fnp") //передали факультет
                 "Факультет психологии" ->
-                    randomIntent.putExtra("faculty", "fps/")
+                    randomIntent.putExtra("faculty", "/fps")
                 "Факультет психолого-педагогического и специального образования" ->
-                    randomIntent.putExtra("faculty", "fppso/") //передали факультет
+                    randomIntent.putExtra("faculty", "/fppso") //передали факультет
                 "Физический факультет" ->
-                    randomIntent.putExtra("faculty", "ff/")
+                    randomIntent.putExtra("faculty", "/ff")
                 "Философский факультет" ->
-                    randomIntent.putExtra("faculty", "fp/") //передали факультет
+                    randomIntent.putExtra("faculty", "/fp") //передали факультет
                 "Экономический факультет" ->
-                    randomIntent.putExtra("faculty", "ef/")
+                    randomIntent.putExtra("faculty", "/ef")
                 "Юридический факультет" ->
-                    randomIntent.putExtra("faculty", "uf/")
+                    randomIntent.putExtra("faculty", "/uf")
                 else ->
                     randomIntent.putExtra("faculty", "")
             }
@@ -133,13 +133,13 @@ class Activity_student_faculty : AppCompatActivity() {
             val randomIntent = Intent(this, Activity_course::class.java)
             when(element){
                 "Геологический колледж" ->
-                    randomIntent.putExtra("faculty", "kgl/") //передали факультет
+                    randomIntent.putExtra("faculty", "/kgl") //передали факультет
                 "Колледж радиоэлектроники им. П.Н. Яблочкова" ->
-                    randomIntent.putExtra("faculty", "cre/")
+                    randomIntent.putExtra("faculty", "/cre")
                 else ->
                     randomIntent.putExtra("faculty", "")
             }
-            randomIntent.putExtra("dayevening", "do/")
+            randomIntent.putExtra("dayevening", "/do")
             //val randomIntent = Intent(this, Activity_day_evening::class.java)
             startActivity(randomIntent)
             overridePendingTransition(R.anim.fide_in, R.anim.fide_out);

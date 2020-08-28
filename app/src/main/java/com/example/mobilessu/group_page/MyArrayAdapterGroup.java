@@ -33,6 +33,7 @@ public class MyArrayAdapterGroup extends ArrayAdapter<ScheduleData> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.groupslistitems,null);
+      //  View view = inflater.inflate(R.layout.listitem,null);
         TextView textViewGroup = view.findViewById(R.id.itemGroup);
        // TextView textViewTitle = view.findViewById(R.id.itemTitle);
         LinearLayout linearLayout = view.findViewById(R.id.linearLayout);

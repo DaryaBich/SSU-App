@@ -28,12 +28,13 @@ class Activity_group : AppCompatActivity() {
 
     fun showGroups(list: List<ScheduleData>) {
         if (list.isNotEmpty()) {
-            val adapter = MyArrayAdapterGroup(this, R.layout.groupslistitems, list)
+          val adapter = MyArrayAdapterGroup(this, R.layout.groupslistitems, list)
+          //  val adapter = MyArrayAdapterGroup(this, R.layout.listitem, list)
             list_group.adapter = adapter
         } else {
             Toast.makeText(
                 applicationContext,
-                "Проверьте подключение к интернету",
+                "По вашему запросу ничего не найдено. Проверьте подключение к интернету или укажите другие параметры.",
                 Toast.LENGTH_LONG
             ).show()
         }
