@@ -11,6 +11,7 @@ import com.example.mobilessu.choose_course.Activity_course
 import com.example.mobilessu.choose_day_evening.Activity_day_evening
 import kotlinx.android.synthetic.main.activitystudentfaculty.*
 
+
 class Activity_student_faculty : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,13 +58,15 @@ class Activity_student_faculty : AppCompatActivity() {
         demodata1.add("Геологический колледж")
         demodata1.add("Колледж радиоэлектроники им. П.Н. Яблочкова")
 
-
-
         val adapter = ArrayAdapter<String>(this, R.layout.listitem, demodata)
         val adapter1 = ArrayAdapter<String>(this, R.layout.listitem, demodata1)
-
         listfaculty.adapter = adapter
         listcolledge.adapter = adapter1
+
+        //listfaculty.layoutParams.
+//        val params = listfaculty.getLayoutParams()
+//        params.height = params.height * demodata.size
+//        listfaculty.setLayoutParams(params);
         listfaculty.setOnItemClickListener { adapterView, view, i, l ->
             //Toast.makeText(this, (view as TextView).text, Toast.LENGTH_LONG).show()
             val element = (view as TextView).text // получаем текст нажатого элемента
