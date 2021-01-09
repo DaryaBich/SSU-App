@@ -12,14 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".group_page.Activity_group"></activity>
+        <activity android:name=".schedule_page.ScheduleActivity" />
+        <activity android:name=".group_page.Activity_group" />
         <activity android:name=".choose_course.Activity_course" />
         <activity android:name=".choose_day_evening.Activity_day_evening" />
         <activity android:name=".menu_page.Activity_menu" />
         <activity android:name=".student_faculty_page.Activity_student_faculty" />
-        <activity android:name=".teacher_page.ActivityFindTeacher" android:windowSoftInputMode="adjustPan"
-            />
-
+        <activity
+            android:name=".teacher_page.ActivityFindTeacher"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".teacher_or_student_page.Activity_teacher_or_student" />
         <activity android:name=".newspage.ActivityNews">
             <intent-filter>

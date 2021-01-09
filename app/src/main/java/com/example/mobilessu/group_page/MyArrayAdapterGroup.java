@@ -16,12 +16,12 @@ import com.example.mobilessu.entities.ScheduleData;
 
 import java.util.List;
 
-public class MyArrayAdapterGroup extends ArrayAdapter<ScheduleData> {
+public class MyArrayAdapterGroup extends ArrayAdapter<String> {
     Context context;
     int resource;
-    List<ScheduleData> groupsList;
+    List<String> groupsList;
 
-    public MyArrayAdapterGroup(Context context, int resource, List<ScheduleData> groupsList) {
+    public MyArrayAdapterGroup(Context context, int resource, List<String> groupsList) {
         super(context, resource, groupsList);
         this.context = context;
         this.groupsList = groupsList;
@@ -37,8 +37,13 @@ public class MyArrayAdapterGroup extends ArrayAdapter<ScheduleData> {
         TextView textViewGroup = view.findViewById(R.id.itemGroup);
        // TextView textViewTitle = view.findViewById(R.id.itemTitle);
         LinearLayout linearLayout = view.findViewById(R.id.linearLayout);
-        ScheduleData groups = groupsList.get(position);
-        textViewGroup.setText(groups.getGroup());
+
+
+        String groups = groupsList.get(position);
+        //textViewGroup.setText(groups.getGroup());
+        textViewGroup.setText(groups);
+
+
        // textViewGroup.setText("39);
        // textViewTitle.setText(groups.getTitle());
         return view;

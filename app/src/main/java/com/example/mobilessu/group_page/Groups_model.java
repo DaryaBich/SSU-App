@@ -22,7 +22,7 @@ public class Groups_model implements Group_interface.Model {
 
     //@NotNull
     @Override
-    public List<ScheduleData> getGroups(ScheduleData scheduleData) throws IOException, ExecutionException, InterruptedException {
+    public List<String> getGroups(ScheduleData scheduleData) throws IOException, ExecutionException, InterruptedException {
         try {
             myAsyncTask = new MyAsyncTask();
             myAsyncTask.execute(scheduleData);
@@ -34,14 +34,18 @@ public class Groups_model implements Group_interface.Model {
     }
     // первый параметр это тип входных параметров, третий - тип выходных параметров
     //private static class MyAsyncTask extends AsyncTask<ScheduleData, Void, LinkedList<ScheduleData>>
-    private static class MyAsyncTask extends AsyncTask<ScheduleData, Void, LinkedList<ScheduleData>> {
+    private static class MyAsyncTask extends AsyncTask<ScheduleData, Void, LinkedList<String>> {
 
        // private ScheduleData scheduleData;
         @Override
         // Тогда здесь входным параметром будет ScheduleData
         //protected LinkedList<ScheduleData> doInBackground(ScheduleData... sheduleData)
-        protected LinkedList<ScheduleData> doInBackground(ScheduleData... scheduleData) {
-            LinkedList<ScheduleData> groupsLinkedList = new LinkedList<>();
+        protected LinkedList<String> doInBackground(ScheduleData... scheduleData) {
+
+            //LinkedList<ScheduleData> groupsLinkedList = new LinkedList<>();
+            LinkedList<String> groupsLinkedList = new LinkedList<>();
+
+
             // тогда здесь ты просто берешь первый элемент списка,
             // если сюда приходит точно ровно один элемент:
             // scheduleData[0]
@@ -81,7 +85,8 @@ public class Groups_model implements Group_interface.Model {
                         //String url = "https://www.sgu.ru" + element.select("a[href]").get(0)
                               //  .attr("href");
                         if (gr.charAt(0) == course.charAt(0))
-                            groupsLinkedList.add(new ScheduleData(faculty, day_evening, course, gr));
+                            //groupsLinkedList.add(new ScheduleData(faculty, day_evening, course, gr));
+                            groupsLinkedList.add(gr);
                     }
                     return groupsLinkedList;
                // } catch (IOException e) {
@@ -106,7 +111,7 @@ public class Groups_model implements Group_interface.Model {
 //            }
 
         @Override
-        protected void onPostExecute(LinkedList<ScheduleData> groups) {
+        protected void onPostExecute(LinkedList<String> groups) {
             super.onPostExecute(groups);
         }
     }
