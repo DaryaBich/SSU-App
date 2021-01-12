@@ -1,6 +1,7 @@
 package com.example.mobilessu.schedule_page
 
 import android.annotation.SuppressLint
+import android.graphics.Color.WHITE
 import android.os.Bundle
 import android.view.View
 import android.widget.RelativeLayout
@@ -41,6 +42,8 @@ class ScheduleActivity : AppCompatActivity() {
                 }
             }
             downloadThread.start()
+            button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
+
 
 
 
@@ -87,14 +90,27 @@ class ScheduleActivity : AppCompatActivity() {
         }
     }
 
-    fun openallbuttons(view: View) {
-        button_day1.isActivated = true
-        button_day2.isActivated = true
-        button_day3.isActivated = true
-        button_day4.isActivated = true
-        button_day5.isActivated = true
-        button_day6.isActivated = true
+    fun click_lessons(view: View) {
+        button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
+        button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner)
     }
+
+    fun click_sessions(view: View) {
+        button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner)
+        button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
+    }
+
+//    fun openallbuttons(view: View) {
+//        button_day1.isActivated = true
+//        button_day2.isActivated = true
+//        button_day3.isActivated = true
+//        button_day4.isActivated = true
+//        button_day5.isActivated = true
+//        button_day6.isActivated = true
+//    }
+
+
+
 
 //    fun updatelocationbuttons(view: View) {
 //        when(returner(view)) {
@@ -108,37 +124,37 @@ class ScheduleActivity : AppCompatActivity() {
 
     fun click1(view: View){
         dayofweek.text = "Понедельник"
-        openallbuttons(view)
+        //openallbuttons(view)
         button_day1.isActivated = false
     }
 
     fun click2(view: View){
         dayofweek.text = "Вторник"
-        openallbuttons(view)
+        //openallbuttons(view)
         button_day2.isActivated = false
     }
 
     fun click3(view: View){
         dayofweek.text = "Среда"
-        openallbuttons(view)
+        //openallbuttons(view)
         button_day3.isActivated = false
     }
 
     fun click4(view: View){
         dayofweek.text = "Четверг"
-        openallbuttons(view)
+        //openallbuttons(view)
         button_day4.isActivated = false
     }
 
     fun click5(view: View){
         dayofweek.text = "Пятница"
-        openallbuttons(view)
+        //openallbuttons(view)
         button_day5.isActivated = false
     }
 
     fun click6(view: View){
         dayofweek.text = "Суббота"
-        openallbuttons(view)
+       // openallbuttons(view)
         button_day6.isActivated = false
     }
 }

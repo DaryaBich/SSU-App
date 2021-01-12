@@ -103,12 +103,12 @@
 
         <Button
             android:id="@+id/button_lessons"
+            android:onClick="click_lessons"
             android:layout_width="192dp"
             android:layout_height="47dp"
             android:layout_weight="1"
             android:background="@drawable/btn_rounded_corner"
-            android:gravity="start|center_vertical"
-            android:paddingLeft="20dp"
+            android:gravity="center"
             android:text="Расписание занятий"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -120,12 +120,12 @@
 
         <Button
             android:id="@+id/button_sessions"
+            android:onClick="click_sessions"
             android:layout_width="192dp"
             android:layout_height="47dp"
             android:layout_weight="1"
             android:background="@drawable/btn_rounded_corner"
-            android:gravity="start|center_vertical"
-            android:paddingLeft="27dp"
+            android:gravity="center"
             android:text="Расписание сессии"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
