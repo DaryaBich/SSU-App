@@ -1,5 +1,6 @@
 package com.example.mobilessu.schedule_page
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ import java.util.*
 
 
 class ScheduleActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_schedule)
@@ -54,14 +56,14 @@ class ScheduleActivity : AppCompatActivity() {
             val c = Calendar.getInstance()
             c.time = Date()
             val dayOfWeek = c[Calendar.DAY_OF_WEEK]
-            when (dayOfWeek) {
+            when (dayOfWeek - 2) {
+                0 -> dayofweek.text = "Понедельник"
                 1 -> dayofweek.text = "Понедельник"
                 2 -> dayofweek.text = "Вторник"
                 3 -> dayofweek.text = "Среда"
                 4 -> dayofweek.text = "Четверг"
                 5 -> dayofweek.text = "Пятница"
                 6 -> dayofweek.text = "Суббота"
-                7 -> dayofweek.text = "Воскресенье"
             }
         }
     }
