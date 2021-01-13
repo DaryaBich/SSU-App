@@ -62,13 +62,34 @@ class ScheduleActivity : AppCompatActivity() {
             c.time = Date()
             val dayOfWeek = c[Calendar.DAY_OF_WEEK]
             when (dayOfWeek - 1) {
-                0 -> dayofweek.text = "Понедельник"
-                1 -> dayofweek.text = "Понедельник"
-                2 -> dayofweek.text = "Вторник"
-                3 -> dayofweek.text = "Среда"
-                4 -> dayofweek.text = "Четверг"
-                5 -> dayofweek.text = "Пятница"
-                6 -> dayofweek.text = "Суббота"
+                0 -> {
+                    dayofweek.text = "Понедельник"
+                    button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                1 -> {
+                    dayofweek.text = "Понедельник"
+                    button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                2 -> {
+                    dayofweek.text = "Вторник"
+                    button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                3 -> {
+                    dayofweek.text = "Среда"
+                    button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                4 -> {
+                    dayofweek.text = "Четверг"
+                    button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                5 -> {
+                    dayofweek.text = "Пятница"
+                    button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                6 -> {
+                    dayofweek.text = "Суббота"
+                    button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
             }
         }
     }
@@ -78,17 +99,17 @@ class ScheduleActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
-    private fun returner(view: View): Int {
-        when (dayofweek.text) {
-            "Понедельник" -> return 1
-            "Вторник" -> return 2
-            "Среда" -> return 3
-            "Четверг" -> return 4
-            "Пятница" -> return 5
-            "Суббота" -> return 6
-            else -> return 1
-        }
-    }
+//    private fun returner(view: View): Int {
+//        when (dayofweek.text) {
+//            "Понедельник" -> return 1
+//            "Вторник" -> return 2
+//            "Среда" -> return 3
+//            "Четверг" -> return 4
+//            "Пятница" -> return 5
+//            "Суббота" -> return 6
+//            else -> return 1
+//        }
+//    }
 
     fun click_lessons(view: View) {
         button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
@@ -100,14 +121,14 @@ class ScheduleActivity : AppCompatActivity() {
         button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
     }
 
-//    fun openallbuttons(view: View) {
-//        button_day1.isActivated = true
-//        button_day2.isActivated = true
-//        button_day3.isActivated = true
-//        button_day4.isActivated = true
-//        button_day5.isActivated = true
-//        button_day6.isActivated = true
-//    }
+    fun openallbuttons(view: View) {
+        button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
+        button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
+        button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
+        button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
+        button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
+        button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
+    }
 
 
 
@@ -124,37 +145,38 @@ class ScheduleActivity : AppCompatActivity() {
 
     fun click1(view: View){
         dayofweek.text = "Понедельник"
-        //openallbuttons(view)
-        button_day1.isActivated = false
+        openallbuttons(view)
+        button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
     }
 
     fun click2(view: View){
         dayofweek.text = "Вторник"
-        //openallbuttons(view)
-        button_day2.isActivated = false
+        openallbuttons(view)
+        button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
     }
 
     fun click3(view: View){
         dayofweek.text = "Среда"
-        //openallbuttons(view)
-        button_day3.isActivated = false
+        openallbuttons(view)
+        button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        return
     }
 
     fun click4(view: View){
         dayofweek.text = "Четверг"
-        //openallbuttons(view)
-        button_day4.isActivated = false
+        openallbuttons(view)
+        button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
     }
 
     fun click5(view: View){
         dayofweek.text = "Пятница"
-        //openallbuttons(view)
-        button_day5.isActivated = false
+        openallbuttons(view)
+        button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
     }
 
     fun click6(view: View){
         dayofweek.text = "Суббота"
-       // openallbuttons(view)
-        button_day6.isActivated = false
+        openallbuttons(view)
+        button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
     }
 }
