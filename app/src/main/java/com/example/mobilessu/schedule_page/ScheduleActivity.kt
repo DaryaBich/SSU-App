@@ -111,14 +111,36 @@ class ScheduleActivity : AppCompatActivity() {
 //        }
 //    }
 
+    fun lesson_on(view: View) {
+        button_day1.visibility = View.VISIBLE
+        button_day2.visibility = View.VISIBLE
+        button_day3.visibility = View.VISIBLE
+        button_day4.visibility = View.VISIBLE
+        button_day5.visibility = View.VISIBLE
+        button_day6.visibility = View.VISIBLE
+        dayofweek.visibility = View.VISIBLE
+    }
+
+    fun lesson_off(view: View) {
+        button_day1.visibility = View.INVISIBLE
+        button_day2.visibility = View.INVISIBLE
+        button_day3.visibility = View.INVISIBLE
+        button_day4.visibility = View.INVISIBLE
+        button_day5.visibility = View.INVISIBLE
+        button_day6.visibility = View.INVISIBLE
+        dayofweek.visibility = View.INVISIBLE
+    }
+
     fun click_lessons(view: View) {
         button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
         button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner)
+        lesson_on(view)
     }
 
     fun click_sessions(view: View) {
         button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner)
         button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
+        lesson_off(view)
     }
 
     fun openallbuttons(view: View) {
