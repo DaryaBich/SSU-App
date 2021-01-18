@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.mobilessu.R
 import com.example.mobilessu.teacher_or_student_page.Activity_teacher_or_student
+import com.example.mobilessu.ui.login.LoginActivity
 
 class Activity_menu :  AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,5 +24,10 @@ class Activity_menu :  AppCompatActivity() {
         finish()
         overridePendingTransition(R.anim.news_in, R.anim.news_out);
 
+    }
+    fun click_personal_account(view: View) {
+        val randomIntent = Intent(this, LoginActivity::class.java)
+        startActivity(randomIntent)
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 }
