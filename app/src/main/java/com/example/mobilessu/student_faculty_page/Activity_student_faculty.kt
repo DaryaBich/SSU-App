@@ -63,6 +63,11 @@ class Activity_student_faculty : AppCompatActivity() {
         listfaculty.adapter = adapter
         listcolledge.adapter = adapter1
 
+        //listfaculty.scrollTo(0, listfaculty.height);
+
+
+        //listfaculty.setSelection(listfaculty.adapter.count);
+        //listcolledge.setSelection(listcolledge.adapter.count);
         //listfaculty.layoutParams.
 //        val params = listfaculty.getLayoutParams()
 //        params.height = params.height * demodata.size
