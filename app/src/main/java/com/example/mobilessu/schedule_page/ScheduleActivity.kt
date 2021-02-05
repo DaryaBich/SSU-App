@@ -1,17 +1,18 @@
 package com.example.mobilessu.schedule_page
 
 import android.annotation.SuppressLint
-import android.graphics.Color.WHITE
 import android.os.Bundle
 import android.view.View
-import android.widget.RelativeLayout
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import com.example.mobilessu.R
 import kotlinx.android.synthetic.main.activity_schedule.*
+import kotlinx.android.synthetic.main.activitystudentfaculty.*
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import org.jsoup.select.Elements
 import java.io.IOException
+import java.security.AccessController.getContext
 import java.util.*
 
 
@@ -31,14 +32,38 @@ class ScheduleActivity : AppCompatActivity() {
 
             val downloadThread: Thread = object : Thread() {
                 override fun run() {
-                    val doc: Document
+                    var doc: Document? = null
                     try {
                         doc = Jsoup.connect(url).get()
-                        val title = doc.title()
-                        print(title)
+                        //val title = doc.title()
+                            //print(title)
+//                        var listschedule: Elements
+//                        val demoschedule = mutableListOf<String>()
+//                        listschedule = doc.select("td[id*=1_2]")
+//                        for (element in listschedule) {
+//                            val gr = element.select("div[class*=1-dn]").text()
+//                            demoschedule.add(gr)
+//                        }
+//                        val adapter = ArrayAdapter<String>(this, R.layout.listitem, demoschedule)
+//                        list_schedules.adapter = adapter
+
+
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }
+                    var listschedule: Elements? = null
+                    val demoschedule = mutableListOf<String>()
+                    if (doc != null) {
+                        listschedule = doc.select("td[id*=1_2]")
+                    }
+                    if (listschedule != null) {
+                        for (element in listschedule) {
+                            val gr = element.select("div[class*=l-dn]").text()
+                            demoschedule.add(gr)
+                        }
+                    }
+                    val adapter = ArrayAdapter<String>(applicationContext, R.layout.listitem, demoschedule)
+                    list_schedules.adapter = adapter
                 }
             }
             downloadThread.start()
