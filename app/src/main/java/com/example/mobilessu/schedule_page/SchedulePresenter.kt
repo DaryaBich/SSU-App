@@ -8,7 +8,7 @@ import com.example.mobilessu.group_page.Groups_model
 
 class SchedulePresenter (var view: ScheduleActivity): ScheduleInterface.Presenter {
     var model: ScheduleInterface.Model = ScheduleModel()
-    override fun getData(lessonData: LessonData):List<String> {
+    override fun getData(lessonData: LessonData):List<LessonData> {
         val list = model.getLessons(lessonData)
         view.showLessons(list)
         return list

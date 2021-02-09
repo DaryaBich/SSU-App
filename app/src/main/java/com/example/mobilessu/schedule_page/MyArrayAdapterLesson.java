@@ -12,14 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.mobilessu.R;
+import com.example.mobilessu.entities.LessonData;
 
 import java.util.List;
 
-public class MyArrayAdapterLesson extends ArrayAdapter<String> {
+public class MyArrayAdapterLesson extends ArrayAdapter<LessonData> {
     Context context;
     int resource;
-    List<String> lessonsList;
-    public MyArrayAdapterLesson(Context context, int resource, List<String> lessonsList) {
+    List<LessonData> lessonsList;
+    public MyArrayAdapterLesson(Context context, int resource, List<LessonData> lessonsList) {
         super(context, resource, lessonsList);
         this.context = context;
         this.lessonsList = lessonsList;
@@ -30,16 +31,23 @@ public class MyArrayAdapterLesson extends ArrayAdapter<String> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.groupslistitems,null);
+        View view = inflater.inflate(R.layout.scheduleslistitems,null);
         //  View view = inflater.inflate(R.layout.listitem,null);
-        TextView textViewGroup = view.findViewById(R.id.itemGroup);
+        TextView Textname = view.findViewById(R.id.item_name);
+        TextView Textlec_pr = view.findViewById(R.id.item_lec_pr);
+        TextView Textch_zn = view.findViewById(R.id.item_ch_zn);
+        TextView Textteacher = view.findViewById(R.id.item_teacher);
+        TextView Textplace = view.findViewById(R.id.item_place);
         // TextView textViewTitle = view.findViewById(R.id.itemTitle);
-        LinearLayout linearLayout = view.findViewById(R.id.linearLayout);
+        //LinearLayout linearLayout = view.findViewById(R.id.linearLayout);
 
-
-        String lessons = lessonsList.get(position);
+        LessonData lessons = lessonsList.get(position);
         //textViewGroup.setText(groups.getGroup());
-        textViewGroup.setText(lessons);
+        Textname.setText(lessons.getname());
+        Textlec_pr.setText(lessons.getlec_pr());
+        Textch_zn.setText(lessons.getch_zn());
+        Textteacher.setText(lessons.getteacher());
+        Textplace.setText(lessons.getplace());
 
 
         // textViewGroup.setText("39);

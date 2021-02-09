@@ -32,83 +32,10 @@ class ScheduleActivity : AppCompatActivity() {
         setContentView(R.layout.activity_schedule)
         val arguments = intent.extras
         if (arguments != null) {
-            //val faculty = arguments["faculty"].toString()
-            //val dayevening = arguments["dayevening"].toString()
-            //val course = arguments["course"].toString()
-           // val group = arguments["group"].toString()
             val url = arguments["url"].toString()
-            val lessonData = LessonData("", url)
-            val list = presenter.getData(lessonData) // получение пар
-           // val url = "https://www.sgu.ru/schedule$faculty$dayevening/$group"
-            //val demoschedule = mutableListOf<String>()
-            //val adapter = ArrayAdapter<String>(this, R.layout.listitem, demoschedule)
-            //var doc: Document? = null
-
-//            val downloadThread: Thread = object : Thread() {
-//                override fun run() {
-//                    //var doc: Document? = null
-//                    try {
-//                        doc = Jsoup.connect(url).get()
-//                        //val title = doc.title()
-//                            //print(title)
-////                        var listschedule: Elements
-////                        val demoschedule = mutableListOf<String>()
-////                        listschedule = doc.select("td[id*=1_2]")
-////                        for (element in listschedule) {
-////                            val gr = element.select("div[class*=1-dn]").text()
-////                            demoschedule.add(gr)
-////                        }
-////                        val adapter = ArrayAdapter<String>(this, R.layout.listitem, demoschedule)
-////                        list_schedules.adapter = adapter
-//
-//
-//                    } catch (e: IOException) {
-//                        e.printStackTrace()
-//                    }
-////                    var listschedule: Elements? = null
-////                    if (doc != null) {
-////                        listschedule = doc.select("td[id*=1_2]")
-////                    }
-////                    if (listschedule != null) {
-////                        for (element in listschedule) {
-////                            val gr = element.select("div[class*=l-dn]").text()
-////                            demoschedule.add(gr)
-////                        }
-////                    }
-////                    val adapter = ArrayAdapter<String>(this, R.layout.listitem, demoschedule)
-////                    list_schedules.adapter = adapter
-//                }
-//            }
-            //downloadThread.start()
-//            doc = Jsoup.connect(url).get()
-//            var listschedule: Elements? = null
-//            if (doc != null) {
-//                listschedule = doc!!.select("td[id*=1_2]")
-//            }
-//            if (listschedule != null) {
-//                for (element in listschedule) {
-//                    val gr = element.select("div[class*=l-dn]").text()
-//                    demoschedule.add(gr)
-//                }
-//            }
-            //val adapter = ArrayAdapter<String>(this, R.layout.listitem, demoschedule)
-           // list_schedules.adapter = adapter
+            var lessonData = LessonData("", url, 1, "", "", "", "")
+            var list = presenter.getData(lessonData) // получение пар
             button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
-
-
-
-
-
-//            var document: Document? = null
-//            try {
-//                document = Jsoup.connect(url).timeout(100000).get()
-//            }
-//            catch(e: IOException) {
-//
-//            }
-                //val listGroups = document.select("fieldset[class*=zo form_education form-wrapper]")
-                //.select("a")
-                //val currentDate = Date()
             val c = Calendar.getInstance()
             c.time = Date()
             val dayOfWeek = c[Calendar.DAY_OF_WEEK]
@@ -116,36 +43,43 @@ class ScheduleActivity : AppCompatActivity() {
                 0 -> {
                     dayofweek.text = "Понедельник"
                     button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                    update_schedule(1);
                 }
                 1 -> {
                     dayofweek.text = "Понедельник"
                     button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                    update_schedule(1);
                 }
                 2 -> {
                     dayofweek.text = "Вторник"
                     button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                    update_schedule(2);
                 }
                 3 -> {
                     dayofweek.text = "Среда"
                     button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                    update_schedule(3);
                 }
                 4 -> {
                     dayofweek.text = "Четверг"
                     button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                    update_schedule(4);
                 }
                 5 -> {
                     dayofweek.text = "Пятница"
                     button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                    update_schedule(5);
                 }
                 6 -> {
                     dayofweek.text = "Суббота"
                     button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                    update_schedule(6);
                 }
             }
         }
     }
 
-    fun showLessons(list: List<String>) {
+    fun showLessons(list: List<LessonData>) {
         if (list.isNotEmpty()) {
             val adapter = MyArrayAdapterLesson(this, R.layout.groupslistitems, list)
             //  val adapter = MyArrayAdapterGroup(this, R.layout.listitem, list)
@@ -176,6 +110,16 @@ class ScheduleActivity : AppCompatActivity() {
 //            else -> return 1
 //        }
 //    }
+
+    fun update_schedule(num: Int){
+        val arguments = intent.extras
+        var lessonData = LessonData("", "", num, "", "", "", "")
+        if (arguments != null) {
+            val url = arguments["url"].toString()
+            lessonData = LessonData("", url, num, "", "", "", "")
+        }
+        var list = presenter.getData(lessonData) // получение пар
+    }
 
     fun lesson_on(view: View) {
         button_day1.visibility = View.VISIBLE
@@ -237,18 +181,21 @@ class ScheduleActivity : AppCompatActivity() {
         dayofweek.text = "Понедельник"
         openallbuttons(view)
         button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        update_schedule(1)
     }
 
     fun click2(view: View){
         dayofweek.text = "Вторник"
         openallbuttons(view)
         button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        update_schedule(2)
     }
 
     fun click3(view: View){
         dayofweek.text = "Среда"
         openallbuttons(view)
         button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        update_schedule(3)
         return
     }
 
@@ -256,17 +203,20 @@ class ScheduleActivity : AppCompatActivity() {
         dayofweek.text = "Четверг"
         openallbuttons(view)
         button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        update_schedule(4)
     }
 
     fun click5(view: View){
         dayofweek.text = "Пятница"
         openallbuttons(view)
         button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        update_schedule(5)
     }
 
     fun click6(view: View){
         dayofweek.text = "Суббота"
         openallbuttons(view)
         button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        update_schedule(6)
     }
 }

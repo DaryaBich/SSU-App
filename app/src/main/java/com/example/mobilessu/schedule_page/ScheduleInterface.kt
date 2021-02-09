@@ -7,14 +7,14 @@ import java.util.concurrent.ExecutionException
 interface ScheduleInterface {
     interface Model {
         @Throws(IOException::class, ExecutionException::class, InterruptedException::class)
-        fun getLessons(lessonData: LessonData):List<String>
+        fun getLessons(lessonData: LessonData):List<LessonData>
     }
 
     interface View {
-        fun showGroups(list:List<String>)
+        fun showGroups(list:List<LessonData>)
     }
 
     interface Presenter {
-        fun getData(lessonData: LessonData):List<String>
+        fun getData(lessonData: LessonData):List<LessonData>
     }
 }
