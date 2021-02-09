@@ -59,8 +59,11 @@ public class ScheduleModel implements ScheduleInterface.Model{
             Elements listLessons;
            // listLessons = document.select("td[id*=1_2]");
             String str = "td[id$=" + num + "]";
-            listLessons = document.select(str);
-
+            listLessons = document.select("tr").select(str);
+            //String str = "td[id$=" + num + "]";
+           // listLessons = document.select(str);
+            Elements listtime = document.select("tr");
+            Integer i = 1;
             for (Element element : listLessons) {
 //                for (int i = 1; i < 9; i++) {
 //                    String les = element.select("div[class*=l-dn]").text();
@@ -68,10 +71,12 @@ public class ScheduleModel implements ScheduleInterface.Model{
                 String les = element.select("div[class=l-dn]").text();
                 String lec_pr = element.select("div[class=l-pr-t]").text();
                 String ch_zn = element.select("div[class=l-pr-r]").text();
+                String g = element.select("div[class=l-pr-g]").text();
                 String teacher = element.select("div[class=l-tn]").text();
                 String place = element.select("div[class=l-p]").text();
-
-                lessonsLinkedList.add(new LessonData(les, url, num, lec_pr, ch_zn, teacher, place));
+                String time = listtime.get(i).select("th").text();
+                lessonsLinkedList.add(new LessonData(les, url, num, lec_pr + " " + g, ch_zn, teacher, place, time));
+                i++;
             }
             return lessonsLinkedList;
         }

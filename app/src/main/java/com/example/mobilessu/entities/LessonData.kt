@@ -7,7 +7,8 @@ class LessonData (
     private var lec_pr: String,
     private var ch_zn: String,
     private var teacher: String,
-    private var place: String
+    private var place: String,
+    private var time: String
     //private var : String,
     //private var course: String,
     //private var group: String
@@ -33,6 +34,9 @@ class LessonData (
     }
     fun getteacher(): String {
         return teacher
+    }
+    fun gettime(): String{
+        return time
     }
     fun setnum(num: Int) {
         this.num = num

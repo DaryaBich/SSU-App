@@ -38,6 +38,7 @@ public class MyArrayAdapterLesson extends ArrayAdapter<LessonData> {
         TextView Textch_zn = view.findViewById(R.id.item_ch_zn);
         TextView Textteacher = view.findViewById(R.id.item_teacher);
         TextView Textplace = view.findViewById(R.id.item_place);
+        TextView Texttime = view.findViewById(R.id.item_time);
         // TextView textViewTitle = view.findViewById(R.id.itemTitle);
         //LinearLayout linearLayout = view.findViewById(R.id.linearLayout);
 
@@ -48,6 +49,7 @@ public class MyArrayAdapterLesson extends ArrayAdapter<LessonData> {
         Textch_zn.setText(lessons.getch_zn());
         Textteacher.setText(lessons.getteacher());
         Textplace.setText(lessons.getplace());
+        Texttime.setText(lessons.gettime());
 
 
         // textViewGroup.setText("39);

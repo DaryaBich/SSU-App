@@ -33,7 +33,7 @@ class ScheduleActivity : AppCompatActivity() {
         val arguments = intent.extras
         if (arguments != null) {
             val url = arguments["url"].toString()
-            var lessonData = LessonData("", url, 1, "", "", "", "")
+            var lessonData = LessonData("", url, 1, "", "", "", "", "")
             var list = presenter.getData(lessonData) // получение пар
             button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
             val c = Calendar.getInstance()
@@ -113,10 +113,10 @@ class ScheduleActivity : AppCompatActivity() {
 
     fun update_schedule(num: Int){
         val arguments = intent.extras
-        var lessonData = LessonData("", "", num, "", "", "", "")
+        var lessonData = LessonData("", "", num, "", "", "", "", "")
         if (arguments != null) {
             val url = arguments["url"].toString()
-            lessonData = LessonData("", url, num, "", "", "", "")
+            lessonData = LessonData("", url, num, "", "", "", "", "")
         }
         var list = presenter.getData(lessonData) // получение пар
     }
