@@ -33,11 +33,14 @@ class Activity_group : AppCompatActivity() {
                 //Toast.makeText(this, (view as TextView).text, Toast.LENGTH_LONG).show()
                 //val element = (view as TextView).text.toString() // получаем текст нажатого элемента
                 val randomIntent = Intent(this, ScheduleActivity::class.java)
-                randomIntent.putExtra("faculty", faculty)
-                randomIntent.putExtra("dayevening", dayevening)
-                randomIntent.putExtra("course", course)
+                val group = list[i]
+                val url = "https://www.sgu.ru/schedule$faculty$dayevening/$group"
+                randomIntent.putExtra("url", url)
+                //randomIntent.putExtra("faculty", faculty)
+                //randomIntent.putExtra("dayevening", dayevening)
+               // randomIntent.putExtra("course", course)
                 //val list = listOf(list_group[i])
-                randomIntent.putExtra("group", list[i])
+                //randomIntent.putExtra("group", list[i])
 //                when (element) {
 //                    "Дневная" ->
 //                        randomIntent.putExtra("dayevening", "/do") //передали форму обучения
