@@ -163,7 +163,7 @@ class ScheduleActivity : AppCompatActivity() {
         val url = arguments?.get("url").toString()
         randomIntent.putExtra("url", url)
         startActivity(randomIntent)
-        //overridePendingTransition(R.anim.fide_in, R.anim.fide_out)
+        overridePendingTransition(R.anim.quick_in, R.anim.quick_out)
         //lesson_off(view)
     }
 
@@ -194,6 +194,7 @@ class ScheduleActivity : AppCompatActivity() {
         openallbuttons(view)
         button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
         update_schedule(1)
+        overridePendingTransition(R.anim.quick_in, R.anim.quick_out)
     }
 
     fun click2(view: View){

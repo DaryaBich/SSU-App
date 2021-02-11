@@ -65,7 +65,7 @@ class SessionActivity : AppCompatActivity() {
         val url = arguments?.get("url").toString()
         randomIntent.putExtra("url", url)
         startActivity(randomIntent)
-        //overridePendingTransition(R.anim.fide_in, R.anim.fide_out)
+        overridePendingTransition(R.anim.quick_in, R.anim.quick_out)
         //lesson_off(view)
     }
 }
