@@ -1,17 +1,21 @@
 package com.example.mobilessu.schedule_page
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
+import com.example.mobilessu.choose_course.Activity_course
 import com.example.mobilessu.entities.LessonData
 import com.example.mobilessu.entities.ScheduleData
+import com.example.mobilessu.group_page.Activity_group
 import com.example.mobilessu.group_page.Group_interface
 import com.example.mobilessu.group_page.Groups_presenter
 import com.example.mobilessu.group_page.MyArrayAdapterGroup
+import com.example.mobilessu.session_page.SessionActivity
 import kotlinx.android.synthetic.main.activity_schedule.*
 import kotlinx.android.synthetic.main.activitygroup.*
 import kotlinx.android.synthetic.main.activitymenu.view.*
@@ -35,7 +39,7 @@ class ScheduleActivity : AppCompatActivity() {
             val url = arguments["url"].toString()
             var lessonData = LessonData("", url, 1, "", "", "", "", "")
             var list = presenter.getData(lessonData) // получение пар
-            button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
+            //button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
             val c = Calendar.getInstance()
             c.time = Date()
             val dayOfWeek = c[Calendar.DAY_OF_WEEK]
@@ -95,6 +99,8 @@ class ScheduleActivity : AppCompatActivity() {
     }
 
     fun click_back(view: View){
+        //val randomIntent = Intent(this, Activity_group::class.java)
+        //startActivity(randomIntent)
         finish()
         overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
@@ -121,38 +127,44 @@ class ScheduleActivity : AppCompatActivity() {
         var list = presenter.getData(lessonData) // получение пар
     }
 
-    fun lesson_on(view: View) {
-        button_day1.visibility = View.VISIBLE
-        button_day2.visibility = View.VISIBLE
-        button_day3.visibility = View.VISIBLE
-        button_day4.visibility = View.VISIBLE
-        button_day5.visibility = View.VISIBLE
-        button_day6.visibility = View.VISIBLE
-        dayofweek.visibility = View.VISIBLE
-        list_schedules.visibility = View.VISIBLE
-    }
+//    fun lesson_on(view: View) {
+//        button_day1.visibility = View.VISIBLE
+//        button_day2.visibility = View.VISIBLE
+//        button_day3.visibility = View.VISIBLE
+//        button_day4.visibility = View.VISIBLE
+//        button_day5.visibility = View.VISIBLE
+//        button_day6.visibility = View.VISIBLE
+//        dayofweek.visibility = View.VISIBLE
+//        list_schedules.visibility = View.VISIBLE
+//    }
 
-    fun lesson_off(view: View) {
-        button_day1.visibility = View.INVISIBLE
-        button_day2.visibility = View.INVISIBLE
-        button_day3.visibility = View.INVISIBLE
-        button_day4.visibility = View.INVISIBLE
-        button_day5.visibility = View.INVISIBLE
-        button_day6.visibility = View.INVISIBLE
-        dayofweek.visibility = View.INVISIBLE
-        list_schedules.visibility = View.INVISIBLE
-    }
+//    fun lesson_off(view: View) {
+//        button_day1.visibility = View.INVISIBLE
+//        button_day2.visibility = View.INVISIBLE
+//        button_day3.visibility = View.INVISIBLE
+//        button_day4.visibility = View.INVISIBLE
+//        button_day5.visibility = View.INVISIBLE
+//        button_day6.visibility = View.INVISIBLE
+//        dayofweek.visibility = View.INVISIBLE
+//        list_schedules.visibility = View.INVISIBLE
+//    }
 
     fun click_lessons(view: View) {
-        button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
-        button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner)
-        lesson_on(view)
+//        button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
+//        button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner)
+//        lesson_on(view)
     }
 
     fun click_sessions(view: View) {
-        button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner)
-        button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
-        lesson_off(view)
+        //button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner)
+        //button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
+        val randomIntent = Intent(this, SessionActivity::class.java)
+        val arguments = intent.extras
+        val url = arguments?.get("url").toString()
+        randomIntent.putExtra("url", url)
+        startActivity(randomIntent)
+        //overridePendingTransition(R.anim.fide_in, R.anim.fide_out)
+        //lesson_off(view)
     }
 
     fun openallbuttons(view: View) {

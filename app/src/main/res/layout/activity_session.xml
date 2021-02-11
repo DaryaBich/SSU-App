@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7FBFF"
-    tools:context=".schedule_page.ScheduleActivity">
+    tools:context=".session_page.SessionActivity">
 
     <View
         android:id="@+id/topWhiteBox"
@@ -107,7 +107,7 @@
             android:layout_width="192dp"
             android:layout_height="47dp"
             android:layout_weight="1"
-            android:background="@drawable/btn_rounded_corner_grey"
+            android:background="@drawable/btn_rounded_corner"
             android:gravity="center"
             android:text="Расписание занятий"
             android:textAllCaps="false"
@@ -124,7 +124,7 @@
             android:layout_width="192dp"
             android:layout_height="47dp"
             android:layout_weight="1"
-            android:background="@drawable/btn_rounded_corner"
+            android:background="@drawable/btn_rounded_corner_grey"
             android:gravity="center"
             android:text="Расписание сессии"
             android:textAllCaps="false"
@@ -135,93 +135,11 @@
             tools:layout_editor_absoluteX="208dp"
             tools:layout_editor_absoluteY="109dp" />
     </LinearLayout>
-
     <ListView
         android:id="@+id/list_sessions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lin1"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <RelativeLayout
-        android:id="@+id/dayweek"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lin1"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/dayofweek"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Суббота"
-            android:layout_centerInParent = "true"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button_day1"
-            android:onClick="click1"
-            android:layout_height="25dp"
-            android:layout_width="25dp"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week" />
-
-        <Button
-            android:id="@+id/button_day2"
-            android:onClick="click2"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week"
-            android:layout_toRightOf="@+id/button_day1" />
-
-        <Button
-            android:id="@+id/button_day3"
-            android:onClick="click3"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_toRightOf = "@+id/button_day2"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week" />
-
-        <Button
-            android:id="@+id/button_day4"
-            android:onClick="click4"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_toLeftOf="@id/button_day5"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week" />
-
-        <Button
-            android:id="@+id/button_day5"
-            android:onClick="click5"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_toLeftOf="@id/button_day6"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week" />
-
-        <Button
-            android:id="@+id/button_day6"
-            android:onClick="click6"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week" />
-    </RelativeLayout>
-
-    <ListView
-        android:id="@+id/list_schedules"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
+        android:paddingLeft="20dp"
         android:paddingRight="10dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="10dp"
@@ -231,7 +149,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/blueStripe"
-        app:layout_constraintTop_toBottomOf="@+id/dayweek"
+        app:layout_constraintTop_toBottomOf="@+id/lin1"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
