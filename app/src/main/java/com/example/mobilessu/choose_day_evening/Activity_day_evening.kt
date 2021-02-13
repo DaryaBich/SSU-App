@@ -33,11 +33,11 @@ class Activity_day_evening : AppCompatActivity() {
                 randomIntent.putExtra("faculty", faculty)
                 when (element) {
                     "Дневная" ->
-                        randomIntent.putExtra("dayevening", "do/") //передали форму обучения
+                        randomIntent.putExtra("dayevening", "/do") //передали форму обучения
                     "Вечерняя" ->
-                        randomIntent.putExtra("dayevening", "vo/")
+                        randomIntent.putExtra("dayevening", "/vo")
                     "Заочная" ->
-                        randomIntent.putExtra("dayevening", "zo/")
+                        randomIntent.putExtra("dayevening", "/zo")
                     else ->
                         randomIntent.putExtra("dayevening", "")
                 }

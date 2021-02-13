@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7FBFF"
+    tools:context=".schedule_page.ScheduleActivity">
+
+    <View
+        android:id="@+id/topWhiteBox"
+        android:layout_width="406dp"
+        android:layout_height="103dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textSSU"
+        android:layout_width="113dp"
+        android:layout_height="70dp"
+        android:text="СГУ"
+        android:textColor="#100C0C"
+        android:textSize="58dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/topWhiteBox"
+        app:layout_constraintEnd_toStartOf="@+id/topWhiteBox"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toEndOf="@+id/topWhiteBox"
+        app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
+        app:layout_constraintVertical_bias="0.445" />
+
+    <View
+        android:id="@+id/blueStripe"
+        android:layout_width="411dp"
+        android:layout_height="7dp"
+        android:background="#68A4FF"
+        android:outlineAmbientShadowColor="#100707"
+        android:outlineSpotShadowColor="#190C0C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="-148dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <ImageView
+        android:id="@+id/ssuEmblema"
+        android:layout_width="156dp"
+        android:layout_height="109dp"
+        android:src="@drawable/ssu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/blueStripe"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/menuButton"
+        android:layout_width="31dp"
+        android:layout_height="29dp"
+        android:background="#FFFFFF"
+        android:onClick="click_back"
+        android:scaleX="3"
+        android:scaleY="3"
+        app:layout_constraintBottom_toTopOf="@+id/topWhiteBox"
+        app:layout_constraintEnd_toStartOf="@+id/topWhiteBox"
+        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintStart_toEndOf="@+id/topWhiteBox"
+        app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
+        app:layout_constraintVertical_bias="0.450"
+        app:srcCompat="@drawable/arrow_left" />
+
+    <LinearLayout
+        android:id="@+id/lin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blueStripe"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/button_lessons"
+            android:onClick="click_lessons"
+            android:layout_width="192dp"
+            android:layout_height="47dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_rounded_corner_grey"
+            android:gravity="center"
+            android:text="Расписание занятий"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textIsSelectable="false"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="109dp" />
+
+        <Button
+            android:id="@+id/button_sessions"
+            android:onClick="click_sessions"
+            android:layout_width="192dp"
+            android:layout_height="47dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_rounded_corner"
+            android:gravity="center"
+            android:text="Расписание сессии"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textIsSelectable="false"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            tools:layout_editor_absoluteX="208dp"
+            tools:layout_editor_absoluteY="109dp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_sessions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lin1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <RelativeLayout
+        android:id="@+id/dayweek"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lin1"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/dayofweek"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Суббота"
+            android:layout_centerInParent = "true"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_day1"
+            android:onClick="click1"
+            android:layout_height="25dp"
+            android:layout_width="25dp"
+            android:background="@drawable/btn_rounded_corner_for_day_of_week" />
+
+        <Button
+            android:id="@+id/button_day2"
+            android:onClick="click2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/btn_rounded_corner_for_day_of_week"
+            android:layout_toRightOf="@+id/button_day1" />
+
+        <Button
+            android:id="@+id/button_day3"
+            android:onClick="click3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_toRightOf = "@+id/button_day2"
+            android:background="@drawable/btn_rounded_corner_for_day_of_week" />
+
+        <Button
+            android:id="@+id/button_day4"
+            android:onClick="click4"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_toLeftOf="@id/button_day5"
+            android:background="@drawable/btn_rounded_corner_for_day_of_week" />
+
+        <Button
+            android:id="@+id/button_day5"
+            android:onClick="click5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_toLeftOf="@id/button_day6"
+            android:background="@drawable/btn_rounded_corner_for_day_of_week" />
+
+        <Button
+            android:id="@+id/button_day6"
+            android:onClick="click6"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_rounded_corner_for_day_of_week" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/list_schedules"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toTopOf="@+id/dayweek"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
