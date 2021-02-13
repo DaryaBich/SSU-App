@@ -106,9 +106,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="@id/viewdop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -231,7 +231,6 @@
                 android:textIsSelectable="false"
                 android:textSize="20sp"
                 android:textStyle="normal|bold" />
-
 
             <Button
                 android:id="@+id/button_callback"

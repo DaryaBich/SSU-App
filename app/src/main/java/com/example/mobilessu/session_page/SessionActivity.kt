@@ -55,6 +55,7 @@ class SessionActivity : AppCompatActivity() {
 //        button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
 //        button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner)
 //        lesson_on(view)
+        ///parentActivityIntent
     }
 
     fun click_lessons(view: View) {

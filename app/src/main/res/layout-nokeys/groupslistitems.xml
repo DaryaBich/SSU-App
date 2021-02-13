@@ -14,10 +14,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.031">
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/itemGroup"
@@ -31,7 +31,7 @@
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="normal|bold"
-            android:gravity="start|center_vertical">
+            android:gravity="start">
 
         </TextView>
     </LinearLayout>
