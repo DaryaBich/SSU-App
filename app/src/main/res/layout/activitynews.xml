@@ -82,19 +82,22 @@
         app:layout_constraintStart_toEndOf="@+id/topWhiteBox"
         app:layout_constraintTop_toBottomOf="@+id/topWhiteBox"
         app:layout_constraintVertical_bias="0.445" />
-
-    <ListView
-        android:id="@+id/list_of_news"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:id="@+id/swipe_refresh"
         app:layout_constraintTop_toTopOf="@+id/blueStripe"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <ListView
+        android:id="@+id/list_of_news"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

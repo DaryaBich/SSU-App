@@ -3,6 +3,7 @@ package com.example.mobilessu.schedule_page
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -17,8 +18,10 @@ import com.example.mobilessu.group_page.Groups_presenter
 import com.example.mobilessu.group_page.MyArrayAdapterGroup
 import com.example.mobilessu.session_page.SessionActivity
 import kotlinx.android.synthetic.main.activity_schedule.*
+import kotlinx.android.synthetic.main.activity_schedule.swipe_refresh
 import kotlinx.android.synthetic.main.activitygroup.*
 import kotlinx.android.synthetic.main.activitymenu.view.*
+import kotlinx.android.synthetic.main.activitynews.*
 import kotlinx.android.synthetic.main.activitystudentfaculty.*
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
@@ -30,10 +33,26 @@ import java.util.*
 
 class ScheduleActivity : AppCompatActivity() {
     var presenter: ScheduleInterface.Presenter = SchedulePresenter(this)
+    private lateinit var handler: Handler
+    private lateinit var runnable: Runnable
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_schedule)
+        handler = Handler()
+        swipe_refresh.setOnRefreshListener {
+            // Initialize a new Runnable
+            runnable = Runnable {
+                // Hide swipe to refresh icon animation
+                swipe_refresh.isRefreshing = false
+            }
+            // Execute the task after specified time
+            handler.postDelayed(
+                runnable, 3000.toLong()
+            )
+        }
+        swipe_refresh.setColorSchemeResources(R.color.light_blue, R.color.middle_blue,R.color.deep_blue)
+
         val arguments = intent.extras
         if (arguments != null) {
             val url = arguments["url"].toString()

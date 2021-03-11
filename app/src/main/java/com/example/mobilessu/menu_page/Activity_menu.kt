@@ -3,6 +3,7 @@ package com.example.mobilessu.menu_page
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
 import com.example.mobilessu.schedule_page.ScheduleActivity
@@ -44,14 +45,20 @@ class Activity_menu :  AppCompatActivity() {
                 //Log.d(LOG_TAG, str)
                 sumstr += str
             }
+            val randomIntent = Intent(this, ScheduleActivity::class.java)
+            randomIntent.putExtra("url", sumstr)
+            startActivity(randomIntent)
+            overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
         } catch (e: FileNotFoundException) {
-            e.printStackTrace()
+            //e.printStackTrace()
+            Toast.makeText(
+                applicationContext,
+                "Выберите свою группу по кнопке \"Расписание занятий\"",
+                Toast.LENGTH_LONG
+            ).show()
+
         } catch (e: IOException) {
             e.printStackTrace()
         }
-        val randomIntent = Intent(this, ScheduleActivity::class.java)
-        randomIntent.putExtra("url", sumstr)
-        startActivity(randomIntent)
-        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 }
