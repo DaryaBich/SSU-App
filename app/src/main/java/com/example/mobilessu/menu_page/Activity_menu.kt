@@ -40,7 +40,7 @@ class Activity_menu :  AppCompatActivity() {
             )
             var str: String? = ""
             // читаем содержимое
-            while (br.readLine().also({str = it}) != null) {
+            while (br.readLine().also {str = it} != null) {
                 //Log.d(LOG_TAG, str)
                 sumstr += str
             }
