@@ -131,7 +131,7 @@
             app:layout_constraintVertical_bias="1.0">
 
             <Button
-                android:id="@+id/button_your_cabinet"
+                android:id="@+id/button_your_schedule"
                 android:layout_width="355dp"
                 android:layout_height="69dp"
                 android:background="@drawable/btn_rounded_corner"
@@ -140,7 +140,7 @@
                 android:paddingLeft="25dp"
                 android:paddingRight="25dp"
                 android:onClick="click_personal_account"
-                android:text="Личный кабинет"
+                android:text="Моё расписание"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textIsSelectable="false"

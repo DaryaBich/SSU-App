@@ -1,17 +1,19 @@
 package com.example.mobilessu.group_page
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import com.example.mobilessu.R
 import com.example.mobilessu.entities.ScheduleData
 import com.example.mobilessu.schedule_page.ScheduleActivity
 import kotlinx.android.synthetic.main.activitygroup.*
-import org.w3c.dom.Text
+import java.io.BufferedWriter
+import java.io.FileNotFoundException
+import java.io.IOException
+import java.io.OutputStreamWriter
 
 
 class Activity_group : AppCompatActivity() {
@@ -36,6 +38,24 @@ class Activity_group : AppCompatActivity() {
                 val group = list[i]
                 val url = "https://www.sgu.ru/schedule$faculty$dayevening/$group"
                 randomIntent.putExtra("url", url)
+                try {
+                    // отрываем поток для записи
+                    val bw = BufferedWriter(
+                        OutputStreamWriter(
+                            openFileOutput("file", Context.MODE_PRIVATE)
+                        )
+                    )
+                    // пишем данные
+                    bw.write(url)
+                    // закрываем поток
+                    bw.close()
+                    //Log.d(LOG_TAG, "Файл записан")
+                } catch (e: FileNotFoundException) {
+                    e.printStackTrace()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+
                 //randomIntent.putExtra("faculty", faculty)
                 //randomIntent.putExtra("dayevening", dayevening)
                // randomIntent.putExtra("course", course)

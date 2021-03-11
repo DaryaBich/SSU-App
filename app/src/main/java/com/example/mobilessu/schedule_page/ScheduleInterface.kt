@@ -11,7 +11,7 @@ interface ScheduleInterface {
     }
 
     interface View {
-        fun showGroups(list:List<LessonData>)
+        fun showLessons(list:List<LessonData>)
     }
 
     interface Presenter {
