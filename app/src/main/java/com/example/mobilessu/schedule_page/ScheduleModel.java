@@ -47,9 +47,19 @@ public class ScheduleModel implements ScheduleInterface.Model{
 
             //LinkedList<ScheduleData> groupsLinkedList = new LinkedList<>();
             LinkedList<LessonData> lessonsLinkedList = new LinkedList<>();
-
+            String alf_en = "ABVGDEZIIKLMNOPRSTUFHCEUabvgdeziiklmnoprstufhceu";
+            String alf_ru = "АБВГДЕЗИЙКЛМНОПРСТУФХЦЭЮабвгдезийклмнопрстуфхцэю";
             String url = lessonData[0].geturl();
             Integer num = lessonData[0].getnum();
+            String gr = lessonData[0].getgr();
+            String gr_en = "";
+            for (int i = 0; i < gr.length(); i++){ //меняем русские буквы на английские
+                if (alf_ru.indexOf(gr.charAt(i)) != -1)
+                    gr_en += alf_en.charAt(alf_ru.indexOf(gr.charAt(i)));
+                else
+                    gr_en += gr.charAt(i);
+            }
+            url = url.substring(0, url.lastIndexOf('/') + 1) + gr_en;
             Document document = null;
             try {
                 document = Jsoup.connect(url).timeout(100000).get();
@@ -75,7 +85,7 @@ public class ScheduleModel implements ScheduleInterface.Model{
                 String teacher = element.select("div[class=l-tn]").text();
                 String place = element.select("div[class=l-p]").text();
                 String time = listtime.get(i).select("th").text();
-                lessonsLinkedList.add(new LessonData(les, url, num, lec_pr + " " + g, ch_zn, teacher, place, time));
+                lessonsLinkedList.add(new LessonData(les, url, num, gr, lec_pr + " " + g, ch_zn, teacher, place, time));
                 i++;
             }
             return lessonsLinkedList;

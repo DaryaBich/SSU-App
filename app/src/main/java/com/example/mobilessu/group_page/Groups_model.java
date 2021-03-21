@@ -84,8 +84,12 @@ public class Groups_model implements Group_interface.Model {
                         //String title = element.select("a[href]").get(0).text();
                         //String url = "https://www.sgu.ru" + element.select("a[href]").get(0)
                               //  .attr("href");
-                        if (gr.charAt(0) == course.charAt(0))
+                        if (gr.charAt(0) == course.charAt(0) & !faculty.equals("/kgl") & !faculty.equals("/cre"))
                             //groupsLinkedList.add(new ScheduleData(faculty, day_evening, course, gr));
+                            groupsLinkedList.add(gr);
+                        else if (gr.charAt(1) == course.charAt(0) & faculty.equals("/kgl"))
+                            groupsLinkedList.add(gr);
+                        else if (gr.charAt(gr.length() - 3) == course.charAt(0) & faculty.equals("/cre"))
                             groupsLinkedList.add(gr);
                     }
                     return groupsLinkedList;

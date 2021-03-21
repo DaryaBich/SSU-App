@@ -4,6 +4,7 @@ class LessonData (
     private var name: String,
     private var url: String,
     private var num: Int,
+    private var gr: String,
     private var lec_pr: String,
     private var ch_zn: String,
     private var teacher: String,
@@ -23,6 +24,9 @@ class LessonData (
     fun getnum(): Int {
         return num
     }
+    fun getgr(): String {
+        return gr
+    }
     fun getlec_pr(): String {
         return lec_pr
     }
@@ -38,7 +42,7 @@ class LessonData (
     fun gettime(): String{
         return time
     }
-    fun setnum(num: Int) {
-        this.num = num
-    }
+    //fun setnum(num: Int) {
+   //     this.num = num
+   // }
 }
