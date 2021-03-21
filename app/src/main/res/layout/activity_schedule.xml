@@ -174,6 +174,7 @@
             android:onClick="click1"
             android:layout_height="25dp"
             android:layout_width="25dp"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/btn_rounded_corner_for_day_of_week" />
 
         <Button
@@ -213,12 +214,13 @@
             android:onClick="click6"
             android:layout_width="25dp"
             android:layout_height="25dp"
+            android:layout_marginRight="10dp"
             android:layout_alignParentRight="true"
             android:background="@drawable/btn_rounded_corner_for_day_of_week" />
     </RelativeLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
@@ -226,20 +228,16 @@
         android:layout_marginBottom="10dp"
         android:id="@+id/swipe_refresh"
         app:layout_constraintTop_toTopOf="@+id/dayweek"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints">
 
     <ListView
         android:id="@+id/list_schedules"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:paddingTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintTop_toTopOf="@+id/dayweek"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:paddingTop="20dp" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

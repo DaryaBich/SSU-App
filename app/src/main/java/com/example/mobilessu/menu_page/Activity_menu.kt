@@ -8,12 +8,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
 import com.example.mobilessu.schedule_page.ScheduleActivity
 import com.example.mobilessu.teacher_or_student_page.Activity_teacher_or_student
+import com.liuguangqiang.swipeback.SwipeBackActivity
 import java.io.BufferedReader
 import java.io.FileNotFoundException
 import java.io.IOException
 import java.io.InputStreamReader
 
-class Activity_menu :  AppCompatActivity() {
+class Activity_menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activitymenu)
