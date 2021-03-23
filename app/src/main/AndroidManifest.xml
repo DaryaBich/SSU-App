@@ -13,15 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/NoActionBar"></activity>
-        <activity
             android:name=".session_page.SessionActivity"
-            android:parentActivityName=".group_page.Activity_group"></activity>
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login" />
+            android:parentActivityName=".group_page.Activity_group">
+        </activity>
         <activity
             android:name=".schedule_page.ScheduleActivity"
             android:parentActivityName=".group_page.Activity_group" />
@@ -34,7 +28,9 @@
             android:name=".teacher_page.ActivityFindTeacher"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".teacher_or_student_page.Activity_teacher_or_student" />
-        <activity android:name=".newspage.ActivityNews">
+
+        <activity android:name=".newspage.ActivityNews"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
