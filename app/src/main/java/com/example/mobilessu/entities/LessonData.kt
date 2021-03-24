@@ -42,7 +42,7 @@ class LessonData (
     fun gettime(): String{
         return time
     }
-    //fun setnum(num: Int) {
-   //     this.num = num
-   // }
+    fun setnum(num: Int) {
+        this.num = num
+    }
 }

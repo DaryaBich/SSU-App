@@ -50,7 +50,6 @@ public class ScheduleModel implements ScheduleInterface.Model{
             String alf_en = "ABVGDEZIIKLMNOPRSTUFHCEUabvgdeziiklmnoprstufhceu";
             String alf_ru = "АБВГДЕЗИЙКЛМНОПРСТУФХЦЭЮабвгдезийклмнопрстуфхцэю";
             String url = lessonData[0].geturl();
-            Integer num = lessonData[0].getnum();
             String gr = lessonData[0].getgr();
             String gr_en = "";
             for (int i = 0; i < gr.length(); i++){ //меняем русские буквы на английские
@@ -62,31 +61,33 @@ public class ScheduleModel implements ScheduleInterface.Model{
             url = url.substring(0, url.lastIndexOf('/') + 1) + gr_en;
             Document document = null;
             try {
-                document = Jsoup.connect(url).timeout(100000).get();
+                document = Jsoup.connect(url).get();
             } catch (IOException e) {
                 e.printStackTrace();
             }
             Elements listLessons;
            // listLessons = document.select("td[id*=1_2]");
-            String str = "td[id$=" + num + "]";
-            listLessons = document.select("tr").select(str);
-            //String str = "td[id$=" + num + "]";
-           // listLessons = document.select(str);
-            Elements listtime = document.select("tr");
-            Integer i = 1;
-            for (Element element : listLessons) {
+            for (Integer num = 1; num < 7; num++) {
+                String str = "td[id$=" + num + "]";
+                listLessons = document.select("tr").select(str);
+                //String str = "td[id$=" + num + "]";
+                // listLessons = document.select(str);
+                Elements listtime = document.select("tr");
+                Integer i = 1;
+                for (Element element : listLessons) {
 //                for (int i = 1; i < 9; i++) {
 //                    String les = element.select("div[class*=l-dn]").text();
 //                }
-                String les = element.select("div[class=l-dn]").text();
-                String lec_pr = element.select("div[class=l-pr-t]").text();
-                String ch_zn = element.select("div[class=l-pr-r]").text();
-                String g = element.select("div[class=l-pr-g]").text();
-                String teacher = element.select("div[class=l-tn]").text();
-                String place = element.select("div[class=l-p]").text();
-                String time = listtime.get(i).select("th").text();
-                lessonsLinkedList.add(new LessonData(les, url, num, gr, lec_pr + " " + g, ch_zn, teacher, place, time));
-                i++;
+                    String les = element.select("div[class=l-dn]").text();
+                    String lec_pr = element.select("div[class=l-pr-t]").text();
+                    String ch_zn = element.select("div[class=l-pr-r]").text();
+                    String g = element.select("div[class=l-pr-g]").text();
+                    String teacher = element.select("div[class=l-tn]").text();
+                    String place = element.select("div[class=l-p]").text();
+                    String time = listtime.get(i).select("th").text();
+                    lessonsLinkedList.add(new LessonData(les, url, num, gr, lec_pr + " " + g, ch_zn, teacher, place, time));
+                    i++;
+                }
             }
             return lessonsLinkedList;
         }

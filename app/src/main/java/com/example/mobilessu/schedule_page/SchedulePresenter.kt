@@ -9,8 +9,23 @@ import com.example.mobilessu.group_page.Groups_model
 class SchedulePresenter (var view: ScheduleActivity): ScheduleInterface.Presenter {
     var model: ScheduleInterface.Model = ScheduleModel()
     override fun getData(lessonData: LessonData):List<LessonData> {
-        val list = model.getLessons(lessonData)
+        var list = model.getLessons(lessonData)
         view.showLessons(list)
+//        lessonData.setnum(2)
+//        list = model.getLessons(lessonData)
+//        view.showLessons(list)
+//        lessonData.setnum(3)
+//        list = model.getLessons(lessonData)
+//        view.showLessons(list)
+//        lessonData.setnum(4)
+//        list = model.getLessons(lessonData)
+//        view.showLessons(list)
+//        lessonData.setnum(5)
+//        list = model.getLessons(lessonData)
+//        view.showLessons(list)
+//        lessonData.setnum(6)
+//        list = model.getLessons(lessonData)
+//        view.showLessons(list)
         return list
     }
 }

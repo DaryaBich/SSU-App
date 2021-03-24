@@ -18,7 +18,7 @@ import com.example.mobilessu.group_page.Groups_presenter
 import com.example.mobilessu.group_page.MyArrayAdapterGroup
 import com.example.mobilessu.session_page.SessionActivity
 import kotlinx.android.synthetic.main.activity_schedule.*
-import kotlinx.android.synthetic.main.activity_schedule.swipe_refresh
+//import kotlinx.android.synthetic.main.activity_schedule.swipe_refresh
 import kotlinx.android.synthetic.main.activitygroup.*
 import kotlinx.android.synthetic.main.activitymenu.view.*
 import kotlinx.android.synthetic.main.activitynews.*
@@ -33,25 +33,25 @@ import java.util.*
 
 class ScheduleActivity : AppCompatActivity() {
     var presenter: ScheduleInterface.Presenter = SchedulePresenter(this)
-    private lateinit var handler: Handler
-    private lateinit var runnable: Runnable
+    //private lateinit var handler: Handler
+    //private lateinit var runnable: Runnable
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_schedule)
-        handler = Handler()
-        swipe_refresh.setOnRefreshListener {
+        //handler = Handler()
+        //swipe_refresh.setOnRefreshListener {
             // Initialize a new Runnable
-            runnable = Runnable {
+            //runnable = Runnable {
                 // Hide swipe to refresh icon animation
-                swipe_refresh.isRefreshing = false
-            }
+                //swipe_refresh.isRefreshing = false
+           // }
             // Execute the task after specified time
-            handler.postDelayed(
-                runnable, 3000.toLong()
-            )
-        }
-        swipe_refresh.setColorSchemeResources(R.color.light_blue, R.color.middle_blue,R.color.deep_blue)
+           // handler.postDelayed(
+           //     runnable, 3000.toLong()
+           // )
+       // }
+        //swipe_refresh.setColorSchemeResources(R.color.light_blue, R.color.middle_blue,R.color.deep_blue)
 
         val arguments = intent.extras
         if (arguments != null) {
@@ -62,52 +62,62 @@ class ScheduleActivity : AppCompatActivity() {
             //button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
             val c = Calendar.getInstance()
             c.time = Date()
-            val dayOfWeek = c[Calendar.DAY_OF_WEEK]
-            when (dayOfWeek - 1) {
-                0 -> {
-                    dayofweek.text = "Понедельник"
-                    button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                    update_schedule(1);
-                }
-                1 -> {
-                    dayofweek.text = "Понедельник"
-                    button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                    update_schedule(1);
-                }
-                2 -> {
-                    dayofweek.text = "Вторник"
-                    button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                    update_schedule(2);
-                }
-                3 -> {
-                    dayofweek.text = "Среда"
-                    button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                    update_schedule(3);
-                }
-                4 -> {
-                    dayofweek.text = "Четверг"
-                    button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                    update_schedule(4);
-                }
-                5 -> {
-                    dayofweek.text = "Пятница"
-                    button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                    update_schedule(5);
-                }
-                6 -> {
-                    dayofweek.text = "Суббота"
-                    button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                    update_schedule(6);
-                }
-            }
+            //val dayOfWeek = c[Calendar.DAY_OF_WEEK]
+//            when (dayOfWeek - 1) {
+//                0 -> {
+//                    dayofweek.text = "Понедельник"
+//                    button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+//                    update_schedule(1);
+//                }
+//                1 -> {
+//                    dayofweek.text = "Понедельник"
+//                    button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+//                    update_schedule(1);
+//                }
+//                2 -> {
+//                    dayofweek.text = "Вторник"
+//                    button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+//                    update_schedule(2);
+//                }
+//                3 -> {
+//                    dayofweek.text = "Среда"
+//                    button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+//                    update_schedule(3);
+//                }
+//                4 -> {
+//                    dayofweek.text = "Четверг"
+//                    button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+//                    update_schedule(4);
+//                }
+//                5 -> {
+//                    dayofweek.text = "Пятница"
+//                    button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+//                    update_schedule(5);
+//                }
+//                6 -> {
+//                    dayofweek.text = "Суббота"
+//                    button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+//                    update_schedule(6);
+//                }
+//            }
         }
     }
 
     fun showLessons(list: List<LessonData>) {
         if (list.isNotEmpty()) {
-            val adapter = MyArrayAdapterLesson(this, R.layout.groupslistitems, list)
+            for( i in 1..6) {
+                val list1 = list.filter { a -> a.getnum() == i }
+                val adapter = MyArrayAdapterLesson(this, R.layout.groupslistitems, list1)
+                when(i){
+                    1 -> list_schedules1.adapter = adapter
+                    2 -> list_schedules2.adapter = adapter
+                    3 -> list_schedules3.adapter = adapter
+                    4 -> list_schedules4.adapter = adapter
+                    5 -> list_schedules5.adapter = adapter
+                    6 -> list_schedules6.adapter = adapter
+                }
+            }
             //  val adapter = MyArrayAdapterGroup(this, R.layout.listitem, list)
-            list_schedules.adapter = adapter
         } else {
             Toast.makeText(
                 applicationContext,

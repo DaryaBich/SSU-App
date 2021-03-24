@@ -90,7 +90,7 @@
         app:srcCompat="@drawable/arrow_left" />
 
     <HorizontalScrollView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="@id/blueStripe"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -108,7 +108,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@id/blueStripe"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_width="match_parent"
             tools:ignore="Suspicious0dp">
 
