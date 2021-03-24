@@ -49,9 +49,37 @@ class ScheduleActivity : AppCompatActivity() {
             //button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
             val c = Calendar.getInstance()
             c.time = Date()
-            //val dayOfWeek = c[Calendar.DAY_OF_WEEK]
-//            when (dayOfWeek - 1) {
-//                0 -> {
+            val dayOfWeek = c[Calendar.DAY_OF_WEEK]
+            when (dayOfWeek - 1) {
+                0 -> {
+                    scroll.smoothScrollTo(0, 0)
+                    button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                1 -> {
+                    scroll.smoothScrollTo(0, 0)
+                    button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                2 -> {
+                    scroll.smoothScrollTo(820, 0)
+                    button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                3 -> {
+                    scroll.smoothScrollTo(1730, 0)
+                    button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                4 -> {
+                    scroll.smoothScrollTo(2640, 0)
+                    button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                5 -> {
+                    scroll.smoothScrollTo(3550, 0)
+                    button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+                6 -> {
+                    scroll.smoothScrollTo(5000, 0)
+                    button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+                }
+
 //                    dayofweek.text = "Понедельник"
 //                    button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
 //                    update_schedule(1);
@@ -86,7 +114,7 @@ class ScheduleActivity : AppCompatActivity() {
 //                    button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
 //                    update_schedule(6);
 //                }
-//            }
+            }
         }
     }
 
@@ -217,14 +245,16 @@ class ScheduleActivity : AppCompatActivity() {
         //dayofweek.text = "Понедельник"
         openallbuttons(view)
         button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        scroll.smoothScrollTo(0, 0)
         //update_schedule(1)
-        overridePendingTransition(R.anim.quick_in, R.anim.quick_out)
+       // overridePendingTransition(R.anim.quick_in, R.anim.quick_out)
     }
 
     fun click2(view: View){
        // dayofweek.text = "Вторник"
         openallbuttons(view)
         button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        scroll.smoothScrollTo(820, 0)
         //update_schedule(2)
     }
 
@@ -232,6 +262,7 @@ class ScheduleActivity : AppCompatActivity() {
         //dayofweek.text = "Среда"
         openallbuttons(view)
         button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        scroll.smoothScrollTo(1730, 0)
         //update_schedule(3)
         return
     }
@@ -240,6 +271,7 @@ class ScheduleActivity : AppCompatActivity() {
         //dayofweek.text = "Четверг"
         openallbuttons(view)
         button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        scroll.smoothScrollTo(2640, 0)
         //update_schedule(4)
     }
 
@@ -247,6 +279,7 @@ class ScheduleActivity : AppCompatActivity() {
         //dayofweek.text = "Пятница"
         openallbuttons(view)
         button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        scroll.smoothScrollTo(3550, 0)
         //update_schedule(5)
     }
 
@@ -254,6 +287,7 @@ class ScheduleActivity : AppCompatActivity() {
         //dayofweek.text = "Суббота"
         openallbuttons(view)
         button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
+        scroll.smoothScrollTo(5000, 0)
         //update_schedule(6)
     }
 }
