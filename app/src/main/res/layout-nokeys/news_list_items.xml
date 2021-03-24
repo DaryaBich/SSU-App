@@ -41,6 +41,3 @@
             android:textSize="22sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--    android:layout_width="354dp"-->
-<!--    android:layout_height="217dp"-->

@@ -11,5 +11,4 @@
     android:textSize="18sp"
     android:textStyle="normal|bold"
     android:gravity="start|center_vertical">
-
 </TextView>
