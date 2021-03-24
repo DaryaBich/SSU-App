@@ -9,20 +9,20 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
 import com.example.mobilessu.entities.ScheduleData
 import com.example.mobilessu.schedule_page.ScheduleActivity
-import kotlinx.android.synthetic.main.activitygroup.*
+import kotlinx.android.synthetic.main.activity_group.*
 import java.io.BufferedWriter
 import java.io.FileNotFoundException
 import java.io.IOException
 import java.io.OutputStreamWriter
 
 
-class Activity_group : AppCompatActivity() {
-    var presenter: Group_interface.Presenter = Groups_presenter(this)
+class ActivityGroup : AppCompatActivity() {
+    var presenter: GroupInterface.Presenter = GroupsPresenter(this)
     //val arguments = intent.extras
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activitygroup)
+        setContentView(R.layout.activity_group)
         val arguments = intent.extras
         if (arguments != null) {
             val faculty = arguments["faculty"].toString()
@@ -81,7 +81,7 @@ class Activity_group : AppCompatActivity() {
 
     fun showGroups(list: List<String>) {
         if (list.isNotEmpty()) {
-          val adapter = MyArrayAdapterGroup(this, R.layout.groupslistitems, list)
+          val adapter = MyArrayAdapterGroup(this, R.layout.groups_list_items, list)
           //  val adapter = MyArrayAdapterGroup(this, R.layout.listitem, list)
             list_group.adapter = adapter
         } else {

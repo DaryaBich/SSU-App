@@ -7,21 +7,20 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
 import com.example.mobilessu.schedule_page.ScheduleActivity
-import com.example.mobilessu.teacher_or_student_page.Activity_teacher_or_student
-import com.liuguangqiang.swipeback.SwipeBackActivity
+import com.example.mobilessu.teacher_or_student_page.ActivityTeacherOrStudent
 import java.io.BufferedReader
 import java.io.FileNotFoundException
 import java.io.IOException
 import java.io.InputStreamReader
 
-class Activity_menu : AppCompatActivity() {
+class ActivityMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activitymenu)
+        setContentView(R.layout.activity_menu)
     }
 
     fun click_schedule(view: View){
-        val randomIntent = Intent(this, Activity_teacher_or_student::class.java)
+        val randomIntent = Intent(this, ActivityTeacherOrStudent::class.java)
         startActivity(randomIntent)
         overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }

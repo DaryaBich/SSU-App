@@ -2,8 +2,9 @@ package com.example.mobilessu.group_page
 
 import com.example.mobilessu.entities.ScheduleData
 
-class Groups_presenter(var view: Activity_group): Group_interface.Presenter {
-    var model: Group_interface.Model = Groups_model()
+class GroupsPresenter(var view: ActivityGroup): GroupInterface.Presenter {
+    var model: GroupInterface.Model =
+        GroupsModel()
 
     override fun getData(scheduleData:ScheduleData):List<String> {
         val list = model.getGroups(scheduleData)

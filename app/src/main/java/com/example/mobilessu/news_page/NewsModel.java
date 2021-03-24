@@ -1,4 +1,4 @@
-package com.example.mobilessu.newspage;
+package com.example.mobilessu.news_page;
 import android.os.AsyncTask;
 import android.util.Log;
 import com.example.mobilessu.entities.News;

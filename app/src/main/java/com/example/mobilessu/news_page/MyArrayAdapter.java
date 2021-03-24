@@ -1,13 +1,12 @@
-package com.example.mobilessu.newspage;
+package com.example.mobilessu.news_page;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import com.example.mobilessu.R;
 import com.example.mobilessu.entities.News;
 import java.util.List;
@@ -28,7 +27,7 @@ public class MyArrayAdapter extends ArrayAdapter<News> {
                         ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater
                 .from(context);
-        View view = inflater.inflate(R.layout.newslistitems,
+        View view = inflater.inflate(R.layout.news_list_items,
                 null);
         TextView textViewDate = view
                 .findViewById(R.id.itemDate);

@@ -6,13 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.mobilessu.R
-import com.example.mobilessu.entities.LessonData
 import com.example.mobilessu.entities.SessionData
-import com.example.mobilessu.group_page.Activity_group
-import com.example.mobilessu.schedule_page.MyArrayAdapterLesson
 import com.example.mobilessu.schedule_page.ScheduleActivity
-import com.example.mobilessu.schedule_page.ScheduleInterface
-import com.example.mobilessu.schedule_page.SchedulePresenter
 import kotlinx.android.synthetic.main.activity_schedule.*
 
 class SessionActivity : AppCompatActivity() {
@@ -31,7 +26,7 @@ class SessionActivity : AppCompatActivity() {
 
     fun showSessions(list: List<SessionData>) {
         if (list.isNotEmpty()) {
-            val adapter = MyArrayAdapterSession(this, R.layout.groupslistitems, list)
+            val adapter = MyArrayAdapterSession(this, R.layout.groups_list_items, list)
             //  val adapter = MyArrayAdapterGroup(this, R.layout.listitem, list)
             list_sessions.adapter = adapter
         } else {

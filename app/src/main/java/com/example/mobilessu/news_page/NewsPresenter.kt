@@ -1,4 +1,4 @@
-package com.example.mobilessu.newspage
+package com.example.mobilessu.news_page
 class NewsPresenter(var view: NewsInterface.View) :
     NewsInterface.Presenter {
     var model: NewsInterface.Model =

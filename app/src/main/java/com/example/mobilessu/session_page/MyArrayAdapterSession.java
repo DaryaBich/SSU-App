@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.mobilessu.R;
-import com.example.mobilessu.entities.LessonData;
 import com.example.mobilessu.entities.SessionData;
 
 import java.util.List;
@@ -31,7 +30,7 @@ public class MyArrayAdapterSession extends ArrayAdapter<SessionData> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.sessionslistitems,null);
+        View view = inflater.inflate(R.layout.sessions_list_items,null);
         //  View view = inflater.inflate(R.layout.listitem,null);
         TextView Textname = view.findViewById(R.id.item_name);
         TextView Textdate = view.findViewById(R.id.item_date);

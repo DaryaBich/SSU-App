@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.example.mobilessu.entities.ScheduleData;
 
-import org.jetbrains.annotations.NotNull;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -16,7 +15,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class Groups_model implements Group_interface.Model {
+public class GroupsModel implements GroupInterface.Model {
     private MyAsyncTask myAsyncTask;
     // Функция парсинга новостей с сайта www.sgu.ru
 

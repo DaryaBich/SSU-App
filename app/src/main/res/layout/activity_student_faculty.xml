@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E7FBFF"
-    tools:context=".teacher_or_student_page.Activity_teacher_or_student">
+    tools:context=".student_faculty_page.ActivityStudentFaculty">
 
     <View
         android:id="@+id/topWhiteBox"
@@ -89,42 +89,85 @@
         app:layout_constraintVertical_bias="0.450"
         app:srcCompat="@drawable/arrow_left" />
 
-    <Button
-        android:id="@+id/button_student"
-        android:onClick="click_schedule_students"
+    <HorizontalScrollView
         android:layout_width="wrap_content"
-        android:layout_height="65dp"
-        android:background="@drawable/btn_rounded_corner"
-        android:text="Расписание студентов"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/blueStripe"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23" />
+        tools:ignore="MissingConstraints">
 
-    <Button
-        android:id="@+id/button_teacher"
-        android:onClick="click_schedule_teacher"
-        android:layout_width="wrap_content"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
-        android:layout_height="65dp"
-        android:background="@drawable/btn_rounded_corner"
-        android:text="Расписание преподавателей"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.356" />
+        <LinearLayout
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/blueStripe"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/blueStripe"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            tools:ignore="Suspicious0dp">
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Факультеты и институты"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/listfaculty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:divider="@color/cardview_light_background"
+                app:layout_constraintLeft_toLeftOf="@id/txt1"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/txt1"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/blueStripe"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            tools:ignore="Suspicious0dp">
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:text="Колледжи"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@id/listfaculty"
+                app:layout_constraintTop_toBottomOf="@id/listfaculty"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <ListView
+                android:id="@+id/listcolledge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:divider="@color/cardview_light_background"
+                app:layout_constraintLeft_toLeftOf="@id/txt2"
+                app:layout_constraintTop_toBottomOf="@id/txt2"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

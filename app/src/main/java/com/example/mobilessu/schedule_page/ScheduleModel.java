@@ -2,20 +2,13 @@ package com.example.mobilessu.schedule_page;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.TextView;
 
-import com.example.mobilessu.R;
 import com.example.mobilessu.entities.LessonData;
-import com.example.mobilessu.entities.ScheduleData;
-import com.example.mobilessu.group_page.Group_interface;
-import com.example.mobilessu.group_page.Groups_model;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.w3c.dom.NodeList;
 
 import java.io.IOException;
 import java.util.LinkedList;

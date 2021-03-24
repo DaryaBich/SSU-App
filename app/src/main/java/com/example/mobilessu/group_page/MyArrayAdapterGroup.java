@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.mobilessu.R;
-import com.example.mobilessu.entities.ScheduleData;
 
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class MyArrayAdapterGroup extends ArrayAdapter<String> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.groupslistitems,null);
+        View view = inflater.inflate(R.layout.groups_list_items,null);
       //  View view = inflater.inflate(R.layout.listitem,null);
         TextView textViewGroup = view.findViewById(R.id.itemGroup);
        // TextView textViewTitle = view.findViewById(R.id.itemTitle);

@@ -7,13 +7,13 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.mobilessu.R
-import com.example.mobilessu.choose_course.Activity_course
-import kotlinx.android.synthetic.main.activitydayevening.*
+import com.example.mobilessu.choose_course.ActivityСourse
+import kotlinx.android.synthetic.main.activity_day_evening.*
 
-class Activity_day_evening : AppCompatActivity() {
+class ActivityDayEvening : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activitydayevening)
+        setContentView(R.layout.activity_day_evening)
         val arguments = intent.extras
         if (arguments != null) {
             val faculty = arguments["faculty"].toString()
@@ -23,13 +23,13 @@ class Activity_day_evening : AppCompatActivity() {
             demodata.add("Вечерняя")
             demodata.add("Заочная")
 
-            val adapter = ArrayAdapter<String>(this, R.layout.listitem, demodata)
+            val adapter = ArrayAdapter<String>(this, R.layout.list_items, demodata)
 
             list_day_evening.adapter = adapter
             list_day_evening.setOnItemClickListener { adapterView, view, i, l ->
                 //Toast.makeText(this, (view as TextView).text, Toast.LENGTH_LONG).show()
                 val element = (view as TextView).text // получаем текст нажатого элемента
-                val randomIntent = Intent(this, Activity_course::class.java)
+                val randomIntent = Intent(this, ActivityСourse::class.java)
                 randomIntent.putExtra("faculty", faculty)
                 when (element) {
                     "Дневная" ->

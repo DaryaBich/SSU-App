@@ -7,12 +7,12 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
-import com.example.mobilessu.choose_course.Activity_course
-import com.example.mobilessu.choose_day_evening.Activity_day_evening
-import kotlinx.android.synthetic.main.activitystudentfaculty.*
+import com.example.mobilessu.choose_course.ActivityСourse
+import com.example.mobilessu.choose_day_evening.ActivityDayEvening
+import kotlinx.android.synthetic.main.activity_student_faculty.*
 
 
-class Activity_student_faculty : AppCompatActivity() {
+class ActivityStudentFaculty : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,7 +28,7 @@ class Activity_student_faculty : AppCompatActivity() {
        // }
 //=======
 
-        setContentView(R.layout.activitystudentfaculty)
+        setContentView(R.layout.activity_student_faculty)
             // val demodata = MutableList(2, {"Биологический факультет"; "Географический факультет"})
         val demodata = mutableListOf<String>()
         val demodata1 = mutableListOf<String>()
@@ -58,8 +58,8 @@ class Activity_student_faculty : AppCompatActivity() {
         demodata1.add("Геологический колледж")
         demodata1.add("Колледж радиоэлектроники им. П.Н. Яблочкова")
 
-        val adapter = ArrayAdapter<String>(this, R.layout.listitem, demodata)
-        val adapter1 = ArrayAdapter<String>(this, R.layout.listitem, demodata1)
+        val adapter = ArrayAdapter<String>(this, R.layout.list_items, demodata)
+        val adapter1 = ArrayAdapter<String>(this, R.layout.list_items, demodata1)
         listfaculty.adapter = adapter
         listcolledge.adapter = adapter1
 
@@ -81,7 +81,7 @@ class Activity_student_faculty : AppCompatActivity() {
 
 
             //click_faculty(view)
-            val randomIntent = Intent(this, Activity_day_evening::class.java)
+            val randomIntent = Intent(this, ActivityDayEvening::class.java)
             when(element){
                 "Биологический факультет" ->
                     randomIntent.putExtra("faculty", "/bf") //передали факультет
@@ -138,7 +138,7 @@ class Activity_student_faculty : AppCompatActivity() {
             // val document = Jsoup.connect("https://www.sgu.ru/schedule").get()
             // val list_faculty = document.select("div[class*=panes_item panes_item__type_group]")
             //click_faculty(view)
-            val randomIntent = Intent(this, Activity_course::class.java)
+            val randomIntent = Intent(this, ActivityСourse::class.java)
             when(element){
                 "Геологический колледж" ->
                     randomIntent.putExtra("faculty", "/kgl") //передали факультет

@@ -6,15 +6,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.example.mobilessu.group_page.Activity_group
+import com.example.mobilessu.group_page.ActivityGroup
 import com.example.mobilessu.R
-import com.example.mobilessu.group_page.Groups_model
-import kotlinx.android.synthetic.main.activitycourse.*
+import kotlinx.android.synthetic.main.activity_course.*
 
-class Activity_course : AppCompatActivity() {
+class ActivityСourse : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activitycourse)
+        setContentView(R.layout.activity_course)
         val arguments = intent.extras
         if (arguments != null) {
             val faculty = arguments["faculty"].toString()
@@ -27,14 +26,14 @@ class Activity_course : AppCompatActivity() {
             demodata.add("4 курс")
             demodata.add("5 курс")
 
-            val adapter = ArrayAdapter<String>(this, R.layout.listitem, demodata)
+            val adapter = ArrayAdapter<String>(this, R.layout.list_items, demodata)
 
             listcourse.adapter = adapter
             listcourse.setOnItemClickListener { adapterView, view, i, l ->
                 //Toast.makeText(this, (view as TextView).text, Toast.LENGTH_LONG).show()
                 val element = (view as TextView).text // получаем текст нажатого элемента
                 //val randomIntent = Intent(this, Activity_group::class.java)
-                val randomIntent1 = Intent(this, Activity_group::class.java)
+                val randomIntent1 = Intent(this, ActivityGroup::class.java)
                // val randomIntent = Intent(this, Groups_model::class.java)
                 randomIntent1.putExtra("faculty", faculty)
                 randomIntent1.putExtra("dayevening", dayevening)

@@ -6,13 +6,13 @@ import android.view.View
 import android.widget.Toast
 import com.example.mobilessu.R
 import com.example.mobilessu.entities.Teacher
-import kotlinx.android.synthetic.main.activityfindteacher.*
+import kotlinx.android.synthetic.main.activity_find_teacher.*
 
 class ActivityFindTeacher :  AppCompatActivity() , TeacherInterface.View{
     var presenter: TeacherInterface.Presenter = TeacherPresenter(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activityfindteacher)
+        setContentView(R.layout.activity_find_teacher)
         button_teacher.setOnClickListener {
             if(teacher_name.text.toString()!=""){
                 presenter.searchInputTeachers(teacher_name.text.toString())
@@ -34,7 +34,7 @@ class ActivityFindTeacher :  AppCompatActivity() , TeacherInterface.View{
 
     override fun showTeachers(list: List<Teacher>) {
         if (list.size > 0) {
-            val adapter = TeacherArrayAdapter(this,R.layout.newslistitems, list)
+            val adapter = TeacherArrayAdapter(this,R.layout.news_list_items, list)
             teacher_list.adapter = adapter
         } else {
             Toast.makeText(

@@ -3,31 +3,18 @@ package com.example.mobilessu.schedule_page
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
-import com.example.mobilessu.choose_course.Activity_course
 import com.example.mobilessu.entities.LessonData
-import com.example.mobilessu.entities.ScheduleData
-import com.example.mobilessu.group_page.Activity_group
-import com.example.mobilessu.group_page.Group_interface
-import com.example.mobilessu.group_page.Groups_presenter
-import com.example.mobilessu.group_page.MyArrayAdapterGroup
 import com.example.mobilessu.session_page.SessionActivity
 import kotlinx.android.synthetic.main.activity_schedule.*
 //import kotlinx.android.synthetic.main.activity_schedule.swipe_refresh
-import kotlinx.android.synthetic.main.activitygroup.*
-import kotlinx.android.synthetic.main.activitymenu.view.*
-import kotlinx.android.synthetic.main.activitynews.*
-import kotlinx.android.synthetic.main.activitystudentfaculty.*
-import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
-import org.jsoup.select.Elements
-import java.io.IOException
-import java.security.AccessController.getContext
+import kotlinx.android.synthetic.main.activity_group.*
+import kotlinx.android.synthetic.main.activity_menu.view.*
+import kotlinx.android.synthetic.main.activity_news.*
+import kotlinx.android.synthetic.main.activity_student_faculty.*
 import java.util.*
 
 
@@ -107,7 +94,7 @@ class ScheduleActivity : AppCompatActivity() {
         if (list.isNotEmpty()) {
             for( i in 1..6) {
                 val list1 = list.filter { a -> a.getnum() == i }
-                val adapter = MyArrayAdapterLesson(this, R.layout.groupslistitems, list1)
+                val adapter = MyArrayAdapterLesson(this, R.layout.groups_list_items, list1)
                 when(i){
                     1 -> list_schedules1.adapter = adapter
                     2 -> list_schedules2.adapter = adapter
@@ -147,16 +134,22 @@ class ScheduleActivity : AppCompatActivity() {
 //        }
 //    }
 
-    fun update_schedule(num: Int){
-        val arguments = intent.extras
-        var lessonData = LessonData("", "", num, "","", "", "", "", "")
-        if (arguments != null) {
-            val url = arguments["url"].toString()
-            val gr = url.substringAfterLast('/')
-            lessonData = LessonData("", url, num, gr,"", "", "", "", "")
-        }
-        var list = presenter.getData(lessonData) // получение пар
-    }
+
+
+
+//    fun update_schedule(num: Int){
+//        val arguments = intent.extras
+//        var lessonData = LessonData("", "", num, "","", "", "", "", "")
+//        if (arguments != null) {
+//            val url = arguments["url"].toString()
+//            val gr = url.substringAfterLast('/')
+//            lessonData = LessonData("", url, num, gr,"", "", "", "", "")
+//        }
+//        var list = presenter.getData(lessonData) // получение пар
+//    }
+
+
+
 
 //    fun lesson_on(view: View) {
 //        button_day1.visibility = View.VISIBLE
@@ -221,46 +214,46 @@ class ScheduleActivity : AppCompatActivity() {
 //    }
 
     fun click1(view: View){
-        dayofweek.text = "Понедельник"
+        //dayofweek.text = "Понедельник"
         openallbuttons(view)
         button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        update_schedule(1)
+        //update_schedule(1)
         overridePendingTransition(R.anim.quick_in, R.anim.quick_out)
     }
 
     fun click2(view: View){
-        dayofweek.text = "Вторник"
+       // dayofweek.text = "Вторник"
         openallbuttons(view)
         button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        update_schedule(2)
+        //update_schedule(2)
     }
 
     fun click3(view: View){
-        dayofweek.text = "Среда"
+        //dayofweek.text = "Среда"
         openallbuttons(view)
         button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        update_schedule(3)
+        //update_schedule(3)
         return
     }
 
     fun click4(view: View){
-        dayofweek.text = "Четверг"
+        //dayofweek.text = "Четверг"
         openallbuttons(view)
         button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        update_schedule(4)
+        //update_schedule(4)
     }
 
     fun click5(view: View){
-        dayofweek.text = "Пятница"
+        //dayofweek.text = "Пятница"
         openallbuttons(view)
         button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        update_schedule(5)
+        //update_schedule(5)
     }
 
     fun click6(view: View){
-        dayofweek.text = "Суббота"
+        //dayofweek.text = "Суббота"
         openallbuttons(view)
         button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        update_schedule(6)
+        //update_schedule(6)
     }
 }

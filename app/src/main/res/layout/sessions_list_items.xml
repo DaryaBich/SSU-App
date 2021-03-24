@@ -44,6 +44,7 @@
                     android:layout_weight="1"
                     android:maxEms="5"
                     android:minEms="5"
+
                     android:layout_marginTop="10dp"
                     android:gravity="left"
                     android:text="TextView"

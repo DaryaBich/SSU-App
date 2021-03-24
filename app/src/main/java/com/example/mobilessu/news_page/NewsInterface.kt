@@ -1,4 +1,4 @@
-package com.example.mobilessu.newspage
+package com.example.mobilessu.news_page
 import com.example.mobilessu.entities.News
 import java.io.IOException
 import java.util.concurrent.ExecutionException

@@ -1,18 +1,16 @@
-package com.example.mobilessu.newspage
+package com.example.mobilessu.news_page
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.view.MotionEvent
 import android.view.View
-import android.view.View.OnTouchListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
 import com.example.mobilessu.entities.News
-import com.example.mobilessu.menu_page.Activity_menu
-import kotlinx.android.synthetic.main.activitynews.*
+import com.example.mobilessu.menu_page.ActivityMenu
+import kotlinx.android.synthetic.main.activity_news.*
 
 
 class ActivityNews : NewsInterface.View,AppCompatActivity(){
@@ -28,7 +26,7 @@ class ActivityNews : NewsInterface.View,AppCompatActivity(){
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activitynews)
+        setContentView(R.layout.activity_news)
         presenter.getData()
         handler = Handler()
         swipe_refresh.setOnRefreshListener {
@@ -112,7 +110,7 @@ class ActivityNews : NewsInterface.View,AppCompatActivity(){
     override fun showNews(list: List<News>) {
         if (list.size > 0) {
             val adapter = MyArrayAdapter(this,
-                R.layout.newslistitems, list)
+                R.layout.news_list_items, list)
             list_of_news.adapter = adapter
         } else {
             Toast.makeText(
@@ -123,7 +121,7 @@ class ActivityNews : NewsInterface.View,AppCompatActivity(){
         }
     }
     fun clickmenu(view: View) {
-        val randomIntent = Intent(this, Activity_menu::class.java)
+        val randomIntent = Intent(this, ActivityMenu::class.java)
         startActivity(randomIntent)
         overridePendingTransition(R.anim.menu_in, R.anim.menu_out)
     }
