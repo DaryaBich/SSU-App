@@ -71,14 +71,19 @@ public class ScheduleModel implements ScheduleInterface.Model{
 //                for (int i = 1; i < 9; i++) {
 //                    String les = element.select("div[class*=l-dn]").text();
 //                }
-                    String les = element.select("div[class=l-dn]").text();
-                    String lec_pr = element.select("div[class=l-pr-t]").text();
-                    String ch_zn = element.select("div[class=l-pr-r]").text();
-                    String g = element.select("div[class=l-pr-g]").text();
-                    String teacher = element.select("div[class=l-tn]").text();
-                    String place = element.select("div[class=l-p]").text();
+                    Integer col = element.select("div[class=l-dn]").size();
                     String time = listtime.get(i).select("th").text();
-                    lessonsLinkedList.add(new LessonData(les, url, num, gr, lec_pr + " " + g, ch_zn, teacher, place, time));
+                    if (col == 0)
+                        lessonsLinkedList.add(new LessonData("", url, num, gr, "", "", "", "", time));
+                    for (Integer c = 0; c < col; c++) {
+                        String les = element.select("div[class=l-dn]").get(c).text();
+                        String lec_pr = element.select("div[class=l-pr-t]").get(c).text();
+                        String ch_zn = element.select("div[class=l-pr-r]").get(c).text();
+                        String g = element.select("div[class=l-pr-g]").get(c).text();
+                        String teacher = element.select("div[class=l-tn]").get(c).text();
+                        String place = element.select("div[class=l-p]").get(c).text();
+                        lessonsLinkedList.add(new LessonData(les, url, num, gr, lec_pr + " " + g, ch_zn, teacher, place, time));
+                    }
                     i++;
                 }
             }
