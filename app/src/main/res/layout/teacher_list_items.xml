@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="366dp"
-        android:layout_height="79dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/btn_rounded_corner"
         android:orientation="vertical"
@@ -22,10 +22,13 @@
 
         <TextView
             android:id="@+id/itemTeacher"
-            android:layout_width="328dp"
-            android:layout_height="52dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minEms="13"
+            android:maxEms="13"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:text="TextView"
             android:textColor="#0B0808"
             android:textSize="20sp" />
