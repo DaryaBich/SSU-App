@@ -93,6 +93,12 @@ class ScheduleActivity : AppCompatActivity() {
             // закрываем поток
             bw.close()
             //Log.d(LOG_TAG, "Файл записан")
+            Toast.makeText(
+                applicationContext,
+                "Теперь вы можете посмотреть своё расписание по кнопке меню \"Моё расписание\"",
+                Toast.LENGTH_LONG
+            ).show()
+            button_save_schedule.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
         } catch (e: FileNotFoundException) {
             e.printStackTrace()
         } catch (e: IOException) {

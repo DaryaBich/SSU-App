@@ -30,7 +30,7 @@ class ActivityMenu : AppCompatActivity() {
         overridePendingTransition(R.anim.news_in, R.anim.news_out);
 
     }
-    fun click_personal_account(view: View) {
+    fun click_my_schedule(view: View) {
         var sumstr: String = ""
         try {
             // открываем поток для чтения
@@ -48,7 +48,7 @@ class ActivityMenu : AppCompatActivity() {
             val randomIntent = Intent(this, ScheduleActivity::class.java)
             randomIntent.putExtra("url", sumstr)
             startActivity(randomIntent)
-            overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
+            overridePendingTransition(R.anim.fide_in, R.anim.fide_out)
         } catch (e: FileNotFoundException) {
             //e.printStackTrace()
             Toast.makeText(
