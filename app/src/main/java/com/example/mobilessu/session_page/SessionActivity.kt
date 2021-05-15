@@ -9,6 +9,7 @@ import com.example.mobilessu.R
 import com.example.mobilessu.entities.SessionData
 import com.example.mobilessu.schedule_page.ScheduleActivity
 import kotlinx.android.synthetic.main.activity_schedule.*
+import kotlinx.android.synthetic.main.activity_session.*
 
 class SessionActivity : AppCompatActivity() {
     var presenter: SessionInterface.Presenter = SessionPresenter(this)
@@ -20,7 +21,6 @@ class SessionActivity : AppCompatActivity() {
             val url = arguments["url"].toString()
             var sessionData = SessionData("", url, "", "", "", "")
             var list = presenter.getData(sessionData) // получение аттестаций
-
         }
     }
 

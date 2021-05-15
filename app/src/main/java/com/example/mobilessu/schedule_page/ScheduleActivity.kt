@@ -1,6 +1,7 @@
 package com.example.mobilessu.schedule_page
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -15,6 +16,10 @@ import kotlinx.android.synthetic.main.activity_group.*
 import kotlinx.android.synthetic.main.activity_menu.view.*
 import kotlinx.android.synthetic.main.activity_news.*
 import kotlinx.android.synthetic.main.activity_student_faculty.*
+import java.io.BufferedWriter
+import java.io.FileNotFoundException
+import java.io.IOException
+import java.io.OutputStreamWriter
 import java.util.*
 
 
@@ -30,39 +35,6 @@ class ScheduleActivity : AppCompatActivity() {
             val gr = url.substringAfterLast('/')
             var lessonData = LessonData("", url, 1, gr, "", "", "", "", "")
             var list = presenter.getData(lessonData) // получение пар
-            val c = Calendar.getInstance()
-            c.time = Date()
-            val dayOfWeek = c[Calendar.DAY_OF_WEEK]
-            when (dayOfWeek - 1) {
-                0 -> {
-                    scroll.smoothScrollTo(0, 0)
-                    button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                }
-                1 -> {
-                    scroll.smoothScrollTo(0, 0)
-                    button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                }
-                2 -> {
-                    scroll.smoothScrollTo(820, 0)
-                    button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                }
-                3 -> {
-                    scroll.smoothScrollTo(1730, 0)
-                    button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                }
-                4 -> {
-                    scroll.smoothScrollTo(2640, 0)
-                    button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                }
-                5 -> {
-                    scroll.smoothScrollTo(3550, 0)
-                    button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                }
-                6 -> {
-                    scroll.smoothScrollTo(5000, 0)
-                    button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-                }
-            }
         }
     }
 
@@ -87,7 +59,6 @@ class ScheduleActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
         }
-
     }
 
     fun click_back(view: View){
@@ -107,49 +78,25 @@ class ScheduleActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.quick_in, R.anim.quick_out)
     }
 
-    fun openallbuttons(view: View) {
-        button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
-        button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
-        button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
-        button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
-        button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
-        button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week)
-    }
-
-    fun click1(view: View){
-        openallbuttons(view)
-        button_day1.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        scroll.smoothScrollTo(0, 0)
-    }
-
-    fun click2(view: View){
-        openallbuttons(view)
-        button_day2.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        scroll.smoothScrollTo(820, 0)
-    }
-
-    fun click3(view: View){
-        openallbuttons(view)
-        button_day3.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        scroll.smoothScrollTo(1730, 0)
-        return
-    }
-
-    fun click4(view: View){
-        openallbuttons(view)
-        button_day4.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        scroll.smoothScrollTo(2640, 0)
-    }
-
-    fun click5(view: View){
-        openallbuttons(view)
-        button_day5.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        scroll.smoothScrollTo(3550, 0)
-    }
-
-    fun click6(view: View){
-        openallbuttons(view)
-        button_day6.setBackgroundResource(R.drawable.btn_rounded_corner_for_day_of_week_grey)
-        scroll.smoothScrollTo(5000, 0)
+    fun click_save_schedule(view: View){
+        val arguments = intent.extras
+        val url = arguments?.get("url").toString()
+        try {
+            // отрываем поток для записи
+            val bw = BufferedWriter(
+                OutputStreamWriter(
+                    openFileOutput("file", Context.MODE_PRIVATE)
+                )
+            )
+            // пишем данные
+            bw.write(url)
+            // закрываем поток
+            bw.close()
+            //Log.d(LOG_TAG, "Файл записан")
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
     }
 }

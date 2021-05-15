@@ -32,29 +32,27 @@ class ActivityGroup : AppCompatActivity() {
             val list = presenter.getData(scheduleData) // получение групп
 
             list_group.setOnItemClickListener { adapterView, view, i, l ->
-                //Toast.makeText(this, (view as TextView).text, Toast.LENGTH_LONG).show()
-                //val element = (view as TextView).text.toString() // получаем текст нажатого элемента
                 val randomIntent = Intent(this, ScheduleActivity::class.java)
                 val group = list[i]
                 val url = "https://www.sgu.ru/schedule$faculty$dayevening/$group"
                 randomIntent.putExtra("url", url)
-                try {
-                    // отрываем поток для записи
-                    val bw = BufferedWriter(
-                        OutputStreamWriter(
-                            openFileOutput("file", Context.MODE_PRIVATE)
-                        )
-                    )
-                    // пишем данные
-                    bw.write(url)
-                    // закрываем поток
-                    bw.close()
-                    //Log.d(LOG_TAG, "Файл записан")
-                } catch (e: FileNotFoundException) {
-                    e.printStackTrace()
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
+//                try {
+//                    // отрываем поток для записи
+//                    val bw = BufferedWriter(
+//                        OutputStreamWriter(
+//                            openFileOutput("file", Context.MODE_PRIVATE)
+//                        )
+//                    )
+//                    // пишем данные
+//                    bw.write(url)
+//                    // закрываем поток
+//                    bw.close()
+//                    //Log.d(LOG_TAG, "Файл записан")
+//                } catch (e: FileNotFoundException) {
+//                    e.printStackTrace()
+//                } catch (e: IOException) {
+//                    e.printStackTrace()
+//                }
 
                 //randomIntent.putExtra("faculty", faculty)
                 //randomIntent.putExtra("dayevening", dayevening)

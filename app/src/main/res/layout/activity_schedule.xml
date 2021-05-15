@@ -136,85 +136,42 @@
             tools:layout_editor_absoluteY="109dp" />
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/list_sessions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lin1"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <RelativeLayout
-        android:id="@+id/dayweek"
+    <LinearLayout
+        android:id="@+id/lin2"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lin1"
         app:layout_constraintVertical_bias="0.0">
 
         <Button
-            android:id="@+id/button_day1"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week"
-            android:onClick="click1" />
-
-        <Button
-            android:id="@+id/button_day2"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_toRightOf="@+id/button_day1"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week"
-            android:onClick="click2" />
-
-        <Button
-            android:id="@+id/button_day3"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_toRightOf="@+id/button_day2"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week"
-            android:onClick="click3" />
-
-        <Button
-            android:id="@+id/button_day4"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_toLeftOf="@id/button_day5"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week"
-            android:onClick="click4" />
-
-        <Button
-            android:id="@+id/button_day5"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_toLeftOf="@id/button_day6"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week"
-            android:onClick="click5" />
-
-        <Button
-            android:id="@+id/button_day6"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/btn_rounded_corner_for_day_of_week"
-            android:onClick="click6" />
-    </RelativeLayout>
+            android:id="@+id/button_save_schedule"
+            android:layout_width="192dp"
+            android:layout_height="47dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_rounded_corner"
+            android:gravity="center"
+            android:onClick="click_save_schedule"
+            android:text="Это моё расписание!"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textIsSelectable="false"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            tools:layout_editor_absoluteX="208dp"
+            tools:layout_editor_absoluteY="109dp" />
+    </LinearLayout>
 
     <HorizontalScrollView
         android:id="@+id/scroll"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dayweek"
+        app:layout_constraintTop_toBottomOf="@id/lin2"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -222,7 +179,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dayweek">
+            app:layout_constraintTop_toBottomOf="@id/lin2">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -230,7 +187,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/dayweek"
+                app:layout_constraintTop_toBottomOf="@id/lin2"
                 tools:ignore="Suspicious0dp">
 
                 <TextView
@@ -261,7 +218,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="@id/dayweek"
+                app:layout_constraintTop_toTopOf="@id/lin2"
                 tools:ignore="Suspicious0dp">
 
                 <TextView
@@ -293,7 +250,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="@id/dayweek"
+                app:layout_constraintTop_toTopOf="@id/lin2"
                 tools:ignore="Suspicious0dp">
 
                 <TextView
@@ -325,7 +282,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="@id/dayweek"
+                app:layout_constraintTop_toTopOf="@id/lin2"
                 tools:ignore="Suspicious0dp">
 
                 <TextView
@@ -357,7 +314,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="@id/dayweek"
+                app:layout_constraintTop_toTopOf="@id/lin2"
                 tools:ignore="Suspicious0dp">
 
                 <TextView
@@ -389,7 +346,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="@id/dayweek"
+                app:layout_constraintTop_toTopOf="@id/lin2"
                 tools:ignore="Suspicious0dp">
 
                 <TextView
