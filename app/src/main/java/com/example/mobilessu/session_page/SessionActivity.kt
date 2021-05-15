@@ -27,7 +27,6 @@ class SessionActivity : AppCompatActivity() {
     fun showSessions(list: List<SessionData>) {
         if (list.isNotEmpty()) {
             val adapter = MyArrayAdapterSession(this, R.layout.groups_list_items, list)
-            //  val adapter = MyArrayAdapterGroup(this, R.layout.listitem, list)
             list_sessions.adapter = adapter
         } else {
             Toast.makeText(
@@ -40,28 +39,19 @@ class SessionActivity : AppCompatActivity() {
     }
 
     fun click_back(view: View){
-        //val randomIntent = Intent(this, Activity_group::class.java)
-        //startActivity(randomIntent)
         finish()
         overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }
 
     fun click_sessions(view: View) {
-//        button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
-//        button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner)
-//        lesson_on(view)
-        ///parentActivityIntent
     }
 
     fun click_lessons(view: View) {
-        //button_lessons.setBackgroundResource(R.drawable.btn_rounded_corner)
-        //button_sessions.setBackgroundResource(R.drawable.btn_rounded_corner_grey)
         val randomIntent = Intent(this, ScheduleActivity::class.java)
         val arguments = intent.extras
         val url = arguments?.get("url").toString()
         randomIntent.putExtra("url", url)
         startActivity(randomIntent)
         overridePendingTransition(R.anim.quick_in, R.anim.quick_out)
-        //lesson_off(view)
     }
 }

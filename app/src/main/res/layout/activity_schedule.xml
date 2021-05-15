@@ -209,18 +209,6 @@
             android:onClick="click6" />
     </RelativeLayout>
 
-    <!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="0dp"-->
-    <!--        android:layout_marginLeft="10dp"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:layout_marginRight="10dp"-->
-    <!--        android:layout_marginBottom="10dp"-->
-    <!--        android:id="@+id/swipe_refresh"-->
-    <!--        app:layout_constraintTop_toTopOf="@+id/dayweek"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        tools:ignore="MissingConstraints">-->
-
     <HorizontalScrollView
         android:id="@+id/scroll"
         android:layout_width="wrap_content"
@@ -428,6 +416,5 @@
             </LinearLayout>
         </LinearLayout>
     </HorizontalScrollView>
-    <!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

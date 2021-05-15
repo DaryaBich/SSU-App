@@ -32,20 +32,12 @@ public class SessionModel implements SessionInterface.Model{
         }
     }
     // первый параметр это тип входных параметров, третий - тип выходных параметров
-    //private static class MyAsyncTask extends AsyncTask<ScheduleData, Void, LinkedList<ScheduleData>>
     private static class MyAsyncTask extends AsyncTask<SessionData, Void, LinkedList<SessionData>> {
-
-        // private ScheduleData scheduleData;
         @Override
         // Тогда здесь входным параметром будет ScheduleData
-        //protected LinkedList<ScheduleData> doInBackground(ScheduleData... sheduleData)
         protected LinkedList<SessionData> doInBackground(SessionData... sessionData) {
-
-            //LinkedList<ScheduleData> groupsLinkedList = new LinkedList<>();
             LinkedList<SessionData> sessionsLinkedList = new LinkedList<>();
-
             String url = sessionData[0].geturl();
-            //Integer num = lessonData[0].getnum();
             Document document = null;
             try {
                 document = Jsoup.connect(url).timeout(100000).get();
@@ -53,13 +45,7 @@ public class SessionModel implements SessionInterface.Model{
                 e.printStackTrace();
             }
             Elements listSessions;
-            // listLessons = document.select("td[id*=1_2]");
-           // String str = "td[id$=" + num + "]";
             listSessions = document.select("table#session").select("tr");
-            //String str = "td[id$=" + num + "]";
-            // listLessons = document.select(str);
-            //Elements listtime = document.select("tr");
-            //Integer i = 1;
 
             for (int i = 0; i < listSessions.size(); i++) {
                 Element element = listSessions.get(i);
@@ -75,22 +61,6 @@ public class SessionModel implements SessionInterface.Model{
                 String place = element.select("td").text();
                 sessionsLinkedList.add(new SessionData(name, url, date, time, teacher, place));
             }
-//            for (Element element : listSessions) {
-////                for (int i = 1; i < 9; i++) {
-////                    String les = element.select("div[class*=l-dn]").text();
-////                }
-//                String les = element.select("div[class=l-dn]").text();
-//                String lec_pr = element.select("div[class=l-pr-t]").text();
-//                String ch_zn = element.select("div[class=l-pr-r]").text();
-//                String g = element.select("div[class=l-pr-g]").text();
-//                String teacher = element.select("div[class=l-tn]").text();
-//                String place = element.select("div[class=l-p]").text();
-//                //String time = listtime.get(i).select("th").text();
-//
-//
-//                lessonsLinkedList.add(new LessonData(les, url, num, lec_pr + " " + g, ch_zn, teacher, place, time));
-//                i++;
-//            }
             return sessionsLinkedList;
         }
 

@@ -10,11 +10,9 @@ interface SessionInterface {
         @Throws(IOException::class, ExecutionException::class, InterruptedException::class)
         fun getSessions(sessionData: SessionData):List<SessionData>
     }
-
     interface View {
         fun showGroups(list:List<SessionData>)
     }
-
     interface Presenter {
         fun getData(sessionData: SessionData):List<SessionData>
     }

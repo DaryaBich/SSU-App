@@ -10,9 +10,6 @@ class LessonData (
     private var teacher: String,
     private var place: String,
     private var time: String
-    //private var : String,
-    //private var course: String,
-    //private var group: String
 ) {
 
     fun getname(): String {

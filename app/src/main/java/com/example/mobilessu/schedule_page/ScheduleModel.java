@@ -29,16 +29,10 @@ public class ScheduleModel implements ScheduleInterface.Model{
         }
     }
     // первый параметр это тип входных параметров, третий - тип выходных параметров
-    //private static class MyAsyncTask extends AsyncTask<ScheduleData, Void, LinkedList<ScheduleData>>
     private static class MyAsyncTask extends AsyncTask<LessonData, Void, LinkedList<LessonData>> {
-
-        // private ScheduleData scheduleData;
         @Override
         // Тогда здесь входным параметром будет ScheduleData
-        //protected LinkedList<ScheduleData> doInBackground(ScheduleData... sheduleData)
         protected LinkedList<LessonData> doInBackground(LessonData... lessonData) {
-
-            //LinkedList<ScheduleData> groupsLinkedList = new LinkedList<>();
             LinkedList<LessonData> lessonsLinkedList = new LinkedList<>();
             String alf_en = "ABVGDEZIIKLMNOPRSTUFHCEUabvgdeziiklmnoprstufhceu";
             String alf_ru = "АБВГДЕЗИЙКЛМНОПРСТУФХЦЭЮабвгдезийклмнопрстуфхцэю";
@@ -59,18 +53,12 @@ public class ScheduleModel implements ScheduleInterface.Model{
                 e.printStackTrace();
             }
             Elements listLessons;
-           // listLessons = document.select("td[id*=1_2]");
             for (Integer num = 1; num < 7; num++) {
                 String str = "td[id$=" + num + "]";
                 listLessons = document.select("tr").select(str);
-                //String str = "td[id$=" + num + "]";
-                // listLessons = document.select(str);
                 Elements listtime = document.select("tr");
                 Integer i = 1;
                 for (Element element : listLessons) {
-//                for (int i = 1; i < 9; i++) {
-//                    String les = element.select("div[class*=l-dn]").text();
-//                }
                     Integer col = element.select("div[class=l-dn]").size();
                     String time = listtime.get(i).select("th").text();
                     if (col == 0)
