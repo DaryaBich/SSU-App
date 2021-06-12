@@ -21,6 +21,18 @@
             android:parentActivityName=".group_page.ActivityGroup" />
         <activity android:name=".group_page.ActivityGroup" />
         <activity android:name=".choose_course.ActivityСourse" />
+        <activity
+            android:name=".contacts_page.ActivityContacts"
+            android:parentActivityName=".menu_page.ActivityMenu" />
+
+        <activity
+            android:name=".contacts_list_page.ActivityContactsList"
+            android:parentActivityName=".contacts_page.ActivityContacts" />
+
+        <activity
+            android:name=".contact_display.ActivityContactDisplay"
+            android:parentActivityName=".contacts_list_page.ActivityContactsList" />
+
         <activity android:name=".choose_day_evening.ActivityDayEvening" />
         <activity android:name=".menu_page.ActivityMenu" />
         <activity android:name=".student_faculty_page.ActivityStudentFaculty" />

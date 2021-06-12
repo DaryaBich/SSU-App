@@ -206,6 +206,7 @@
 
             <Button
                 android:id="@+id/button_contacts"
+                android:onClick="click_contacts"
                 android:layout_width="290dp"
                 android:layout_height="69dp"
                 android:background="@drawable/btn_rounded_corner"

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--- Номера факса, соответствующие разделу "Руководство" -->
+
+    <string-array name="dir_faxes">
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+    </string-array>
+
+    <!--- Номера факса, соответствующие разделу "Административные подразделения" -->
+
+    <string-array name="adm_faxes">
+        <item>не указан</item>
+        <item>+7(8452)509382</item>
+        <item>не указан</item>
+        <item>+7(8452)502996</item>
+        <item>+7(8452)511632</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>+7(8452)507906</item>
+        <item>не указан</item>
+        <item>+7(8452)559413</item>
+        <item>не указан</item>
+        <item>+7(8452)511527</item>
+        <item>+7(8452)261554</item>
+        <item>+7(8452)225129</item>
+        <item>не указан</item>
+        <item>+7(8452)511740</item>
+        <item>+7(8452)514000</item>
+        <item>+7(8452)520596</item>
+        <item>не указан</item>
+        <item>+7(8452)507906</item>
+        <item>не указан</item>
+        <item>+7(8452)509078</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>+7(8452)271496</item>
+        <item>не указан</item>
+        <item>+7(8452)524035</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>+7(8452)278529</item>
+        <item>+7(8452)210766</item>
+        <item>+7(8452)262197</item>
+        <item>+7(8452)236737</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>+7(8452)523381</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>+7(8452)512958</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+    </string-array>
+
+    <!-- Номера факса, соответствующие разделу "Образовательные подразделения"-->
+
+    <string-array name = "edu_faxes">
+        <item>не указан</item>
+        <item>+7(8452)515449</item>
+        <item>+7(8452)516952</item>
+        <item>+7(8452)261554</item>
+        <item>+7(8452)512874</item>
+        <item>+7(8452)225107</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>+7(8452)225109</item>
+        <item>+7(8452)225110</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>+7(8452)210651</item>
+        <item>не указан</item>
+        <item>+7(8452)210644</item>
+        <item>+7(8452)516960</item>
+        <item>+7(8452)225120</item>
+        <item>+7(84545)41649</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>+7(8452)515874</item>
+        <item>не указан</item>
+        <item>не указан</item>
+        <item>не указан</item>
+    </string-array>
+</resources>

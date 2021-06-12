@@ -8,10 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilessu.R
 import com.example.mobilessu.schedule_page.ScheduleActivity
 import com.example.mobilessu.teacher_or_student_page.ActivityTeacherOrStudent
+import com.example.mobilessu.contacts_page.ActivityContacts
 import java.io.BufferedReader
 import java.io.FileNotFoundException
 import java.io.IOException
 import java.io.InputStreamReader
+import android.util.Log
+import androidx.core.graphics.drawable.toDrawable
+import kotlinx.android.synthetic.main.activity_menu.*
 
 class ActivityMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +32,16 @@ class ActivityMenu : AppCompatActivity() {
     fun click_back(view: View){
         finish()
         overridePendingTransition(R.anim.news_in, R.anim.news_out);
-
     }
+
+    // нажатие на кнопку с контактами
+    fun click_contacts(view: View) {
+        val randomIntent = Intent(this, ActivityContacts::class.java)
+        startActivity(randomIntent)
+        Log.d("CONTACTS", "Intent started")
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out)
+    }
+
     fun click_my_schedule(view: View) {
         var sumstr: String = ""
         try {

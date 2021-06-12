@@ -42,7 +42,7 @@ public class TeacherModel implements TeacherInterface.Model {
 
         @Override
         protected List<Teacher> doInBackground(String... strings) {
-            String url = "https://scribabot.tk/api/v1.0/teacher/word";
+            String url = "https://scribabot.ml/api/v1.0/teacher/word";
             final List<Teacher> teacherList = new LinkedList<>();
             OkHttpClient okHttpClient = new OkHttpClient();
             RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), strings[0]);
@@ -68,6 +68,7 @@ public class TeacherModel implements TeacherInterface.Model {
                     }
                 }
             });
+            Log.d("CHECKER", "teacher");
             return teacherList;
         }
         @Override

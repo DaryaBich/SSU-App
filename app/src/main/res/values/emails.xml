@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--- Адреса электронной почты, соответствующие разделу "Руководство" -->
+
+    <string-array name = "dir_emails">
+        <item>rector@sgu.ru</item>
+        <item>president@sgu.ru</item>
+        <item>mig@info.sgu.ru</item>
+        <item>koronovskyaa@info.sgu.ru</item>
+        <item>nesterova@sgu.ru</item>
+        <item>не указан</item>
+        <item>novikovail@info.sgu.ru</item>
+        <item>semenovsg@info.sgu.ru</item>
+        <item>konakovdn@gmail.com</item>
+        <item>golovchenkoav@info.sgu.ru</item>
+        <item>MuhoedSD@info.sgu.ru</item>
+        <item>FedusenkoIV@info.sgu.ru</item>
+    </string-array>
+
+    <!--- Адреса электронной почты, соответствующие разделу "Административные подразделения" -->
+
+    <string-array name = "adm_emails">
+        <item>rector@sgu.ru</item>
+        <item>ied@sgu.ru</item>
+        <item>uovr_sgu@mail.ru</item>
+        <item>pichkurvv@info.sgu.ru</item>
+        <item>aspirant@sgu.ru</item>
+        <item>sergeevanp@info.sgu.ru</item>
+        <item>eddep@sgu.ru</item>
+        <item>streluhinann@info.sgu.ru</item>
+        <item>tpark@sgu.ru</item>
+        <item>kompozit@nm.ru</item>
+        <item>irina0465@mail.ru</item>
+        <item>cpk@info.sgu.ru</item>
+        <item>nano-bio@info.sgu.ru</item>
+        <item>RiskInstitute@sgu.ru</item>
+        <item>profkomsgu@mail.ru</item>
+        <item>docprofcom@mail.ru</item>
+        <item>proekt@sgu.ru</item>
+        <item>library@info.sgu.ru</item>
+        <item>monachsj@mail.ru</item>
+        <item>suchkovds@yandex.ru</item>
+        <item>uidsgu@gmail.com</item>
+        <item>sgubookstore@mail.ru</item>
+        <item>iedo@sgu.ru</item>
+        <item>studclubsgu@yandex.ru</item>
+        <item>sgu_olga@mail.ru</item>
+        <item>press@sgu.ru</item>
+        <item>kinoctudiassu@gmail.com</item>
+        <item>FedusenkoIV@info.sgu.ru</item>
+        <item>science@info.sgu.ru</item>
+        <item>itcpm@yandex.ru</item>
+        <item>sgu-reiting@info.sgu.ru</item>
+        <item>ok@sgu.ru</item>
+        <item>uok@info.sgu.ru</item>
+        <item>odo@info.sgu.ru</item>
+        <item>Arhivsgu@info.sgu.ru</item>
+        <item>pravo@info.sgu.ru</item>
+        <item>selaninain@info.sgu.ru</item>
+        <item>bassein.sgu@mail.ru</item>
+        <item>cpod@info.sgu.ru</item>
+        <item>aksenovaos@info.sgu.ru</item>
+        <item>pfu@info.sgu.ru</item>
+        <item>publ@sgu.ru</item>
+        <item>museum@info.sgu.ru</item>
+        <item>omf@sgu.ru</item>
+        <item>omp@sgu.ru</item>
+        <item>petya.vlasov.62@mail.ru</item>
+        <item>oot_sgu@mail.ru</item>
+        <item>sgutb@yandex.ru</item>
+        <item>ekaterina27.87@mail.ru</item>
+        <item>ugochs@sgu.ru</item>
+        <item>Lrk@sgu.ru</item>
+        <item>ccu@sgu.ru</item>
+        <item>vikashobonova@mail.ru</item>
+        <item>itk.sgu@gmail.com</item>
+        <item>bessonov@sgu.ru</item>
+        <item>subbotindeni@yandex.ru</item>
+    </string-array>
+
+    <!--- Адреса электронной почты, соответствующие разделу "Образовательные подразделения" -->
+
+    <string-array name = "edu_emails">
+        <item>biofac@info.sgu.ru</item>
+        <item>geogr@sgu.ru</item>
+        <item>dekanatgeol@sgu.ru</item>
+        <item>mexmat@sgu.ru</item>
+        <item>sociol@info.sgu.ru</item>
+        <item>kniit@info.sgu.ru</item>
+        <item>inyaz@info.sgu.ru</item>
+        <item>ppino@sgu.ru</item>
+        <item>psy@info.sgu.ru</item>
+        <item>philosof@info.sgu.ru</item>
+        <item>economy@sgu.ru</item>
+        <item>jurid@info.sgu.ru</item>
+        <item>fihomuz@info.sgu.ru</item>
+        <item>iimo@info.sgu.ru</item>
+        <item>ifkis@info.sgu.ru</item>
+        <item>instphilology@info.sgu.ru</item>
+        <item>inchem@info.sgu.ru</item>
+        <item>sidpo@info.sgu.ru</item>
+        <item>mail@bfsgu.ru</item>
+        <item>dept@sgu.ru</item>
+        <item>cre_yablochkov@info.sgu.ru</item>
+        <item>ido@sgu.ru</item>
+        <item>physics@sgu.ru</item>
+        <item>rector@sgu.ru</item>
+        <item>rector@sgu.ru</item>
+    </string-array>
+</resources>
