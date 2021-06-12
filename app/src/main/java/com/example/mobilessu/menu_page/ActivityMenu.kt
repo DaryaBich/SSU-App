@@ -16,6 +16,7 @@ import java.io.IOException
 import java.io.InputStreamReader
 import android.util.Log
 import androidx.core.graphics.drawable.toDrawable
+import com.example.mobilessu.development.ActivityDevelopment
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class ActivityMenu : AppCompatActivity() {
@@ -38,6 +39,36 @@ class ActivityMenu : AppCompatActivity() {
 
     fun click_back(view: View){
         finish()
+        overridePendingTransition(R.anim.news_in, R.anim.news_out);
+    }
+
+    fun click_callback(view: View){
+        val randomIntent = Intent(this, ActivityDevelopment::class.java)
+        startActivity(randomIntent)
+        overridePendingTransition(R.anim.news_in, R.anim.news_out);
+    }
+
+    fun click_students(view: View){
+        val randomIntent = Intent(this, ActivityDevelopment::class.java)
+        startActivity(randomIntent)
+        overridePendingTransition(R.anim.news_in, R.anim.news_out);
+    }
+
+    fun click_point_of(view: View){
+        val randomIntent = Intent(this, ActivityDevelopment::class.java)
+        startActivity(randomIntent)
+        overridePendingTransition(R.anim.news_in, R.anim.news_out);
+    }
+
+    fun click_info(view: View){
+        val randomIntent = Intent(this, ActivityDevelopment::class.java)
+        startActivity(randomIntent)
+        overridePendingTransition(R.anim.news_in, R.anim.news_out);
+    }
+
+    fun click_structure(view: View){
+        val randomIntent = Intent(this, ActivityDevelopment::class.java)
+        startActivity(randomIntent)
         overridePendingTransition(R.anim.news_in, R.anim.news_out);
     }
 

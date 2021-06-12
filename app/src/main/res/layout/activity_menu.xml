@@ -162,6 +162,7 @@
                 android:textSize="20sp"
                 android:textStyle="normal|bold"
                 android:textColor="?attr/colorPrimaryDark"
+                android:onClick="click_structure"
                 />
 
             <Button
@@ -195,6 +196,7 @@
                 android:textSize="20sp"
                 android:textStyle="normal|bold"
                 android:textColor="?attr/colorPrimaryDark"
+                android:onClick="click_info"
                 />
 
             <Button
@@ -211,6 +213,7 @@
                 android:textSize="20sp"
                 android:textStyle="normal|bold"
                 android:textColor="?attr/colorPrimaryDark"
+                android:onClick="click_students"
                 />
 
             <Button
@@ -244,6 +247,7 @@
                 android:textSize="20sp"
                 android:textStyle="normal|bold"
                 android:textColor="?attr/colorPrimaryDark"
+                android:onClick="click_point_of"
                 />
 
             <Button
@@ -260,6 +264,7 @@
                 android:textSize="20sp"
                 android:textStyle="normal|bold"
                 android:textColor="?attr/colorPrimaryDark"
+                android:onClick="click_callback"
                 />
 
             <Button

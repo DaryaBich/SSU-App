@@ -38,6 +38,7 @@
             android:parentActivityName=".contacts_list_page.ActivityContactsList" />
 
         <activity android:name=".choose_day_evening.ActivityDayEvening" />
+        <activity android:name=".development.ActivityDevelopment" />
         <activity android:name=".menu_page.ActivityMenu"/>
         <activity android:name=".student_faculty_page.ActivityStudentFaculty"/>
         <activity
