@@ -37,7 +37,7 @@
             android:layout_marginBottom="20dp"
             android:maxLines="10"
             android:text="TextView"
-            android:textColor="#070101"
+            android:textColor="?attr/colorPrimaryDark"
             android:textSize="22sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

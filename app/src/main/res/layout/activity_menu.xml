@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E7FBFF"
+    android:background="?attr/colorBackgroundFloating"
     android:visibility="visible"
     tools:context=".menu_page.ActivityMenu"
     tools:visibility="visible">
@@ -13,7 +13,7 @@
         android:id="@+id/topWhiteBox"
         android:layout_width="406dp"
         android:layout_height="103dp"
-        android:background="#FFFFFF"
+        android:background="?attr/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="113dp"
         android:layout_height="70dp"
         android:text="СГУ"
-        android:textColor="#100C0C"
+        android:textColor="?attr/colorSecondary"
         android:textSize="58dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/topWhiteBox"
@@ -38,7 +38,7 @@
         android:id="@+id/blueStripe"
         android:layout_width="411dp"
         android:layout_height="7dp"
-        android:background="#68A4FF"
+        android:background="?attr/colorAccent"
         android:outlineAmbientShadowColor="#100707"
         android:outlineSpotShadowColor="#190C0C"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,7 +80,7 @@
         android:onClick="click_back"
         android:layout_width="31dp"
         android:layout_height="29dp"
-        android:background="#FFFFFF"
+        android:background="?attr/colorPrimary"
         android:scaleX="2"
         android:scaleY="2"
         app:layout_constraintBottom_toTopOf="@+id/topWhiteBox"
@@ -141,6 +141,7 @@
                 android:paddingRight="25dp"
                 android:onClick="click_my_schedule"
                 android:text="Моё расписание"
+                android:textColor="?attr/colorPrimaryDark"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textIsSelectable="false"
@@ -159,7 +160,9 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textIsSelectable="false"
                 android:textSize="20sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="?attr/colorPrimaryDark"
+                />
 
             <Button
                 android:id="@+id/button_sсhedule"
@@ -174,7 +177,9 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textIsSelectable="false"
                 android:textSize="20sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="?attr/colorPrimaryDark"
+                />
 
             <Button
                 android:id="@+id/button_info"
@@ -188,7 +193,9 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textIsSelectable="false"
                 android:textSize="20sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="?attr/colorPrimaryDark"
+                />
 
             <Button
                 android:id="@+id/button_studention"
@@ -202,7 +209,9 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textIsSelectable="false"
                 android:textSize="20sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="?attr/colorPrimaryDark"
+                />
 
             <Button
                 android:id="@+id/button_contacts"
@@ -217,7 +226,9 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textIsSelectable="false"
                 android:textSize="20sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="?attr/colorPrimaryDark"
+                />
 
             <Button
                 android:id="@+id/button_point"
@@ -231,7 +242,9 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textIsSelectable="false"
                 android:textSize="20sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="?attr/colorPrimaryDark"
+                />
 
             <Button
                 android:id="@+id/button_callback"
@@ -245,7 +258,25 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textIsSelectable="false"
                 android:textSize="20sp"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:textColor="?attr/colorPrimaryDark"
+                />
+
+            <Button
+                android:id="@+id/button_theme"
+                android:layout_width="290dp"
+                android:layout_height="69dp"
+                android:background="@drawable/btn_rounded_corner"
+                android:gravity="start|center_vertical"
+                android:paddingLeft="25dp"
+                android:onClick="click_theme"
+                android:text="Выбор темы"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textIsSelectable="false"
+                android:textSize="20sp"
+                android:textStyle="normal|bold"
+                android:textColor="?attr/colorPrimaryDark"/>
 
         </LinearLayout>
     </ScrollView>

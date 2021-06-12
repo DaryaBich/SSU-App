@@ -9,6 +9,7 @@ import com.example.mobilessu.R
 import com.example.mobilessu.schedule_page.ScheduleActivity
 import com.example.mobilessu.teacher_or_student_page.ActivityTeacherOrStudent
 import com.example.mobilessu.contacts_page.ActivityContacts
+import com.example.mobilessu.choose_theme.ActivityChooseTheme
 import java.io.BufferedReader
 import java.io.FileNotFoundException
 import java.io.IOException
@@ -25,6 +26,12 @@ class ActivityMenu : AppCompatActivity() {
 
     fun click_schedule(view: View){
         val randomIntent = Intent(this, ActivityTeacherOrStudent::class.java)
+        startActivity(randomIntent)
+        overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
+    }
+
+    fun click_theme(view: View){
+        val randomIntent = Intent(this, ActivityChooseTheme::class.java)
         startActivity(randomIntent)
         overridePendingTransition(R.anim.fide_in, R.anim.fide_out);
     }

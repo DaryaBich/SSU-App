@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorBackgroundFloating"
-    tools:context=".teacher_or_student_page.ActivityTeacherOrStudent">
+    tools:context=".choose_theme.ActivityChooseTheme">
 
     <View
         android:id="@+id/topWhiteBox"
@@ -22,7 +22,7 @@
         android:layout_width="113dp"
         android:layout_height="70dp"
         android:text="СГУ"
-        android:textColor="?attr/colorSecondary"
+        android:textColor="#100C0C"
         android:textSize="58dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/topWhiteBox"
@@ -36,7 +36,7 @@
         android:id="@+id/blueStripe"
         android:layout_width="411dp"
         android:layout_height="7dp"
-        android:background="?attr/colorAccent"
+        android:background="#68A4FF"
         android:outlineAmbientShadowColor="#100707"
         android:outlineSpotShadowColor="#190C0C"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -89,44 +89,72 @@
         app:layout_constraintVertical_bias="0.450"
         app:srcCompat="@drawable/arrow_left" />
 
-    <Button
-        android:id="@+id/button_student"
-        android:onClick="click_schedule_students"
+    <TextView
+        android:id="@+id/txt1"
         android:layout_width="wrap_content"
-        android:layout_height="65dp"
-        android:background="@drawable/btn_rounded_corner"
-        android:text="Расписание студентов"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="20dp"
+        android:text="Выберите тему приложения"
         android:textColor="?attr/colorPrimaryDark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintTop_toTopOf="@+id/blueStripe" />
 
-    <Button
-        android:id="@+id/button_teacher"
-        android:onClick="click_schedule_teacher"
-        android:layout_width="wrap_content"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
-        android:layout_height="65dp"
-        android:background="@drawable/btn_rounded_corner"
-        android:text="Расписание преподавателей"
-        android:textAllCaps="false"
+    <RadioGroup
+        android:id="@+id/themeGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/txt1"
+        android:background="?attr/colorBackgroundFloating">
+
+
+    <RadioButton
+        android:id="@+id/themeLight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_weight="1"
+        android:text="Светлая тема"
         android:textSize="20sp"
-        android:textStyle="normal|bold"
-        android:textColor="?attr/colorPrimaryDark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.356" />
+        android:textStyle="normal|bold"/>
+
+
+    <RadioButton
+        android:id="@+id/themeDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_weight="1"
+        android:text="Темная тема"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"/>
+
+    <RadioButton
+        android:id="@+id/themeBattery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_weight="1"
+        android:text="Сбережение заряда батареи"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"/>
+
+    <RadioButton
+        android:id="@+id/themeSystem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_weight="1"
+        android:text="Системная тема"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"/>
+
+
+    </RadioGroup>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

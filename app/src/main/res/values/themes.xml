@@ -1,4 +1,19 @@
 <resources>
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- голубой цвет фона -->
+        <item name="colorBackgroundFloating">@color/background</item>
+        <!-- белый цвет -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- цвет голубой полоски -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- черный цвет -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- темный цвет для надписи СГУ -->
+        <item name="colorSecondary">#100C0C</item>
+    </style>
 
     <style name="NoActionBar">
         <item name="windowActionBar">false</item>
@@ -9,10 +24,4 @@
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="LightTheme" parent="NoActionBar">
-        <item name="colorPrimary">#FFFFFF</item>
-        <item name="android:textColor">#100C0C</item>
-        <item name="colorAccent">#68A4FF</item>
-        <item name="android:background">#E7FBFF</item>
-    </style>
 </resources>

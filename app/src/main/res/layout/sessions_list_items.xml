@@ -47,7 +47,7 @@
                     android:layout_marginTop="10dp"
                     android:gravity="left"
                     android:text="TextView"
-                    android:textColor="#070101"
+                    android:textColor="?attr/colorPrimaryDark"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -61,7 +61,7 @@
                     android:layout_marginTop="10dp"
                     android:gravity="right"
                     android:text="TextView"
-                    android:textColor="#070101"
+                    android:textColor="?attr/colorPrimaryDark"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -74,7 +74,7 @@
                 android:minEms="15"
                 android:layout_marginBottom="20dp"
                 android:text="TextView"
-                android:textColor="#070101"
+                android:textColor="?attr/colorPrimaryDark"
                 android:textSize="18sp" />
 
             <TextView
@@ -87,7 +87,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_gravity="left"
                 android:text="TextView"
-                android:textColor="#070101"
+                android:textColor="?attr/colorPrimaryDark"
                 android:textSize="16sp" />
 
             <TextView
@@ -100,7 +100,7 @@
                 android:layout_gravity="left"
                 android:layout_marginRight="20dp"
                 android:text="TextView"
-                android:textColor="#070101"
+                android:textColor="?attr/colorPrimaryDark"
                 android:textSize="16sp" />
         </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

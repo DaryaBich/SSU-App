@@ -11,10 +11,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".session_page.SessionActivity"
             android:parentActivityName=".group_page.ActivityGroup">
+        </activity>
+        <activity
+            android:name=".choose_theme.ActivityChooseTheme"
+            android:parentActivityName=".menu_page.ActivityMenu">
         </activity>
         <activity
             android:name=".schedule_page.ScheduleActivity"
@@ -34,12 +38,13 @@
             android:parentActivityName=".contacts_list_page.ActivityContactsList" />
 
         <activity android:name=".choose_day_evening.ActivityDayEvening" />
-        <activity android:name=".menu_page.ActivityMenu" />
-        <activity android:name=".student_faculty_page.ActivityStudentFaculty" />
+        <activity android:name=".menu_page.ActivityMenu"/>
+        <activity android:name=".student_faculty_page.ActivityStudentFaculty"/>
         <activity
             android:name=".teacher_page.ActivityFindTeacher"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".teacher_or_student_page.ActivityTeacherOrStudent" />
+        <activity android:name=".teacher_or_student_page.ActivityTeacherOrStudent"
+           />
 
         <activity android:name=".SplashScreen">
             <intent-filter>
@@ -49,8 +54,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".news_page.ActivityNews"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".news_page.ActivityNews">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
